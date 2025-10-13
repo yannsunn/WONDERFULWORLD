@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface ImageGalleryProps {
   images: {
@@ -15,23 +15,38 @@ interface ImageGalleryProps {
 export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     if (selectedImage !== null) {
       setSelectedImage(selectedImage === 0 ? images.length - 1 : selectedImage - 1);
     }
-  };
+  }, [selectedImage, images.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (selectedImage !== null) {
       setSelectedImage(selectedImage === images.length - 1 ? 0 : selectedImage + 1);
     }
-  };
+  }, [selectedImage, images.length]);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') setSelectedImage(null);
-    if (e.key === 'ArrowLeft') handlePrevious();
-    if (e.key === 'ArrowRight') handleNext();
-  };
+  // Keyboard navigation
+  useEffect(() => {
+    if (selectedImage !== null) {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setSelectedImage(null);
+        if (e.key === 'ArrowLeft') handlePrevious();
+        if (e.key === 'ArrowRight') handleNext();
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [selectedImage, handlePrevious, handleNext]);
 
   return (
     <>
@@ -72,12 +87,15 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 animate-fadeIn"
           onClick={() => setSelectedImage(null)}
-          onKeyDown={(e) => handleKeyDown(e as any)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="画像ギャラリー"
         >
           {/* Close Button */}
           <button
             className="absolute top-4 right-4 text-white hover:text-accent-gold transition-colors p-2 z-10"
             onClick={() => setSelectedImage(null)}
+            aria-label="閉じる"
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -91,6 +109,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
               e.stopPropagation();
               handlePrevious();
             }}
+            aria-label="前の画像"
           >
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -104,6 +123,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
               e.stopPropagation();
               handleNext();
             }}
+            aria-label="次の画像"
           >
             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

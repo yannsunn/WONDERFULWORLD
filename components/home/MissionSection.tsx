@@ -1,4 +1,8 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { fadeInUp, fadeInLeft, fadeInRight, scrollViewport } from '@/lib/animations';
 
 const MissionSection = () => {
   return (
@@ -8,7 +12,13 @@ const MissionSection = () => {
           {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Text Content */}
-            <div className="space-y-6">
+            <motion.div
+              className="space-y-6"
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={scrollViewport}
+            >
               <div className="inline-block">
                 <span className="px-4 py-2 bg-gradient-to-r from-accent-gold to-primary-600 text-white text-sm font-bold rounded-full">
                   Support Women
@@ -75,10 +85,16 @@ const MissionSection = () => {
                   </svg>
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right: Stats / Visual */}
-            <div className="relative">
+            <motion.div
+              className="relative"
+              variants={fadeInRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={scrollViewport}
+            >
               <div className="card p-8 bg-gradient-to-br from-accent-gold/10 to-primary-100">
                 {/* Stats */}
                 <div className="space-y-8">
@@ -133,7 +149,7 @@ const MissionSection = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

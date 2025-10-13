@@ -1,5 +1,8 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, scrollViewport } from '@/lib/animations';
+
 const SocialMediaSection = () => {
   // Note: In production, you would use actual Instagram/TikTok embed codes
   // For now, we'll create placeholder cards that can be replaced with real embeds
@@ -29,21 +32,34 @@ const SocialMediaSection = () => {
     <section className="section bg-gradient-to-b from-primary-50 to-white">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
             Social Media
           </h2>
           <p className="text-lg text-gray-600 mb-8">
             SNSで最新の活動をチェック
           </p>
-        </div>
+        </motion.div>
 
         {/* Social Posts Grid - Placeholder for embeds */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           {socialPosts.map((post, index) => (
-            <div
+            <motion.div
               key={index}
               className="card p-4 bg-gradient-to-br from-white to-primary-50"
+              variants={fadeInUp}
             >
               {/* Placeholder for Instagram/TikTok embed */}
               <div className="aspect-[4/5] bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 flex items-center justify-center">
@@ -102,12 +118,18 @@ const SocialMediaSection = () => {
                   </>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Social Links */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <motion.div
+          className="flex flex-wrap justify-center gap-4"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <a
             href="https://instagram.com/wonderfulworld"
             target="_blank"
@@ -130,7 +152,7 @@ const SocialMediaSection = () => {
             </svg>
             TikTok でフォロー
           </a>
-        </div>
+        </motion.div>
 
         {/* Note about embeds */}
         <div className="mt-8 text-center">

@@ -1,4 +1,8 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { fadeInUp, scrollViewport } from '@/lib/animations';
 
 const SponsorSection = () => {
   return (
@@ -6,7 +10,13 @@ const SponsorSection = () => {
       <div className="container">
         <div className="max-w-4xl mx-auto">
           {/* Card Container */}
-          <div className="card p-8 md:p-12 bg-white/80 backdrop-blur-sm">
+          <motion.div
+            className="card p-8 md:p-12 bg-white/80 backdrop-blur-sm"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={scrollViewport}
+          >
             {/* Header */}
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
@@ -80,7 +90,7 @@ const SponsorSection = () => {
                 お問い合わせ
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

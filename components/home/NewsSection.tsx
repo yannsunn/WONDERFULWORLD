@@ -1,4 +1,8 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, scrollViewport } from '@/lib/animations';
 
 const NewsSection = () => {
   // Sample news data - in production, this would come from CMS
@@ -30,24 +34,36 @@ const NewsSection = () => {
     <section className="section bg-white">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
             News
           </h2>
           <p className="text-lg text-gray-600">
             最新情報・お知らせ
           </p>
-        </div>
+        </motion.div>
 
         {/* News List */}
-        <div className="max-w-4xl mx-auto space-y-4 mb-8">
+        <motion.div
+          className="max-w-4xl mx-auto space-y-4 mb-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           {latestNews.map((news) => (
-            <Link
-              key={news.id}
-              href={`/news/${news.id}`}
-              className="block"
-            >
-              <div className="card p-6 hover:shadow-2xl transition-shadow duration-300">
+            <motion.div key={news.id} variants={fadeInUp}>
+              <Link
+                href={`/news/${news.id}`}
+                className="block"
+              >
+                <div className="card p-6 hover:shadow-2xl transition-shadow duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   {/* Date & Category */}
                   <div className="flex items-center gap-3 flex-shrink-0">
@@ -76,11 +92,18 @@ const NewsSection = () => {
                 </div>
               </div>
             </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* View All Button */}
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <Link
             href="/news"
             className="inline-flex items-center text-accent-gold hover:text-accent-gold/80 font-semibold transition-colors"
@@ -90,7 +113,7 @@ const NewsSection = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

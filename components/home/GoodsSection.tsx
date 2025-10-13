@@ -1,4 +1,8 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, scrollViewport } from '@/lib/animations';
 
 const GoodsSection = () => {
   // Sample goods data - in production, would come from Shopify API or CMS
@@ -33,21 +37,34 @@ const GoodsSection = () => {
     <section className="section bg-white">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
             Official Goods
           </h2>
           <p className="text-lg text-gray-600">
             オフィシャルグッズでモデルを応援
           </p>
-        </div>
+        </motion.div>
 
         {/* Goods Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           {featuredGoods.map((item) => (
-            <div
+            <motion.div
               key={item.id}
               className="card overflow-hidden hover:shadow-2xl transition-shadow duration-300 group"
+              variants={fadeInUp}
             >
               {/* Product Image */}
               <div className="relative h-64 bg-gradient-to-br from-primary-50 to-primary-100 overflow-hidden">
@@ -81,12 +98,18 @@ const GoodsSection = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA to Store */}
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <a
             href="https://shop.wonderful-world.example"
             target="_blank"
@@ -98,7 +121,7 @@ const GoodsSection = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>
-        </div>
+        </motion.div>
 
         {/* Note */}
         <div className="mt-8 text-center">

@@ -61,7 +61,7 @@ const ModelsHighlight = () => {
           whileInView="visible"
           viewport={scrollViewport}
         >
-          {featuredModels.map((model) => (
+          {featuredModels.map((model, index) => (
             <motion.div key={model.id} variants={fadeInUp}>
               <Link
                 href={`/models/${model.id}`}
@@ -75,6 +75,8 @@ const ModelsHighlight = () => {
                     alt={model.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    priority={index < 2} // Priority for first 2 models (above the fold)
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

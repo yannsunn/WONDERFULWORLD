@@ -1,7 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import ImageGallery from '@/components/ImageGallery';
+import dynamic from 'next/dynamic';
+
+// Dynamic import for ImageGallery to reduce initial bundle size
+const ImageGallery = dynamic(() => import('@/components/ImageGallery'), {
+  loading: () => (
+    <div className="flex items-center justify-center py-12">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-accent-gold"></div>
+    </div>
+  ),
+  ssr: false, // Image gallery is client-side only
+});
 
 export const metadata: Metadata = {
   title: 'Best of Miss Tokyo 2025 メインスポンサーとして参加 | WONDERFUL WORLD',
