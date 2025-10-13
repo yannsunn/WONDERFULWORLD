@@ -1,11 +1,26 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-accent-sand to-accent-rose/20">
-      {/* Background Pattern */}
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero/best-of-miss-poster.jpg"
+          alt="Best of Miss Tokyo 2025"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+      </div>
+
+      {/* Background Pattern Accent */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent-gold rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
         <div className="absolute top-40 right-10 w-72 h-72 bg-accent-rose rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
@@ -26,12 +41,12 @@ const HeroSection = () => {
           </h1>
 
           {/* Catchphrase */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-4 font-medium">
+          <p className="text-xl sm:text-2xl md:text-3xl text-white mb-4 font-medium drop-shadow-lg">
             AI×Beautyで女性が輝く、新しい世界へ
           </p>
 
           {/* Sub-message */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
             ミスコンテストのファイナリストから生まれた<br className="hidden sm:block" />
             AIモデルインフルエンサー
           </p>

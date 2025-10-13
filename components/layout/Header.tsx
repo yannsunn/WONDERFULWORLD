@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const Header = () => {
@@ -21,8 +22,17 @@ const Header = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="メインナビゲーション">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="text-2xl font-heading font-bold bg-gradient-to-r from-accent-gold to-primary-600 bg-clip-text text-transparent transition-all group-hover:scale-105">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative w-12 h-12 flex-shrink-0">
+              <Image
+                src="/images/about/company-logo.jpg"
+                alt="WONDERFUL WORLD"
+                fill
+                className="object-contain transition-transform group-hover:scale-110"
+                sizes="48px"
+              />
+            </div>
+            <div className="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-accent-gold to-primary-600 bg-clip-text text-transparent transition-all group-hover:scale-105">
               WONDERFUL WORLD
             </div>
           </Link>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -194,32 +195,76 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Representative & Company */}
       <section className="section">
-        <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+        <div className="container max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
             運営チーム
           </h2>
-          <div className="card p-8">
-            <div className="space-y-6">
-              {[
-                { role: 'プロジェクトリーダー', name: '山田太郎' },
-                { role: 'AI開発エンジニア', name: '田中花子' },
-                { role: 'クリエイティブディレクター', name: 'John Smith' },
-                { role: 'SNSマネージャー', name: '佐藤美咲' },
-              ].map((member, index) => (
-                <div key={index} className="flex items-center space-x-4 pb-6 border-b last:border-b-0">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-accent-gold to-primary-600" />
-                  <div>
-                    <p className="font-bold text-gray-900">{member.name}</p>
-                    <p className="text-sm text-gray-600">{member.role}</p>
-                  </div>
+
+          {/* Representative Photo */}
+          <div className="card p-8 md:p-12 mb-12">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative h-[400px] rounded-lg overflow-hidden">
+                <Image
+                  src="/images/about/representative-presentation.jpg"
+                  alt="WONDERFUL WORLD 代表者プレゼンテーション"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">代表挨拶</h3>
+                <div className="space-y-4 text-gray-700">
+                  <p>
+                    WONDERFUL WORLDは、AI技術と美の力で女性たちの可能性を広げることを使命としています。
+                  </p>
+                  <p>
+                    私たちは、ミスコンテスト出場者をはじめとする女性たちに、
+                    AIを活用した新たな活躍の場を提供し、継続的なキャリア形成をサポートします。
+                  </p>
+                  <p>
+                    これは単なるビジネスではなく、社会課題の解決を目指すプロジェクトです。
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
-            <div className="mt-8 pt-8 border-t">
-              <h3 className="font-bold text-gray-900 mb-4">法人情報</h3>
-              <div className="text-sm text-gray-600 space-y-2">
+          </div>
+
+          {/* Sponsors/Partners */}
+          <div className="card p-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">パートナー企業</h3>
+            <div className="relative h-[300px] rounded-lg overflow-hidden mb-6">
+              <Image
+                src="/images/about/sponsors-screen.jpg"
+                alt="Best of Miss Tokyo 2025 パートナー企業"
+                fill
+                className="object-contain bg-gray-900"
+                sizes="100vw"
+              />
+            </div>
+            <p className="text-center text-sm text-gray-600">
+              Best of Miss Tokyo 2025 をサポートいただいた企業の皆様
+            </p>
+          </div>
+
+          {/* Company Info */}
+          <div className="card p-8 mt-8">
+            <div className="flex items-center justify-center mb-6">
+              <div className="relative w-32 h-32">
+                <Image
+                  src="/images/about/company-logo.jpg"
+                  alt="WONDERFUL WORLD ロゴ"
+                  fill
+                  className="object-contain"
+                  sizes="128px"
+                />
+              </div>
+            </div>
+            <div className="text-center space-y-2">
+              <h3 className="font-bold text-gray-900 text-xl mb-4">会社情報</h3>
+              <div className="text-sm text-gray-600 space-y-2 max-w-md mx-auto">
                 <p>WONDERFUL WORLD株式会社（※仮称）</p>
                 <p>設立: 2025年9月</p>
                 <p>所在地: 東京都〇〇区...</p>

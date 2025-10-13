@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 const NewsPage = () => {
   const news = [
     {
+      id: 'best-of-miss-tokyo-2025',
+      date: '2025.10.13',
+      category: 'イベント',
+      title: 'Best of Miss Tokyo 2025 メインスポンサーとして参加',
+      excerpt: 'WONDERFUL WORLDは「Best of Miss Tokyo 2025」にメインスポンサーとして参加し、代表が特別賞を授与しました。Miss Universe Japan、Miss Planet Japan、Miss Universityの3大会のファイナリストが集う華やかなイベントとなりました。',
+      isNew: true,
+    },
+    {
       id: '2025-10-01-launch',
       date: '2025.10.01',
       category: 'プレスリリース',
@@ -22,7 +30,7 @@ const NewsPage = () => {
       category: 'メディア掲載',
       title: '日経新聞にWONDERFUL WORLDの取り組みが紹介されました',
       excerpt: '本日の日経新聞朝刊にて、弊プロジェクトの女性支援×AI技術の取り組みが大きく取り上げられました。',
-      isNew: true,
+      isNew: false,
     },
     {
       id: '2025-09-01-model',
