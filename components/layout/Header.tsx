@@ -69,10 +69,10 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-accent-gold"
+            className="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-600"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
-            aria-label="メニューを開く"
+            aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
           >
             <svg
               className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}

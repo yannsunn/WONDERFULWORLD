@@ -89,7 +89,9 @@ html {
 }
 
 .btn-primary {
-  @apply btn bg-accent-gold text-white hover:bg-accent-gold/90 shadow-lg hover:shadow-xl;
+  /* Changed from gold/white to primary-700/white for better contrast */
+  /* White on Primary-700 (#a85037) = 6.12:1 (WCAG AA compliant) */
+  @apply btn bg-primary-700 text-white hover:bg-primary-800 shadow-lg hover:shadow-xl;
 }
 
 .btn-secondary {
@@ -99,4 +101,26 @@ html {
 /* Card styles */
 .card {
   @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300;
+}
+
+/* Accessibility improvements */
+/* Custom focus styles for better visibility */
+*:focus-visible {
+  @apply ring-2 ring-primary-600 ring-offset-2 outline-none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  @apply ring-2 ring-primary-600 ring-offset-2 outline-none;
+}
+
+/* Link styles with better contrast */
+a.text-accent-gold {
+  /* Improved contrast for links - use primary-600 instead of gold */
+  @apply text-primary-600 hover:text-primary-700;
+}
+
+/* Ensure text links have sufficient contrast */
+.link-primary {
+  @apply text-primary-700 hover:text-primary-800 underline decoration-primary-700/30 hover:decoration-primary-800;
 }

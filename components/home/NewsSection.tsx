@@ -10,6 +10,7 @@ const NewsSection = () => {
     {
       id: '2025-10-01-launch',
       date: '2025.10.01',
+      dateTime: '2025-10-01',
       category: 'プレスリリース',
       title: 'WONDERFUL WORLD プロジェクト正式ローンチ',
       isNew: true,
@@ -17,6 +18,7 @@ const NewsSection = () => {
     {
       id: '2025-09-20-media',
       date: '2025.09.20',
+      dateTime: '2025-09-20',
       category: 'メディア掲載',
       title: '日経新聞にWONDERFUL WORLDの取り組みが紹介されました',
       isNew: true,
@@ -24,6 +26,7 @@ const NewsSection = () => {
     {
       id: '2025-09-01-model',
       date: '2025.09.01',
+      dateTime: '2025-09-01',
       category: 'お知らせ',
       title: '新AIモデル「AI Reina」デビュー！',
       isNew: false,
@@ -67,7 +70,7 @@ const NewsSection = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   {/* Date & Category */}
                   <div className="flex items-center gap-3 flex-shrink-0">
-                    <time className="text-sm font-medium text-gray-500">
+                    <time className="text-sm font-medium text-gray-500" dateTime={news.dateTime}>
                       {news.date}
                     </time>
                     <span className="px-3 py-1 text-xs font-semibold rounded-full bg-accent-gold/10 text-accent-gold border border-accent-gold/20">
