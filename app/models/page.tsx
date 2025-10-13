@@ -11,34 +11,37 @@ const ModelsPage = () => {
   // In production, this would come from CMS or API
   const models = [
     {
-      id: 'aihana',
-      name: 'AI Hana',
-      handle: '@ai_hana',
-      followers: '120K',
-      catchphrase: 'クールビューティ',
-      description: '世界と音楽を愛するバーチャルDJモデル。夜の街に虹を架けるAIインフルエンサー。',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop',
-      tags: ['Fashion', 'Music', 'Lifestyle'],
+      id: 'miss-universe-japan',
+      name: 'AI Yuna',
+      handle: '@ai_yuna',
+      followers: '150K',
+      catchphrase: 'Miss Universe Japan 代表',
+      description: 'Best of Miss Tokyo 2025でグランプリを獲得。世界を目指すエレガントな美の象徴。',
+      image: '/images/models/finalists-group.jpg',
+      tags: ['Miss Universe', 'Beauty', 'Global'],
+      badge: 'Grand Prix',
     },
     {
-      id: 'aireina',
-      name: 'AI Reina',
-      handle: '@ai_reina',
-      followers: '95K',
-      catchphrase: '多文化ミックスモデル',
-      description: 'ルーマニア出身の DJ、AIで多様性を体現するグローバルインフルエンサー。',
-      image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=600&fit=crop',
-      tags: ['Global', 'DJ', 'Diversity'],
+      id: 'miss-planet-japan',
+      name: 'AI Sakura',
+      handle: '@ai_sakura',
+      followers: '128K',
+      catchphrase: 'Miss Planet Japan 代表',
+      description: '環境保護と美を融合。持続可能な未来を発信するAIインフルエンサー。',
+      image: '/images/models/finalists-group.jpg',
+      tags: ['Miss Planet', 'Eco', 'Fashion'],
+      badge: 'Finalist',
     },
     {
-      id: 'aimisaki',
-      name: 'AI Misaki',
-      handle: '@ai_misaki',
-      followers: '88K',
-      catchphrase: 'エレガントビューティ',
-      description: '日本の美を世界に発信する、エレガントなAIモデル。',
-      image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop',
-      tags: ['Beauty', 'Japanese', 'Fashion'],
+      id: 'miss-university',
+      name: 'AI Rina',
+      handle: '@ai_rina',
+      followers: '112K',
+      catchphrase: 'Miss University 代表',
+      description: '知性と美しさを兼ね備えた次世代リーダー。教育支援活動にも注力。',
+      image: '/images/models/finalists-group.jpg',
+      tags: ['Miss University', 'Education', 'Leadership'],
+      badge: 'Finalist',
     },
   ];
 
@@ -72,7 +75,20 @@ const ModelsPage = () => {
                     alt={model.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
+                  {/* Badge */}
+                  {model.badge && (
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className={`px-3 py-1 text-xs font-bold rounded-full ${
+                        model.badge === 'Grand Prix'
+                          ? 'bg-accent-gold text-white'
+                          : 'bg-white/90 text-gray-900'
+                      }`}>
+                        {model.badge}
+                      </span>
+                    </div>
+                  )}
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6 text-white w-full">

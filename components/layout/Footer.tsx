@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -63,14 +64,29 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-heading font-bold bg-gradient-to-r from-accent-gold to-primary-600 bg-clip-text text-transparent">
-              WONDERFUL WORLD
-            </h3>
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative w-12 h-12 flex-shrink-0">
+                <Image
+                  src="/images/about/company-logo.jpg"
+                  alt="WONDERFUL WORLD"
+                  fill
+                  className="object-contain transition-transform group-hover:scale-110"
+                  sizes="48px"
+                />
+              </div>
+              <h3 className="text-xl font-heading font-bold bg-gradient-to-r from-accent-gold to-primary-600 bg-clip-text text-transparent">
+                WONDERFUL WORLD
+              </h3>
+            </Link>
             <p className="text-sm text-gray-600 leading-relaxed">
               AI×Beautyで女性が輝く、新しい世界へ。<br />
               ミスコンテストのファイナリストから生まれた<br />
               AIモデルインフルエンサープロジェクト。
             </p>
+            <div className="text-xs text-gray-500">
+              <p>WONDERFUL WORLD株式会社（仮称）</p>
+              <p>所在地: 東京都 | 設立: 2025年9月</p>
+            </div>
           </div>
 
           {/* Links */}
