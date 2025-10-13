@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, scrollViewport } from '@/lib/animations';
 
 const ModelsHighlight = () => {
   // Sample model data - in production, this would come from CMS or API
@@ -34,24 +38,36 @@ const ModelsHighlight = () => {
     <section className="section bg-gradient-to-b from-white to-primary-50">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
             Our Models
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             AIが創る、新しい美のカタチ
           </p>
-        </div>
+        </motion.div>
 
         {/* Models Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           {featuredModels.map((model) => (
-            <Link
-              key={model.id}
-              href={`/models/${model.id}`}
-              className="group"
-            >
-              <div className="card overflow-hidden hover:scale-105 transition-all duration-300">
+            <motion.div key={model.id} variants={fadeInUp}>
+              <Link
+                href={`/models/${model.id}`}
+                className="group block"
+              >
+                <div className="card overflow-hidden hover:scale-105 transition-all duration-300">
                 {/* Model Image */}
                 <div className="relative h-96 overflow-hidden bg-gradient-to-b from-primary-100 to-primary-200">
                   <Image
@@ -84,11 +100,18 @@ const ModelsHighlight = () => {
                 </div>
               </div>
             </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* View All Button */}
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <Link
             href="/models"
             className="inline-flex items-center btn-primary text-lg"
@@ -98,7 +121,7 @@ const ModelsHighlight = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Metadata } from 'next';
+import ModelsHeader from '@/components/models/ModelsHeader';
+import ModelsGrid from '@/components/models/ModelsGrid';
 
 export const metadata: Metadata = {
   title: 'モデル一覧 | WONDERFUL WORLD',
@@ -49,87 +50,10 @@ const ModelsPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-24">
       <div className="container">
         {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
-            Our Models
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            ミスコンテストのファイナリストから生まれた、<br className="hidden sm:block" />
-            AIモデルインフルエンサーたち
-          </p>
-        </div>
+        <ModelsHeader />
 
         {/* Models Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-16">
-          {models.map((model) => (
-            <Link
-              key={model.id}
-              href={`/models/${model.id}`}
-              className="group"
-            >
-              <article className="card overflow-hidden hover:scale-105 transition-all duration-300 h-full">
-                {/* Model Image */}
-                <div className="relative h-96 overflow-hidden bg-gradient-to-b from-primary-100 to-primary-200">
-                  <Image
-                    src={model.image}
-                    alt={model.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* Badge */}
-                  {model.badge && (
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className={`px-3 py-1 text-xs font-bold rounded-full ${
-                        model.badge === 'Grand Prix'
-                          ? 'bg-accent-gold text-white'
-                          : 'bg-white/90 text-gray-900'
-                      }`}>
-                        {model.badge}
-                      </span>
-                    </div>
-                  )}
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-6 text-white w-full">
-                      <p className="text-sm font-medium mb-2">{model.catchphrase}</p>
-                      <p className="text-sm opacity-90">{model.description}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Model Info */}
-                <div className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-accent-gold transition-colors">
-                    {model.name}
-                  </h2>
-                  <p className="text-gray-600 mb-4">{model.handle}</p>
-
-                  {/* Stats */}
-                  <div className="flex items-center text-sm text-gray-500 mb-4">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span className="font-semibold">{model.followers}</span>
-                    <span className="ml-1">フォロワー</span>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {model.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary-100 text-primary-700"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            </Link>
-          ))}
-        </div>
+        <ModelsGrid models={models} />
 
         {/* Coming Soon Section */}
         <div className="text-center py-16 border-t border-primary-100">

@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, scrollViewport } from '@/lib/animations';
+
 const ConceptSection = () => {
   const concepts = [
     {
@@ -33,21 +38,34 @@ const ConceptSection = () => {
     <section className="section bg-white">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
             3つの柱
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             WONDERFUL WORLDが創る、新しい価値
           </p>
-        </div>
+        </motion.div>
 
         {/* Concept Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollViewport}
+        >
           {concepts.map((concept, index) => (
-            <div
+            <motion.div
               key={index}
               className="card p-8 text-center hover:scale-105 transition-transform duration-300"
+              variants={fadeInUp}
             >
               {/* Icon */}
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-accent-gold to-primary-600 text-white mb-6">
@@ -63,9 +81,9 @@ const ConceptSection = () => {
               <p className="text-gray-600 leading-relaxed">
                 {concept.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

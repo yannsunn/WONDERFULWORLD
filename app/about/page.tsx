@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import AnimatedSection from '@/components/about/AnimatedSection';
 
 export const metadata: Metadata = {
   title: 'プロジェクトについて | WONDERFUL WORLD',
@@ -40,34 +41,38 @@ const AboutPage = () => {
       {/* Mission Statement */}
       <section className="section">
         <div className="container max-w-4xl">
-          <div className="card p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
-              Our Mission
-            </h2>
-            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
-              <p>
-                本プロジェクトは、AI技術と美の力で女性たちの可能性を広げることを使命としています。
-              </p>
-              <p>
-                ミスコンテスト出場者は、大会後のキャリア構築が課題となることが少なくありません。
-                私たちは、そうした女性たちにAIを用いた新たな活躍の場を提供し、
-                継続的な収入とキャリア形成の機会を創出します。
-              </p>
-              <p>
-                これは単なるエンタメビジネスではなく、女性のエンパワーメントと社会的支援を実現する
-                イノベーションプロジェクトです。
-              </p>
+          <AnimatedSection>
+            <div className="card p-8 md:p-12">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+                Our Mission
+              </h2>
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+                <p>
+                  本プロジェクトは、AI技術と美の力で女性たちの可能性を広げることを使命としています。
+                </p>
+                <p>
+                  ミスコンテスト出場者は、大会後のキャリア構築が課題となることが少なくありません。
+                  私たちは、そうした女性たちにAIを用いた新たな活躍の場を提供し、
+                  継続的な収入とキャリア形成の機会を創出します。
+                </p>
+                <p>
+                  これは単なるエンタメビジネスではなく、女性のエンパワーメントと社会的支援を実現する
+                  イノベーションプロジェクトです。
+                </p>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="section bg-primary-50">
         <div className="container max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
-            プロジェクトの仕組み
-          </h2>
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
+              プロジェクトの仕組み
+            </h2>
+          </AnimatedSection>
 
           {/* Flow Diagram */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-12">
