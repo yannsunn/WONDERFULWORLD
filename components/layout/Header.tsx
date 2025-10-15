@@ -4,17 +4,35 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 
+interface DropdownItem {
+  name: string;
+  href: string;
+}
+
+interface NavigationItem {
+  name: string;
+  href: string;
+  external?: boolean;
+  dropdown?: DropdownItem[];
+}
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false);
 
-  const navigation = [
+  const navigation: NavigationItem[] = [
     { name: 'ホーム', href: '/' },
-    { name: 'モデル', href: '/models' },
-    { name: 'プロジェクト', href: '/about' },
-    { name: 'ニュース', href: '/news' },
+    { name: '会社情報', href: '/about' },
+    {
+      name: '事業案内',
+      href: '#',
+      dropdown: [
+        { name: 'AIモデルインフルエンサー', href: '/business/ai-models' },
+        { name: 'ジム事業（3BGYM）', href: '/business/gym' },
+      ]
+    },
     { name: 'パートナー', href: '/partners' },
     { name: 'お問い合わせ', href: '/contact' },
-    { name: 'オンラインストア', href: 'https://shop.wonderful-world.example', external: true },
   ];
 
   return (
@@ -40,7 +58,36 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
-              item.external ? (
+              item.dropdown ? (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setIsBusinessDropdownOpen(true)}
+                  onMouseLeave={() => setIsBusinessDropdownOpen(false)}
+                >
+                  <button
+                    className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-accent-gold transition-colors rounded-lg hover:bg-primary-50 flex items-center gap-1"
+                  >
+                    {item.name}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {isBusinessDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                      {item.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-accent-gold hover:bg-primary-50 transition-colors"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : item.external ? (
                 <a
                   key={item.name}
                   href={item.href}
@@ -99,7 +146,41 @@ const Header = () => {
         <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden pb-4`}>
           <div className="space-y-1">
             {navigation.map((item) => (
-              item.external ? (
+              item.dropdown ? (
+                <div key={item.name}>
+                  <button
+                    className="w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-accent-gold hover:bg-primary-50 rounded-lg transition-colors flex items-center justify-between"
+                    onClick={() => setIsBusinessDropdownOpen(!isBusinessDropdownOpen)}
+                  >
+                    {item.name}
+                    <svg
+                      className={`w-5 h-5 transition-transform ${isBusinessDropdownOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {isBusinessDropdownOpen && (
+                    <div className="pl-4 space-y-1 mt-1">
+                      {item.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-accent-gold hover:bg-primary-50 rounded-lg transition-colors"
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsBusinessDropdownOpen(false);
+                          }}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : item.external ? (
                 <a
                   key={item.name}
                   href={item.href}
