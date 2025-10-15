@@ -116,7 +116,7 @@ export default function AIModelsBusinessPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div
                 key={feature.title}
                 className="text-center"
@@ -149,7 +149,7 @@ export default function AIModelsBusinessPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div
                 key={service.title}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
