@@ -1,0 +1,107 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+
+interface CEOMessageSectionProps {
+  name: string;
+  title: string;
+  message: string;
+  photo: string;
+  fullMessageUrl?: string;
+}
+
+export default function CEOMessageSection({ name, title, message, photo, fullMessageUrl }: CEOMessageSectionProps) {
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4">
+              代表挨拶
+            </h2>
+            <p className="text-xl text-gray-600">
+              Message from CEO
+            </p>
+          </div>
+
+          {/* Content */}
+          <div className="grid md:grid-cols-5 gap-8 items-center">
+            {/* Photo */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="md:col-span-2"
+            >
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src={photo}
+                  alt={`${name} - ${title}`}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+                {/* Name Badge */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <p className="text-sm font-medium opacity-90 mb-1">{title}</p>
+                  <h3 className="text-2xl font-bold font-playfair">{name}</h3>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Message */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="md:col-span-3"
+            >
+              <div className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+                <div className="relative">
+                  {/* Quote Mark */}
+                  <div className="absolute -top-2 -left-2 text-6xl text-orange-500/20 font-serif">"</div>
+
+                  <div className="relative z-10">
+                    <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line mb-6">
+                      {message}
+                    </p>
+
+                    {fullMessageUrl && (
+                      <Link
+                        href={fullMessageUrl}
+                        className="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors"
+                      >
+                        続きを読む
+                        <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    )}
+                  </div>
+                </div>
+
+                {/* Signature */}
+                <div className="mt-8 pt-6 border-t border-gray-200 text-right">
+                  <p className="text-gray-600 text-sm mb-1">{title}</p>
+                  <p className="text-gray-900 font-bold text-lg">{name}</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
