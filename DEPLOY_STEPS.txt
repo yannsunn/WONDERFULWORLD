@@ -1,0 +1,86 @@
+========================================
+WONDERFUL WORLD - デプロイ手順
+========================================
+
+現在の状況:
+✅ プロジェクト完成
+✅ Git初期化・コミット完了
+✅ Gitユーザー設定完了 (yannsunn)
+
+========================================
+ステップ1: GitHubリポジトリ作成
+========================================
+
+1. ブラウザで開く:
+   https://github.com/new
+
+2. 入力:
+   Repository name: WONDERFULWORLD
+   Description: AI×Beauty女性支援プロジェクト公式サイト
+
+3. 選択:
+   ✓ Public
+
+4. ⚠️重要 - 以下のチェックを外す:
+   □ Add a README file
+   □ Add .gitignore
+   □ Choose a license
+
+5. クリック:
+   [Create repository]
+
+========================================
+ステップ2: GitHubにプッシュ
+========================================
+
+PowerShell または Git Bash で実行:
+
+cd C:\Users\march\Projects\websites\WONDERFULWORLD
+
+git remote add origin https://github.com/yannsunn/WONDERFULWORLD.git
+git branch -M main
+git push -u origin main
+
+※認証が求められた場合:
+  Username: yannsunn
+  Password: Personal Access Token
+  (GitHubの Settings > Developer settings > Personal access tokens で作成)
+
+========================================
+ステップ3: Vercel にデプロイ
+========================================
+
+1. ブラウザで開く:
+   https://vercel.com/new
+
+2. サインイン:
+   "Continue with GitHub" をクリック
+
+3. リポジトリをインポート:
+   - "Import Git Repository" セクションを探す
+   - "yannsunn/WONDERFULWORLD" を選択
+   - [Import] をクリック
+
+4. 設定確認（自動検出されます）:
+   Framework Preset: Next.js ✓
+   Root Directory: ./
+   Build Command: npm run build
+   Output Directory: .next
+
+5. デプロイ:
+   [Deploy] をクリック
+
+   待機時間: 約1-2分
+
+========================================
+完成！取得できるURL
+========================================
+
+GitHub:
+https://github.com/yannsunn/WONDERFULWORLD
+
+Vercel:
+https://wonderful-world-xxxxx.vercel.app
+(xxxxx は自動生成)
+
+========================================
