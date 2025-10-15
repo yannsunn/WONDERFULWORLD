@@ -12,8 +12,8 @@ const NewsPage = () => {
       id: 'best-of-miss-tokyo-2025',
       date: '2025.10.13',
       category: 'イベント',
-      title: 'Best of Miss Tokyo 2025 メインスポンサーとして参加',
-      excerpt: 'WONDERFUL WORLDは「Best of Miss Tokyo 2025」にメインスポンサーとして参加し、代表が特別賞を授与しました。Miss Universe Japan、Miss Planet Japan、Miss Universityの3大会のファイナリストが集う華やかなイベントとなりました。',
+      title: 'Best of Miss Tokyo 2025 プラチナスポンサーとして参加',
+      excerpt: 'Wonderful World 合同会社は「Best of Miss Tokyo 2025」にプラチナスポンサーとして参加しました。Miss Universe Japan、Miss Planet Japan、Miss Universityの3大会のファイナリストが集う華やかなイベントとなりました。',
       isNew: true,
     },
     {

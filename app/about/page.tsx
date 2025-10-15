@@ -221,24 +221,21 @@ const AboutPage = () => {
               </div>
               <div>
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">代表取締役</h3>
-                  <p className="text-lg text-gray-600">山田 太郎（仮名）</p>
-                  <p className="text-sm text-gray-500">Taro Yamada</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">代表社員</h3>
+                  <p className="text-lg text-gray-600">藤山 嘉彦</p>
+                  <p className="text-sm text-gray-500">Yoshihiko Fujiyama</p>
                 </div>
                 <div className="space-y-4 text-gray-700">
                   <p>
-                    WONDERFUL WORLDは、AI技術と美の力で女性たちの可能性を広げることを使命としています。
+                    「人に富を与える」——この言葉こそが、Wonderful World 合同会社の原点です。
                   </p>
                   <p>
-                    私たちは、ミスコンテスト出場者をはじめとする女性たちに、
-                    AIを活用した新たな活躍の場を提供し、継続的なキャリア形成をサポートします。
+                    私たちは、AIの力と人のつながりをかけ合わせ、
+                    挑戦するすべての人が"心の豊かさ"と"経済的な豊かさ"の両方を得られる未来を目指しています。
                   </p>
                   <p>
-                    Best of Miss Tokyo 2025では、メインスポンサーとして特別賞を授与させていただきました。
+                    Best of Miss Tokyo 2025では、プラチナスポンサーとして参加させていただきました。
                     これからも美と技術の融合で、新しい価値を創造してまいります。
-                  </p>
-                  <p className="text-sm italic text-gray-600">
-                    ※プロフィール詳細は追って更新予定です
                   </p>
                 </div>
               </div>

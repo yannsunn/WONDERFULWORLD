@@ -14,8 +14,8 @@ const ImageGallery = dynamic(() => import('@/components/ImageGallery'), {
 });
 
 export const metadata: Metadata = {
-  title: 'Best of Miss Tokyo 2025 メインスポンサーとして参加 | WONDERFUL WORLD',
-  description: 'WONDERFUL WORLDは「Best of Miss Tokyo 2025」にメインスポンサーとして参加し、代表が特別賞を授与しました。',
+  title: 'Best of Miss Tokyo 2025 プラチナスポンサーとして参加 | Wonderful World',
+  description: 'Wonderful World 合同会社は「Best of Miss Tokyo 2025」にプラチナスポンサーとして参加しました。',
 };
 
 const BestOfMissTokyoPage = () => {
@@ -78,11 +78,11 @@ const BestOfMissTokyoPage = () => {
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6 leading-tight">
-            Best of Miss Tokyo 2025<br />メインスポンサーとして参加
+            Best of Miss Tokyo 2025<br />プラチナスポンサーとして参加
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            WONDERFUL WORLDは「Best of Miss Tokyo 2025」にメインスポンサーとして参加し、
-            代表が特別賞を授与しました。Miss Universe Japan、Miss Planet Japan、Miss Universityの
+            Wonderful World 合同会社は「Best of Miss Tokyo 2025」にプラチナスポンサーとして参加しました。
+            Miss Universe Japan、Miss Planet Japan、Miss Universityの
             3大会のファイナリストが集う華やかなイベントとなりました。
           </p>
         </header>
@@ -111,12 +111,11 @@ const BestOfMissTokyoPage = () => {
           </p>
 
           <h2 className="text-3xl font-heading font-bold text-gray-900 mb-4 mt-12">
-            WONDERFUL WORLD特別賞を授与
+            プラチナスポンサーとして参加
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            WONDERFUL WORLDは本イベントのメインスポンサーとして参加し、
-            代表が「WONDERFUL WORLD特別賞」を授与しました。
-            この賞は、美しさだけでなく、社会への貢献意欲と将来性を持つファイナリストに贈られるものです。
+            Wonderful World 合同会社は本イベントのプラチナスポンサーとして参加しました。
+            美しさだけでなく、社会への貢献意欲と将来性を持つファイナリストの皆様を応援しています。
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
             受賞者の皆様は、今後WONDERFUL WORLDのプロジェクトにおいて、
@@ -158,7 +157,7 @@ const BestOfMissTokyoPage = () => {
               </div>
               <div className="flex">
                 <dt className="font-semibold min-w-[120px]">協賛:</dt>
-                <dd>WONDERFUL WORLD（メインスポンサー）他多数</dd>
+                <dd>Wonderful World 合同会社（プラチナスポンサー）他多数</dd>
               </div>
             </dl>
           </div>
