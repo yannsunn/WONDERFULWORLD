@@ -38,6 +38,14 @@ export const chatbotFAQ: FAQItem[] = [
     category: 'about',
     priority: 85
   },
+  {
+    id: 'about-004',
+    question: '会社情報を教えてください',
+    answer: 'WONDERFUL WORLDの会社情報については、現在準備中です。🏢\n\n詳しい会社概要、設立年月日、所在地などの情報は、「お問い合わせ」ページからお問い合わせいただけます。\n\n📧 お気軽にご連絡ください！',
+    keywords: ['会社', '会社情報', '企業情報', '設立', '設立年月日', '所在地', '住所', '法人', '運営会社', '運営元'],
+    category: 'about',
+    priority: 75
+  },
 
   // =================================
   // カテゴリ: モデル
