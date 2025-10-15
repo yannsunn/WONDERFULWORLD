@@ -32,7 +32,12 @@
       "Bash(git log:*)",
       "Bash(gh repo view:*)",
       "Bash(git remote get-url:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(git mv:*)",
+      "Bash(tasklist)",
+      "Bash(findstr:*)",
+      "Bash(robocopy:*)",
+      "Bash(xcopy:*)"
     ],
     "deny": [],
     "ask": []

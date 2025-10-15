@@ -30,6 +30,32 @@ const nextConfig = {
     } : false,
   },
 
+  // Redirects for backward compatibility (old URLs → new structure)
+  async redirects() {
+    return [
+      {
+        source: '/models',
+        destination: '/business/ai-models/models',
+        permanent: true,
+      },
+      {
+        source: '/models/:slug',
+        destination: '/business/ai-models/models/:slug',
+        permanent: true,
+      },
+      {
+        source: '/news',
+        destination: '/business/ai-models/news',
+        permanent: true,
+      },
+      {
+        source: '/news/:slug',
+        destination: '/business/ai-models/news/:slug',
+        permanent: true,
+      },
+    ];
+  },
+
   // Security headers
   async headers() {
     return [
