@@ -6,7 +6,7 @@ export interface FAQItem {
   question: string;
   answer: string;
   keywords: string[];
-  category: 'about' | 'models' | 'projects' | 'contact' | 'navigation' | 'general';
+  category: 'about' | 'business' | 'models' | 'gym' | 'projects' | 'contact' | 'navigation' | 'general';
   priority: number; // マッチング優先度（高いほど優先）
 }
 
@@ -17,8 +17,8 @@ export const chatbotFAQ: FAQItem[] = [
   {
     id: 'about-001',
     question: 'WONDERFUL WORLDとは何ですか？',
-    answer: 'WONDERFUL WORLDは、AI技術と美の力で女性が輝く新しい世界を創造するプロジェクトです✨\n\nミスコンテストのファイナリストから生まれたAIモデルインフルエンサーたちが、新たなキャリアの場として活躍しています。女性たちに経済的自立とグローバルな活躍の機会を提供することを目指しています！',
-    keywords: ['WONDERFUL WORLD', 'ワンダフルワールド', 'とは', '何', 'どんな', 'プロジェクト', '概要', '説明'],
+    answer: 'Wonderful World 合同会社は、美しさと可能性を広げる2つの事業を展開している企業です✨\n\n🎯 **事業内容**\n1. AIモデルインフルエンサー事業\n2. ジム事業（3BGYM）\n\n【企業理念】\n美しさは内面から。健康な身体と心が、本当の美しさを作り出すと信じています。\n\n詳しくは「会社情報」ページをご覧ください！',
+    keywords: ['WONDERFUL WORLD', 'ワンダフルワールド', 'とは', '何', 'どんな', '会社', '企業', '概要', '説明'],
     category: 'about',
     priority: 100
   },
@@ -41,10 +41,38 @@ export const chatbotFAQ: FAQItem[] = [
   {
     id: 'about-004',
     question: '会社情報を教えてください',
-    answer: 'WONDERFUL WORLDの会社情報については、現在準備中です。🏢\n\n詳しい会社概要、設立年月日、所在地などの情報は、「お問い合わせ」ページからお問い合わせいただけます。\n\n📧 お気軽にご連絡ください！',
-    keywords: ['会社', '会社情報', '企業情報', '設立', '設立年月日', '所在地', '住所', '法人', '運営会社', '運営元'],
+    answer: 'Wonderful World 合同会社の会社情報です🏢\n\n【会社名】\nWonderful World 合同会社（Wonderful World LLC）\n\n【設立】\n2015年10月\n\n【代表】\n藤山 嘉彦\n\n【拠点】\n・本社: 北海道帯広市\n・東京オフィス: 東京都新宿区\n\n詳しくは「会社情報」ページをご覧ください！',
+    keywords: ['会社', '会社情報', '企業情報', '設立', '設立年月日', '所在地', '住所', '法人', '運営会社', '運営元', '代表'],
     category: 'about',
     priority: 75
+  },
+
+  // =================================
+  // カテゴリ: 事業案内
+  // =================================
+  {
+    id: 'business-001',
+    question: 'どんな事業をしていますか？',
+    answer: 'Wonderful World 合同会社では、2つの事業を展開しています！🎯\n\n**1. AIモデルインフルエンサー事業**\nミスコンテストファイナリストから生まれたAIモデルによるインフルエンサーマーケティング\n\n**2. ジム事業（3BGYM）**\n健康的な身体づくりをサポートするセミプライベートジム\n\n詳しくは「事業案内」メニューから各事業ページをご覧ください！',
+    keywords: ['事業', 'ビジネス', '何をしている', '業務内容', '事業内容'],
+    category: 'business',
+    priority: 95
+  },
+  {
+    id: 'business-002',
+    question: 'AIモデルインフルエンサー事業について教えてください',
+    answer: '**AIモデルインフルエンサー事業**は、次世代のインフルエンサーマーケティングを提供します✨\n\n【特徴】\n・ミスコンテストファイナリストベースの美しいAIモデル\n・24/7稼働可能\n・スキャンダルリスクゼロ\n・柔軟なカスタマイズ\n\n【サービス】\n・SNSマーケティング\n・広告・PR活動\n・コンテンツ制作\n\n詳しくは「事業案内」→「AIモデルインフルエンサー」をご覧ください！',
+    keywords: ['AIモデル', 'AIインフルエンサー', 'インフルエンサー事業', 'モデル事業'],
+    category: 'business',
+    priority: 90
+  },
+  {
+    id: 'business-003',
+    question: '3BGYMについて教えてください',
+    answer: '**3BGYM（スリービージム）**は、健康的な身体が美しさを作るをコンセプトにしたセミプライベートジムです💪\n\n【特徴】\n・3B = body build beauty\n・セミプライベート空間\n・作業療法士監修のトレーニング\n・デザイナーによる洗練された空間\n・ピラティス完備\n\n【料金】\n・月額制トレーニング: ¥6,600/月\n・入会費: ¥3,300\n・ビジター: ¥2,200/回\n\n詳しくは「事業案内」→「ジム事業（3BGYM）」をご覧ください！',
+    keywords: ['3BGYM', 'スリービージム', 'ジム', 'フィットネス', 'トレーニング', 'ピラティス'],
+    category: 'gym',
+    priority: 90
   },
 
   // =================================
@@ -145,23 +173,23 @@ export const chatbotFAQ: FAQItem[] = [
   {
     id: 'nav-001',
     question: 'モデルのページはどこですか？',
-    answer: '「モデル」ページは、サイト上部のナビゲーションメニューからアクセスできます！\n\n📍 トップページ → モデル\n\nそこで、AI Yuna、AI Sakura、AI Rinaの詳しいプロフィールや活動をご覧いただけます✨',
+    answer: '「モデル」ページは、サイト上部のナビゲーションメニューからアクセスできます！\n\n📍 事業案内 → AIモデルインフルエンサー → モデル一覧\n\nそこで、AI Yuna、AI Sakura、AI Rinaの詳しいプロフィールや活動をご覧いただけます✨',
     keywords: ['モデルページ', 'どこ', 'ページ', '見る', 'アクセス'],
     category: 'navigation',
     priority: 70
   },
   {
     id: 'nav-002',
-    question: 'オンラインストアはありますか？',
-    answer: 'はい、オンラインストアがございます！🛍️\n\nサイト上部のナビゲーションメニューから「オンラインストア」をクリックしてください。\n\nWONDERFUL WORLDオリジナルグッズなどをご購入いただけます！',
-    keywords: ['オンラインストア', 'ストア', 'ショップ', '購入', '買う', 'グッズ', '商品'],
+    question: 'ジムのページはどこですか？',
+    answer: '3BGYMのページは、サイト上部のナビゲーションメニューからアクセスできます！💪\n\n📍 事業案内 → ジム事業（3BGYM）\n\nジムの特徴、料金、アクセス情報などをご覧いただけます。\n\n公式サイトへのリンクもございます！',
+    keywords: ['ジムページ', '3BGYM', 'どこ', 'ページ', '見る', 'アクセス'],
     category: 'navigation',
-    priority: 75
+    priority: 70
   },
   {
     id: 'nav-003',
     question: 'ニュースはどこで見られますか？',
-    answer: '最新ニュースは「ニュース」ページでご覧いただけます！📰\n\n📍 トップページ → ニュース\n\nプロジェクトの最新情報、イベントレポート、モデルの活動などを随時更新しています。\n\nぜひチェックしてくださいね！',
+    answer: '最新ニュースは「ニュース」ページでご覧いただけます！📰\n\n📍 事業案内 → AIモデルインフルエンサー → ニュース一覧\n\nプロジェクトの最新情報、イベントレポート、モデルの活動などを随時更新しています。\n\nぜひチェックしてくださいね！',
     keywords: ['ニュース', '最新情報', 'お知らせ', '情報', '更新'],
     category: 'navigation',
     priority: 70
@@ -240,13 +268,23 @@ export const chatbotFAQ: FAQItem[] = [
 export const categorySuggestions = {
   about: [
     'WONDERFUL WORLDとは？',
-    'ミッションについて',
+    '会社情報を教えて',
     'どんな活動をしていますか？'
+  ],
+  business: [
+    'どんな事業をしていますか？',
+    'AIモデル事業について',
+    '3BGYMについて教えて'
   ],
   models: [
     '所属モデルを教えて',
     'AI Yunaについて',
     'モデルになるには？'
+  ],
+  gym: [
+    '3BGYMについて',
+    'ジムの料金は？',
+    'どこにありますか？'
   ],
   projects: [
     'Best of Miss Tokyo 2025とは？',
@@ -259,7 +297,7 @@ export const categorySuggestions = {
   ],
   navigation: [
     'モデルページはどこ？',
-    'オンラインストアは？',
+    'ジムページはどこ？',
     'ニュースはどこ？'
   ],
   general: [
