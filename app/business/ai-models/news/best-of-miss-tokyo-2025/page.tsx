@@ -26,7 +26,7 @@ const BestOfMissTokyoPage = () => {
       caption: '栄冠に輝いたトップ3の皆様と代表',
     },
     {
-      src: '/images/news/best-of-miss-top3-poster.jpg',
+      src: '/images/hero/best-of-miss-poster.jpg',
       alt: 'Best of Miss Tokyo 2025 公式ポスター',
       caption: '3大ミスコンテストのトップ3',
     },
@@ -41,29 +41,9 @@ const BestOfMissTokyoPage = () => {
       caption: '特別賞受賞者との記念撮影',
     },
     {
-      src: '/images/news/wonderful-world-special-award-1.jpg',
-      alt: 'WONDERFUL WORLD特別賞授与シーン',
-      caption: '特別賞の授与シーン',
-    },
-    {
-      src: '/images/news/wonderful-world-special-award-2.jpg',
-      alt: 'WONDERFUL WORLD特別賞記念撮影',
-      caption: '特別賞の記念撮影',
-    },
-    {
       src: '/images/news/best-of-miss-all-guests.jpg',
       alt: '集合写真',
       caption: 'ファイナリスト、ゲスト、スタッフの皆様と',
-    },
-    {
-      src: '/images/news/group-photo-main.jpg',
-      alt: 'Best of Miss Tokyo 2025 グループ写真',
-      caption: 'イベントをサポートいただいた皆様',
-    },
-    {
-      src: '/images/news/stage-finalists.jpg',
-      alt: 'ステージ上のファイナリストと代表',
-      caption: 'ステージでの授賞式の様子',
     },
     {
       src: '/images/news/top3-group.jpg',
@@ -74,11 +54,6 @@ const BestOfMissTokyoPage = () => {
       src: '/images/news/event-staff-photo.jpg',
       alt: 'イベントスタッフ',
       caption: 'イベント運営スタッフの皆様',
-    },
-    {
-      src: '/images/news/guests-photo.jpg',
-      alt: 'ゲストの皆様',
-      caption: 'イベントにご参加いただいたゲストの皆様',
     },
   ];
 
@@ -120,7 +95,7 @@ const BestOfMissTokyoPage = () => {
         {/* Main Image */}
         <div className="relative h-[500px] rounded-xl overflow-hidden mb-12 shadow-2xl">
           <Image
-            src="/images/news/group-photo-main.jpg"
+            src="/images/news/best-of-miss-all-guests.jpg"
             alt="Best of Miss Tokyo 2025 集合写真"
             fill
             className="object-cover"
