@@ -11,16 +11,16 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   const faqs = [
     {
-      question: 'どうやってAIモデルの顔や体を作っているのですか？',
-      answer: '独自開発の深層学習モデルにより、実在人物の特徴を学習して生成しています。ただし詳細なプロセスは企業秘密です。',
+      question: 'AIモデルインフルエンサーとは何ですか？',
+      answer: 'ミスコンテストファイナリストとAI技術を融合した、新しいタイプのインフルエンサーです。最先端のAI技術により、魅力的で親しみやすいコンテンツを提供します。',
     },
     {
-      question: 'モデル本人は実際の活動に関与していますか？',
-      answer: 'AIモデルのSNS投稿やグッズ制作は基本的に弊社が行っています。本人とは定期的にコミュニケーションを取り、アイディア出しやインスピレーション源として協力いただくこともあります。',
+      question: 'どのようなサービスを提供していますか？',
+      answer: 'SNSマーケティング、広告・PR活動、コンテンツ制作など、多様なインフルエンサーマーケティングサービスを提供しています。企業様とのコラボレーションも積極的に行っています。',
     },
     {
-      question: 'なぜ20%だけしか本人に還元しないのですか？',
-      answer: 'AIモデルの制作・運営にもコストがかかるため、収益の一部を運営費としています。ただし事業拡大に伴い還元率アップも検討します。',
+      question: 'パートナーシップについて教えてください',
+      answer: '企業様とのブランド協業、イベント共催、キャンペーン展開など、様々な形でのパートナーシップが可能です。詳しくは「お問い合わせ」ページからご相談ください。',
     },
   ];
 
@@ -77,11 +77,11 @@ const AboutPage = () => {
           {/* Flow Diagram */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-12">
             {[
-              { step: '1', title: 'モデル選出', desc: 'ミスコン出場者と提携' },
-              { step: '2', title: 'AI生成', desc: '独自AIで3Dモデル制作' },
-              { step: '3', title: 'SNS運用', desc: 'コンテンツ発信' },
-              { step: '4', title: '収益化', desc: '広告・グッズ販売' },
-              { step: '5', title: '還元', desc: '本人に20%還元' },
+              { step: '1', title: 'モデル選出', desc: 'ミスコンテストファイナリストと提携' },
+              { step: '2', title: 'AIモデル制作', desc: '最先端技術による制作' },
+              { step: '3', title: 'コンテンツ発信', desc: 'SNSでの情報発信' },
+              { step: '4', title: 'ブランド協業', desc: '企業様とのパートナーシップ' },
+              { step: '5', title: '継続的成長', desc: 'プロジェクトの拡大' },
             ].map((item, index) => (
               <div key={index} className="relative">
                 <div className="card p-6 text-center h-full">
@@ -107,23 +107,23 @@ const AboutPage = () => {
             <div className="prose max-w-none text-gray-700 space-y-4">
               <p>
                 <strong className="text-accent-gold">1. モデル選出：</strong>
-                ミスコンテスト等で活躍した女性と提携し、肖像利用許諾を取得します。
+                ミスコンテストで活躍した女性と提携し、新たなキャリアの場を提供します。
               </p>
               <p>
-                <strong className="text-accent-gold">2. AI生成：</strong>
-                独自開発AIで本人に似た高精細3Dモデル・CGを生成します。
+                <strong className="text-accent-gold">2. AIモデル制作：</strong>
+                最先端のAI技術を活用して、魅力的なビジュアルコンテンツを制作します。
               </p>
               <p>
-                <strong className="text-accent-gold">3. SNS運用：</strong>
-                AIモデルとしてInstagram/TikTokにて定期的にコンテンツ発信し、ファン獲得を図ります。
+                <strong className="text-accent-gold">3. コンテンツ発信：</strong>
+                Instagram、TikTok等のSNSで定期的にコンテンツを発信し、ファンとのつながりを築きます。
               </p>
               <p>
-                <strong className="text-accent-gold">4. 収益化：</strong>
-                SNSの広告収入・タイアップやグッズ販売等で収益を上げます。
+                <strong className="text-accent-gold">4. ブランド協業：</strong>
+                企業様とのタイアップ、キャンペーン、イベント協賛など、多様なパートナーシップを展開します。
               </p>
               <p>
-                <strong className="text-accent-gold">5. 還元：</strong>
-                得られた収益の約20%を実在モデル本人へ還元。残りは運営とAIモデルの活動拡大に充当します。
+                <strong className="text-accent-gold">5. 継続的成長：</strong>
+                プロジェクトを拡大し、より多くの女性に活躍の機会を提供していきます。
               </p>
             </div>
           </div>
@@ -134,38 +134,35 @@ const AboutPage = () => {
       <section className="section">
         <div className="container max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
-            AI生成技術
+            AI技術について
           </h2>
           <div className="card p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
               <p>
-                私たちのAIモデルは、最新の生成AI（GAN・ディープラーニング技術）を用いて開発されています。
-                数千枚規模の学習データから、表情豊かでリアルなビジュアルを作り出します。
+                私たちは最先端のAI技術を活用し、魅力的で親しみやすいビジュアルコンテンツを制作しています。
+                表情豊かでリアルなビジュアルを通じて、新しいインフルエンサーマーケティングを実現します。
               </p>
-              <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">特徴</h3>
+              <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">AIモデルの特徴</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>独自モデル：</strong>ゼロから自社トレーニングした生成モデルを使用。他社サービスに頼らず柔軟なチューニングが可能。</span>
+                  <span><strong>高品質なビジュアル：</strong>美しく自然なビジュアルコンテンツを提供します。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>高精度：</strong>髪の毛一本や肌の質感まで表現する高解像度レンダリング。</span>
+                  <span><strong>多様な表現力：</strong>様々なシーンやテーマに対応した柔軟なコンテンツ制作が可能です。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>動き・動画対応：</strong>静止画だけでなく、簡易な動画コンテンツも作成。表情変化や動作アニメーションにも対応予定。</span>
+                  <span><strong>ブランドコラボ対応：</strong>企業様のご要望に応じたカスタマイズが可能です。</span>
                 </li>
               </ul>
-              <p className="text-sm text-gray-500 italic mt-6">
-                ※具体的なアルゴリズムは企業秘密ですが、生成AIの倫理にも配慮し開発しています。
-              </p>
             </div>
           </div>
         </div>
@@ -175,7 +172,7 @@ const AboutPage = () => {
       <section className="section bg-gradient-to-br from-accent-gold/10 to-primary-50">
         <div className="container max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
-            女性支援の透明性
+            女性のキャリア支援
           </h2>
           <div className="card p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
@@ -184,13 +181,15 @@ const AboutPage = () => {
                 キャリアに悩む女性たちに第二の活躍舞台を提供し、経済的自立を後押しします。
               </p>
               <p>
-                収益の一部を本人に還元する仕組みは、透明性を持って運用されます。
-                毎四半期末に収益報告と配分額を算出し、契約に基づき支払います。
+                ミスコンテスト出場者とのパートナーシップを通じて、AIモデルインフルエンサーという新しいキャリアの可能性を創出しています。
+                定期的なコミュニケーションを大切にし、共に成長していくことを目指しています。
               </p>
               <div className="bg-primary-50 border-l-4 border-accent-gold p-6 my-6">
-                <p className="font-bold text-gray-900 mb-2">還元実績（2025年10月現在）</p>
-                <p className="text-2xl font-bold text-accent-gold">¥X,XXX,XXX</p>
-                <p className="text-sm text-gray-600 mt-1">○名の女性に累計還元</p>
+                <p className="font-bold text-gray-900 mb-2">プロジェクトの展開</p>
+                <p className="text-gray-700">
+                  AIモデルインフルエンサー事業を通じて、より多くの女性に活躍の機会を提供していきます。
+                  企業様とのコラボレーションも積極的に展開してまいります。
+                </p>
               </div>
               <p>
                 今後も支援対象を拡大し、より多くの女性の夢を応援していきます。
