@@ -133,7 +133,7 @@ const ContactPage = () => {
                 required
                 aria-required="true"
                 aria-label="お名前"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all"
+                className="input-primary"
                 placeholder="山田太郎"
               />
             </div>
@@ -152,7 +152,7 @@ const ContactPage = () => {
                 required
                 aria-required="true"
                 aria-label="メールアドレス"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all"
+                className="input-primary"
                 placeholder="example@company.com"
               />
             </div>
@@ -167,7 +167,7 @@ const ContactPage = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all"
+                className="input-primary"
               >
                 <option value="一般のお問い合わせ">一般のお問い合わせ</option>
                 <option value="スポンサー/協業に関する相談">スポンサー/協業に関する相談</option>
@@ -190,7 +190,7 @@ const ContactPage = () => {
                 aria-required="true"
                 aria-label="お問い合わせ内容"
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all resize-none"
+                className="input-primary resize-none"
                 placeholder="お問い合わせ内容を詳細にご記入ください"
               />
             </div>

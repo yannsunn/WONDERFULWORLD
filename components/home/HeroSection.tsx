@@ -6,18 +6,19 @@ import Image from 'next/image';
 const HeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with enhanced overlay */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero/best-of-miss-poster.jpg"
           alt="Best of Miss Tokyo 2025"
           fill
-          className="object-cover"
+          className="object-cover scale-105 animate-slow-zoom"
           priority
           sizes="100vw"
         />
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        {/* Multi-layer overlay for premium look */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/20 via-transparent to-pink-900/20"></div>
       </div>
 
       {/* Background Pattern Accent */}
@@ -30,57 +31,72 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          {/* Main Title */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6">
-            <span className="block bg-gradient-to-r from-accent-gold via-primary-600 to-primary-800 bg-clip-text text-transparent">
+          {/* Main Title - Ultra Enhanced */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 relative">
+            <span className="block bg-gradient-to-r from-orange-400 via-orange-500 to-pink-400 bg-clip-text text-transparent animate-shimmer drop-shadow-2xl">
               WONDERFUL
             </span>
-            <span className="block bg-gradient-to-r from-primary-800 via-primary-600 to-accent-gold bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-pink-400 via-orange-500 to-orange-400 bg-clip-text text-transparent animate-shimmer drop-shadow-2xl" style={{animationDelay: '0.5s'}}>
               WORLD
             </span>
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-pink-500/20 blur-3xl -z-10"></div>
           </h1>
 
-          {/* Catchphrase */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-white mb-4 font-medium drop-shadow-lg">
+          {/* Catchphrase - Enhanced */}
+          <p className="text-xl sm:text-2xl md:text-3xl text-white mb-4 font-semibold drop-shadow-2xl animate-fade-in backdrop-blur-sm bg-white/10 inline-block px-8 py-3 rounded-full border border-white/20">
             AI×Beautyで女性が輝く、新しい世界へ
           </p>
 
-          {/* Sub-message */}
-          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+          {/* Sub-message - Enhanced */}
+          <p className="text-base sm:text-lg md:text-xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-2xl animate-slide-in-left">
             ミスコンテストのファイナリストから生まれた<br className="hidden sm:block" />
-            AIモデルインフルエンサー
+            <span className="text-orange-300 font-semibold">AIモデルインフルエンサー</span>
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* CTA Buttons - Ultra Enhanced */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in">
             <Link
               href="/about"
-              className="btn-primary text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              className="btn-primary text-lg px-10 py-5 shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(249,115,22,0.5)] transform hover:-translate-y-2 animate-pulse-glow group relative overflow-hidden"
             >
-              詳しく見る
+              <span className="relative z-10 flex items-center gap-2">
+                詳しく見る
+                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
             <Link
-              href="/models"
-              className="btn-secondary text-lg px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              href="/business/ai-models"
+              className="btn-secondary text-lg px-10 py-5 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 group backdrop-blur-md"
             >
-              モデルを見る
+              <span className="flex items-center gap-2">
+                モデルを見る
+                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-gray-400"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+        {/* Scroll indicator - Enhanced */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+          <div className="flex flex-col items-center gap-2 animate-float">
+            <span className="text-xs text-white/70 font-medium tracking-wider uppercase">Scroll</span>
+            <svg
+              className="w-6 h-6 text-orange-400 animate-bounce"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -100,8 +116,19 @@ const HeroSection = () => {
             transform: translate(0px, 0px) scale(1);
           }
         }
+        @keyframes slow-zoom {
+          0%, 100% {
+            transform: scale(1.05);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+        }
         .animate-blob {
           animation: blob 7s infinite;
+        }
+        .animate-slow-zoom {
+          animation: slow-zoom 20s ease-in-out infinite;
         }
         .animation-delay-2000 {
           animation-delay: 2s;

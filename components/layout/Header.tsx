@@ -36,22 +36,26 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-xl border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl shadow-2xl border-b-2 border-gradient-to-r from-orange-200/50 via-pink-200/50 to-orange-200/50">
+      {/* Gradient accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-pink-500 to-orange-500 opacity-80"></div>
+
       <nav className="container mx-auto px-6 sm:px-8 lg:px-12" aria-label="メインナビゲーション">
         <div className="flex items-center justify-between h-24">
-          {/* Logo - Enhanced */}
+          {/* Logo - Ultra Enhanced */}
           <Link href="/" className="flex items-center space-x-4 group">
-            <div className="relative w-14 h-14 flex-shrink-0 rounded-full overflow-hidden ring-2 ring-orange-200 group-hover:ring-orange-400 transition-all duration-300">
+            <div className="relative w-14 h-14 flex-shrink-0 rounded-full overflow-hidden ring-2 ring-orange-200 group-hover:ring-4 group-hover:ring-orange-400 transition-all duration-500 shadow-lg group-hover:shadow-xl group-hover:shadow-orange-300/50">
               <Image
                 src="/images/about/company-logo.jpg"
                 alt="WONDERFUL WORLD"
                 fill
-                className="object-contain transition-transform duration-300 group-hover:scale-110"
+                className="object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
                 sizes="56px"
               />
             </div>
-            <div className="text-xl md:text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105">
+            <div className="text-xl md:text-2xl lg:text-3xl font-heading font-bold gradient-text transition-all duration-500 group-hover:scale-105 relative">
               WONDERFUL WORLD
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:w-full transition-all duration-500"></div>
             </div>
           </Link>
 
@@ -64,13 +68,14 @@ const Header = () => {
                   className="relative group"
                 >
                   <button
-                    className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 flex items-center gap-2"
+                    className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-300 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 flex items-center gap-2 relative group/nav"
                     onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                   >
                     {item.name}
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 transition-transform duration-300 group-hover/nav:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
+                    <div className="absolute -bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-left"></div>
                   </button>
                   {isBusinessDropdownOpen && (
                     <div
@@ -105,9 +110,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50"
+                  className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-300 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 relative group/nav"
                 >
                   {item.name}
+                  <div className="absolute -bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </Link>
               )
             ))}
