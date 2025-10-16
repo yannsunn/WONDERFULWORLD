@@ -48,7 +48,7 @@ const ContactPage = () => {
         message: '',
         agree: false,
       });
-    } catch (error) {
+    } catch {
       // Handle error gracefully
       setSubmitStatus('error');
     } finally {

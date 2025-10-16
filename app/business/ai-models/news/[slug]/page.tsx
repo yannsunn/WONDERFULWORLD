@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `${post.title} | WONDERFUL WORLD`,
       description: post.excerpt || post.title,
     };
-  } catch (error) {
+  } catch {
     return {
       title: 'ニュース記事が見つかりません | WONDERFUL WORLD',
     };
@@ -30,7 +30,7 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
 
   try {
     post = await getNewsPost(params.slug);
-  } catch (error) {
+  } catch {
     notFound();
   }
 

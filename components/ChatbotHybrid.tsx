@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { findBestMatch, getSuggestedQuestions } from '@/lib/chatbot-matcher';
-import type { FAQItem } from '@/data/chatbot-faq';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -13,7 +12,11 @@ interface Message {
   source?: 'faq' | 'gemini';
 }
 
-const FAQ_SCORE_THRESHOLD = 5; // この値以上ならFAQ使用、以下ならGemini使用
+interface FAQMatch {
+  id: string;
+  answer: string;
+  category?: 'about' | 'models' | 'navigation' | 'business' | 'gym' | 'projects' | 'contact' | 'general';
+}
 
 export default function ChatbotHybrid() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +66,7 @@ export default function ChatbotHybrid() {
 
     try {
       // ステップ1: まずFAQで検索を試みる
-      const faqMatch: any = findBestMatch(messageText);
+      const faqMatch = findBestMatch(messageText) as FAQMatch;
 
       // デバッグ用: マッチスコアを確認
       const isGoodFaqMatch = faqMatch.id !== 'default-001'; // デフォルト応答でない

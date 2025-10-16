@@ -23,6 +23,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: "WONDERFUL WORLD - AI×Beautyで女性が輝く、新しい世界へ",
   description: "ミスコンテストのファイナリストから生まれたAIモデルインフルエンサー。独自開発のAI技術で、女性たちに新たなチャンスを提供し、世界へ羽ばたくプロジェクトです。",
   keywords: ["AIモデル", "バーチャルインフルエンサー", "女性支援", "AI×Beauty", "ミスコンテスト"],

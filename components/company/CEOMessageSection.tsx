@@ -71,7 +71,7 @@ export default function CEOMessageSection({ name, title, message, photo, fullMes
               <div className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
                 <div className="relative">
                   {/* Quote Mark */}
-                  <div className="absolute -top-2 -left-2 text-6xl text-orange-500/20 font-serif">"</div>
+                  <div className="absolute -top-2 -left-2 text-6xl text-orange-500/20 font-serif">&ldquo;</div>
 
                   <div className="relative z-10">
                     <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line mb-6">

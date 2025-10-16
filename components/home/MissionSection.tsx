@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { fadeInUp, fadeInLeft, fadeInRight, scrollViewport } from '@/lib/animations';
+import { fadeInLeft, fadeInRight, scrollViewport } from '@/lib/animations';
 
 const MissionSection = () => {
   return (
