@@ -48,7 +48,8 @@
       "Bash(do echo \"$img:\")",
       "Bash(xargs:*)",
       "Bash(while IFS= read -r file)",
-      "Bash(do echo \"=== $file ===\")"
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(npm run lint)"
     ],
     "deny": [],
     "ask": []

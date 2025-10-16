@@ -1,9 +1,22 @@
 import { MetadataRoute } from 'next';
+import { getAllNews } from '@/lib/markdown';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
-  return [
+  // 全てのニュース記事を取得
+  const allNews = getAllNews();
+
+  // ニュース記事のsitemapエントリを動的に生成
+  const newsEntries: MetadataRoute.Sitemap = allNews.map((post) => ({
+    url: `${baseUrl}/business/ai-models/news/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // 静的ページのエントリ
+  const staticEntries: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -53,12 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/business/ai-models/news/best-of-miss-tokyo-2025`,
-      lastModified: new Date('2025-10-13'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/business/gym`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -89,4 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
+
+  // 静的ページとニュース記事を結合して返す
+  return [...staticEntries, ...newsEntries];
 }

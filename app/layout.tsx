@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ChatbotHybrid from "@/components/ChatbotHybrid";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,11 +33,20 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     siteName: "WONDERFUL WORLD",
+    images: [
+      {
+        url: "/images/hero/best-of-miss-poster.jpg",
+        width: 1200,
+        height: 630,
+        alt: "WONDERFUL WORLD - AIモデルインフルエンサープロジェクト",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "WONDERFUL WORLD - AI×Beautyで女性が輝く、新しい世界へ",
     description: "ミスコンテストのファイナリストから生まれたAIモデルインフルエンサー",
+    images: ["/images/hero/best-of-miss-poster.jpg"],
   },
   robots: {
     index: true,
@@ -58,6 +68,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ChatbotHybrid />
+        <Analytics />
       </body>
     </html>
   );

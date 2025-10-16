@@ -118,7 +118,7 @@ const ContactPage = () => {
           )}
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" aria-label="お問い合わせフォーム">
             {/* Name */}
             <div>
               <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
@@ -131,6 +131,8 @@ const ContactPage = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                aria-required="true"
+                aria-label="お名前"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all"
                 placeholder="山田太郎"
               />
@@ -148,6 +150,8 @@ const ContactPage = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                aria-required="true"
+                aria-label="メールアドレス"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all"
                 placeholder="example@company.com"
               />
@@ -183,6 +187,8 @@ const ContactPage = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                aria-required="true"
+                aria-label="お問い合わせ内容"
                 rows={6}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all resize-none"
                 placeholder="お問い合わせ内容を詳細にご記入ください"
@@ -197,6 +203,8 @@ const ContactPage = () => {
                   name="agree"
                   checked={formData.agree}
                   onChange={handleChange}
+                  aria-required="true"
+                  aria-label="プライバシーポリシーへの同意"
                   className="mt-1 w-4 h-4 text-accent-gold border-gray-300 rounded focus:ring-accent-gold"
                 />
                 <span className="ml-3 text-sm text-gray-700">
