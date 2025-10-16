@@ -31,14 +31,24 @@ const BestOfMissTokyoPage = () => {
       caption: '3大ミスコンテストのトップ3',
     },
     {
-      src: '/images/news/wonderful-world-special-award-1.jpg',
+      src: '/images/news/award-ceremony-1.jpg',
       alt: 'WONDERFUL WORLD特別賞授与式',
       caption: 'WONDERFUL WORLD特別賞の授与',
     },
     {
-      src: '/images/news/wonderful-world-special-award-2.jpg',
+      src: '/images/news/award-ceremony-2.jpg',
       alt: 'WONDERFUL WORLD特別賞授与式',
       caption: '特別賞受賞者との記念撮影',
+    },
+    {
+      src: '/images/news/wonderful-world-special-award-1.jpg',
+      alt: 'WONDERFUL WORLD特別賞授与シーン',
+      caption: '特別賞の授与シーン',
+    },
+    {
+      src: '/images/news/wonderful-world-special-award-2.jpg',
+      alt: 'WONDERFUL WORLD特別賞記念撮影',
+      caption: '特別賞の記念撮影',
     },
     {
       src: '/images/news/best-of-miss-all-guests.jpg',
