@@ -84,7 +84,7 @@ const Footer = () => {
               AIモデルインフルエンサープロジェクト。
             </p>
             <div className="text-xs text-gray-500">
-              <p>WONDERFUL WORLD株式会社（仮称）</p>
+              <p>Wonderful World 合同会社</p>
               <p>所在地: 東京都 | 設立: 2025年9月</p>
             </div>
           </div>

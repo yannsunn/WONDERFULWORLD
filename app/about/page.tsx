@@ -274,10 +274,10 @@ const AboutPage = () => {
             <div className="text-center space-y-2">
               <h3 className="font-bold text-gray-900 text-xl mb-4">会社情報</h3>
               <div className="text-sm text-gray-600 space-y-2 max-w-md mx-auto">
-                <p>WONDERFUL WORLD株式会社（※仮称）</p>
+                <p>Wonderful World 合同会社</p>
                 <p>設立: 2025年9月</p>
-                <p>所在地: 東京都〇〇区...</p>
-                <p className="text-xs text-gray-500 italic mt-4">※正式な会社概要は追って更新予定です</p>
+                <p>所在地: 東京都</p>
+                <p className="text-xs text-gray-500 italic mt-4">※詳細な会社概要は追って更新予定です</p>
               </div>
             </div>
           </div>

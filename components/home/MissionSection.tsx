@@ -31,21 +31,20 @@ const MissionSection = () => {
 
               <p className="text-lg text-gray-700 leading-relaxed">
                 私たちは女性たちの夢を応援します。<br />
-                AIモデルの活動で得られた収益の
-                <span className="text-2xl font-bold text-accent-gold mx-1">20%</span>
-                をモデル本人に還元し、キャリア形成と経済的自立を支援します。
+                ミスコンテスト出場者とのパートナーシップを通じて、<br />
+                新しいキャリアの可能性を創出し、経済的自立を支援します。
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-gold/20 flex items-center justify-center">
                     <svg className="w-5 h-5 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">透明な収益還元</h4>
-                    <p className="text-sm text-gray-600">四半期ごとに収益を算出し、契約に基づき公正に配分</p>
+                    <h4 className="font-semibold text-gray-900">パートナーシップ</h4>
+                    <p className="text-sm text-gray-600">ミスコンテスト出場者と協力し、新しいキャリアを創出</p>
                   </div>
                 </div>
 
@@ -100,10 +99,10 @@ const MissionSection = () => {
                 <div className="space-y-8">
                   <div className="text-center p-6 bg-white rounded-xl shadow-md">
                     <div className="text-4xl md:text-5xl font-bold text-accent-gold mb-2">
-                      20%
+                      AI × Beauty
                     </div>
                     <div className="text-sm text-gray-600">
-                      収益還元率
+                      新しいインフルエンサーの形
                     </div>
                   </div>
 
@@ -128,13 +127,10 @@ const MissionSection = () => {
 
                   <div className="text-center p-6 bg-white rounded-xl shadow-md">
                     <div className="text-sm text-gray-600 mb-2">
-                      プロジェクト開始以来
+                      プロジェクトミッション
                     </div>
-                    <div className="text-3xl font-bold text-primary-700">
-                      ¥X,XXX,XXX
-                    </div>
-                    <div className="text-sm text-gray-600 mt-1">
-                      還元実績（累計）
+                    <div className="text-lg font-bold text-primary-700 leading-relaxed">
+                      女性が輝く<br />新しい世界を創る
                     </div>
                   </div>
                 </div>
