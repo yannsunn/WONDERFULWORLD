@@ -43,7 +43,12 @@
       "Bash(find:*)",
       "Bash(for img in \"ceo-presentation-stage.jpg\" \"guests-photo.jpg\" \"finalists-group.jpg\" \"best-of-miss-poster.jpg\")",
       "Bash(do echo \"=== $img ===\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(for img in \"best-of-miss-top3-poster.jpg\" \"best-of-miss-all-guests.jpg\" \"wonderful-world-special-award-1.jpg\" \"wonderful-world-special-award-2.jpg\")",
+      "Bash(do echo \"$img:\")",
+      "Bash(xargs:*)",
+      "Bash(while IFS= read -r file)",
+      "Bash(do echo \"=== $file ===\")"
     ],
     "deny": [],
     "ask": []
