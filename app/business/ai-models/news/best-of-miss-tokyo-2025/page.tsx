@@ -21,9 +21,34 @@ export const metadata: Metadata = {
 const BestOfMissTokyoPage = () => {
   const galleryImages = [
     {
+      src: '/images/news/best-of-miss-top3-with-ceo.jpg',
+      alt: 'トップ3と代表の記念撮影',
+      caption: '栄冠に輝いたトップ3の皆様と代表',
+    },
+    {
+      src: '/images/news/best-of-miss-top3-poster.jpg',
+      alt: 'Best of Miss Tokyo 2025 公式ポスター',
+      caption: '3大ミスコンテストのトップ3',
+    },
+    {
+      src: '/images/news/wonderful-world-special-award-1.jpg',
+      alt: 'WONDERFUL WORLD特別賞授与式',
+      caption: 'WONDERFUL WORLD特別賞の授与',
+    },
+    {
+      src: '/images/news/wonderful-world-special-award-2.jpg',
+      alt: 'WONDERFUL WORLD特別賞授与式',
+      caption: '特別賞受賞者との記念撮影',
+    },
+    {
+      src: '/images/news/best-of-miss-all-guests.jpg',
+      alt: '集合写真',
+      caption: 'ファイナリスト、ゲスト、スタッフの皆様と',
+    },
+    {
       src: '/images/news/group-photo-main.jpg',
       alt: 'Best of Miss Tokyo 2025 グループ写真',
-      caption: 'ファイナリスト、ゲスト、スタッフの皆様と',
+      caption: 'イベントをサポートいただいた皆様',
     },
     {
       src: '/images/news/stage-finalists.jpg',
@@ -32,23 +57,13 @@ const BestOfMissTokyoPage = () => {
     },
     {
       src: '/images/news/top3-group.jpg',
-      alt: 'トップ3と代表の記念撮影',
-      caption: '栄冠に輝いたトップ3の皆様と',
+      alt: 'トップ3記念撮影',
+      caption: '輝かしい笑顔のトップ3',
     },
     {
-      src: '/images/news/award-ceremony-1.jpg',
-      alt: 'WONDERFUL WORLD特別賞授与式',
-      caption: 'WONDERFUL WORLD特別賞の授与',
-    },
-    {
-      src: '/images/news/award-ceremony-2.jpg',
-      alt: '特別賞授与式の様子',
-      caption: '受賞者の皆様との記念撮影',
-    },
-    {
-      src: '/images/news/guests-photo.jpg',
-      alt: 'ゲストの皆様と',
-      caption: 'イベントをサポートいただいたゲストの皆様',
+      src: '/images/news/event-staff-photo.jpg',
+      alt: 'イベントスタッフ',
+      caption: 'イベント運営スタッフの皆様',
     },
   ];
 
