@@ -14,7 +14,7 @@ const ModelsHighlight = () => {
       handle: '@ai_hana',
       followers: '120K',
       catchphrase: 'クールビューティ',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop',
+      image: '/images/news/top3-group.jpg',
     },
     {
       id: 'aireina',
@@ -22,7 +22,7 @@ const ModelsHighlight = () => {
       handle: '@ai_reina',
       followers: '95K',
       catchphrase: '多文化ミックスモデル',
-      image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=600&fit=crop',
+      image: '/images/news/award-ceremony-1.jpg',
     },
     {
       id: 'aimisaki',
@@ -30,7 +30,7 @@ const ModelsHighlight = () => {
       handle: '@ai_misaki',
       followers: '88K',
       catchphrase: 'エレガントビューティ',
-      image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop',
+      image: '/images/news/award-ceremony-2.jpg',
     },
   ];
 

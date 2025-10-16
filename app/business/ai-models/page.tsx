@@ -41,12 +41,12 @@ export default function AIModelsBusinessPage() {
     {
       title: 'SNSマーケティング',
       description: 'Instagram、X、TikTokなど各種SNSでのインフルエンサーマーケティング',
-      image: '/images/models/finalists-group.jpg'
+      image: '/images/news/stage-finalists.jpg'
     },
     {
       title: '広告・PR活動',
       description: '商品プロモーション、ブランドアンバサダー、キャンペーンモデル',
-      image: '/images/models/finalists-group.jpg'
+      image: '/images/news/group-photo-main.jpg'
     },
     {
       title: 'コンテンツ制作',
