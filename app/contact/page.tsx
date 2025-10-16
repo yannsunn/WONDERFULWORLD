@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import PageTransition from '@/components/animations/PageTransition';
+import ScrollReveal from '@/components/animations/ScrollReveal';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -55,19 +57,23 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-24">
-      <div className="container max-w-3xl py-12">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
-            Contact
-          </h1>
-          <p className="text-lg text-gray-600">
-            お問い合わせ
-          </p>
-        </div>
+    <PageTransition>
+      <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-24">
+        <div className="container max-w-3xl py-12">
+          {/* Header */}
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+                Contact
+              </h1>
+              <p className="text-lg text-gray-600">
+                お問い合わせ
+              </p>
+            </div>
+          </ScrollReveal>
 
-        <div className="card p-8 md:p-12">
+          <ScrollReveal delay={0.2}>
+            <div className="card p-8 md:p-12">
           <p className="text-gray-700 mb-8 leading-relaxed">
             以下のフォームに必要事項をご記入の上、送信してください。<br />
             折り返し担当者よりご連絡いたします。<br />
@@ -228,17 +234,21 @@ const ContactPage = () => {
               お送りいただいた情報はお問い合わせ対応以外の目的で使用いたしません。
             </p>
           </form>
-        </div>
+            </div>
+          </ScrollReveal>
 
-        {/* Alternative Contact */}
-        <div className="mt-8 text-center text-sm text-gray-600">
-          <p>お問い合わせフォームからご連絡ください</p>
-          <p className="text-xs text-gray-500 mt-2">
-            担当者より3営業日以内にご返信いたします
-          </p>
+          {/* Alternative Contact */}
+          <ScrollReveal delay={0.4}>
+            <div className="mt-8 text-center text-sm text-gray-600">
+              <p>お問い合わせフォームからご連絡ください</p>
+              <p className="text-xs text-gray-500 mt-2">
+                担当者より3営業日以内にご返信いたします
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 

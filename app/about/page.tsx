@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import AnimatedSection from '@/components/about/AnimatedSection';
+import PageTransition from '@/components/animations/PageTransition';
+import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'プロジェクトについて | WONDERFUL WORLD',
@@ -37,23 +38,26 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section */}
-      <section className="section bg-gradient-to-br from-primary-50 via-accent-sand/20 to-white">
-        <div className="container text-center">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
-            About Us
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            誰もが主役になれる素晴らしい世界を
-          </p>
-        </div>
-      </section>
+    <PageTransition>
+      <div className="min-h-screen bg-white pt-20">
+        {/* Hero Section */}
+        <section className="section bg-gradient-to-br from-primary-50 via-accent-sand/20 to-white">
+          <div className="container text-center">
+            <ScrollReveal>
+              <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+                About Us
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                誰もが主役になれる素晴らしい世界を
+              </p>
+            </ScrollReveal>
+          </div>
+        </section>
 
       {/* Mission Statement */}
       <section className="section">
         <div className="container max-w-4xl">
-          <AnimatedSection>
+          <ScrollReveal>
             <div className="card p-8 md:p-12">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
                 Our Mission
@@ -73,18 +77,18 @@ const AboutPage = () => {
                 </p>
               </div>
             </div>
-          </AnimatedSection>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="section bg-primary-50">
         <div className="container max-w-6xl">
-          <AnimatedSection>
+          <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
               プロジェクトの仕組み
             </h2>
-          </AnimatedSection>
+          </ScrollReveal>
 
           {/* Flow Diagram */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-12">
@@ -95,7 +99,7 @@ const AboutPage = () => {
               { step: '4', title: 'ブランド協業', desc: '企業様とのパートナーシップ' },
               { step: '5', title: '継続的成長', desc: 'プロジェクトの拡大' },
             ].map((item, index) => (
-              <div key={index} className="relative">
+              <ScrollReveal key={index} delay={index * 0.1} className="relative">
                 <div className="card p-6 text-center h-full">
                   <div className="w-12 h-12 rounded-full bg-accent-gold text-white flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     {item.step}
@@ -110,45 +114,50 @@ const AboutPage = () => {
                     </svg>
                   </div>
                 )}
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
           {/* Description */}
-          <div className="card p-8">
-            <div className="prose max-w-none text-gray-700 space-y-4">
-              <p>
-                <strong className="text-accent-gold">1. モデル選出：</strong>
-                ミスコンテストで活躍した女性と提携し、新たなキャリアの場を提供します。
-              </p>
-              <p>
-                <strong className="text-accent-gold">2. AIモデル制作：</strong>
-                最先端のAI技術を活用して、魅力的なビジュアルコンテンツを制作します。
-              </p>
-              <p>
-                <strong className="text-accent-gold">3. コンテンツ発信：</strong>
-                Instagram、TikTok等のSNSで定期的にコンテンツを発信し、ファンとのつながりを築きます。
-              </p>
-              <p>
-                <strong className="text-accent-gold">4. ブランド協業：</strong>
-                企業様とのタイアップ、キャンペーン、イベント協賛など、多様なパートナーシップを展開します。
-              </p>
-              <p>
-                <strong className="text-accent-gold">5. 継続的成長：</strong>
-                プロジェクトを拡大し、より多くの女性に活躍の機会を提供していきます。
-              </p>
+          <ScrollReveal delay={0.3}>
+            <div className="card p-8">
+              <div className="prose max-w-none text-gray-700 space-y-4">
+                <p>
+                  <strong className="text-accent-gold">1. モデル選出：</strong>
+                  ミスコンテストで活躍した女性と提携し、新たなキャリアの場を提供します。
+                </p>
+                <p>
+                  <strong className="text-accent-gold">2. AIモデル制作：</strong>
+                  最先端のAI技術を活用して、魅力的なビジュアルコンテンツを制作します。
+                </p>
+                <p>
+                  <strong className="text-accent-gold">3. コンテンツ発信：</strong>
+                  Instagram、TikTok等のSNSで定期的にコンテンツを発信し、ファンとのつながりを築きます。
+                </p>
+                <p>
+                  <strong className="text-accent-gold">4. ブランド協業：</strong>
+                  企業様とのタイアップ、キャンペーン、イベント協賛など、多様なパートナーシップを展開します。
+                </p>
+                <p>
+                  <strong className="text-accent-gold">5. 継続的成長：</strong>
+                  プロジェクトを拡大し、より多くの女性に活躍の機会を提供していきます。
+                </p>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* AI Technology */}
       <section className="section">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
-            AI技術について
-          </h2>
-          <div className="card p-8 md:p-12">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+              AI技術について
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="card p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
               <p>
                 私たちは最先端のAI技術を活用し、ミスコンテストファイナリストをベースにした魅力的で親しみやすいAIモデルを制作しています。
@@ -191,17 +200,21 @@ const AboutPage = () => {
                 ※ 私たちは最新のAI技術を活用しつつ、倫理的配慮と透明性を大切にしています。
               </p>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Women Support */}
       <section className="section bg-gradient-to-br from-accent-gold/10 to-primary-50">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
-            女性のキャリア支援
-          </h2>
-          <div className="card p-8 md:p-12">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+              女性のキャリア支援
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="card p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
               <p>
                 WONDERFUL WORLDは単なるエンタメビジネスではなく、女性のエンパワーメントと社会的支援を実現するイノベーションプロジェクトです。
@@ -252,19 +265,23 @@ const AboutPage = () => {
                 企業様とのコラボレーションを通じて、さらに多様な活躍の場を創出してまいります。
               </p>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Representative & Company */}
       <section className="section">
         <div className="container max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
-            運営チーム
-          </h2>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
+              運営チーム
+            </h2>
+          </ScrollReveal>
 
           {/* Representative Photo */}
-          <div className="card p-8 md:p-12 mb-8">
+          <ScrollReveal delay={0.2}>
+            <div className="card p-8 md:p-12 mb-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
@@ -296,10 +313,12 @@ const AboutPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
 
           {/* Sponsors/Partners */}
-          <div className="card p-8">
+          <ScrollReveal delay={0.3}>
+            <div className="card p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">パートナー企業</h3>
             <div className="relative h-[300px] rounded-lg overflow-hidden mb-6">
               <Image
@@ -313,10 +332,12 @@ const AboutPage = () => {
             <p className="text-center text-sm text-gray-600">
               Best of Miss Tokyo 2025 をサポートいただいた企業の皆様
             </p>
-          </div>
+            </div>
+          </ScrollReveal>
 
           {/* Company Info */}
-          <div className="card p-8 mt-8">
+          <ScrollReveal delay={0.4}>
+            <div className="card p-8 mt-8">
             <div className="flex items-center justify-center mb-6">
               <div className="relative w-32 h-32">
                 <Image
@@ -355,19 +376,23 @@ const AboutPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="section bg-primary-50">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
-            FAQ
-          </h2>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+              FAQ
+            </h2>
+          </ScrollReveal>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="card p-6">
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <div className="card p-6">
                 <h3 className="font-bold text-gray-900 mb-3 flex items-start">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-gold text-white flex items-center justify-center text-sm font-bold mr-3">
                     Q
@@ -375,7 +400,8 @@ const AboutPage = () => {
                   {faq.question}
                 </h3>
                 <p className="text-gray-700 pl-9">{faq.answer}</p>
-              </div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -384,20 +410,23 @@ const AboutPage = () => {
       {/* CTA */}
       <section className="section">
         <div className="container text-center">
-          <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">
-            私たちと一緒に、新しい世界を創りませんか？
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/partners" className="btn-primary text-lg">
-              パートナーシップのご案内
-            </Link>
-            <Link href="/contact" className="btn-secondary text-lg">
-              お問い合わせ
-            </Link>
-          </div>
+          <ScrollReveal>
+            <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">
+              私たちと一緒に、新しい世界を創りませんか？
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/partners" className="btn-primary text-lg">
+                パートナーシップのご案内
+              </Link>
+              <Link href="/contact" className="btn-secondary text-lg">
+                お問い合わせ
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 
