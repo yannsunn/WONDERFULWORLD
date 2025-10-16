@@ -91,7 +91,7 @@ function checkRateLimit(identifier) {
   // 古いエントリをクリーンアップ（メモリリーク防止）
   if (requestCounts.size > 10000) {
     const cutoff = now - 86400000; // 24時間前
-    for (const [key, value] of requestCounts.entries()) {
+    for (const [key] of requestCounts.entries()) {
       const timestamp = parseInt(key.split('-').pop());
       if (timestamp < cutoff) {
         requestCounts.delete(key);

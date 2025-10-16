@@ -3,8 +3,27 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
+interface Achievement {
+  date: string;
+  text: string;
+}
+
+interface ModelData {
+  id: string;
+  name: string;
+  handle: string;
+  catchphrase: string;
+  description: string;
+  image: string;
+  instagramFollowers: string;
+  tiktokFollowers: string;
+  engagementRate: string;
+  achievements: Achievement[];
+  tags: string[];
+}
+
 // Sample data - in production, fetch from CMS/API
-const modelsData: Record<string, any> = {
+const modelsData: Record<string, ModelData> = {
   aihana: {
     id: 'aihana',
     name: 'AI Hana',
@@ -121,7 +140,7 @@ export default function ModelDetailPage({ params }: { params: { slug: string } }
                 {model.description}
               </p>
               <div className="flex flex-wrap gap-2">
-                {model.tags.map((tag: string) => (
+                {model.tags.map((tag) => (
                   <span
                     key={tag}
                     className="px-4 py-2 text-sm font-medium rounded-full bg-primary-100 text-primary-700"
@@ -206,7 +225,7 @@ export default function ModelDetailPage({ params }: { params: { slug: string } }
             </h2>
             <div className="card p-8">
               <ul className="space-y-4">
-                {model.achievements.map((achievement: any, index: number) => (
+                {model.achievements.map((achievement, index) => (
                   <li key={index} className="flex items-start space-x-4">
                     <span className="flex-shrink-0 w-24 text-sm font-medium text-accent-gold">
                       {achievement.date}
