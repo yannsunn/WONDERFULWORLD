@@ -161,8 +161,8 @@ const PartnersPage = () => {
             <h3 className="font-bold text-gray-900 mb-4">お問い合わせ窓口</h3>
             <div className="text-gray-700 space-y-2">
               <p>WONDERFUL WORLD事業部 パートナー担当</p>
-              <p>Mail: <a href="mailto:contact@wonderful-world.example" className="text-accent-gold hover:underline">contact@wonderful-world.example</a></p>
-              <p>TEL: 03-xxxx-xxxx（平日 10:00-18:00）</p>
+              <p className="text-sm text-gray-600">下記のお問い合わせフォームよりご連絡ください</p>
+              <p className="text-sm text-gray-600">（受付時間：平日 10:00-18:00）</p>
             </div>
           </div>
           <Link href="/contact" className="btn-primary text-lg">

@@ -37,7 +37,7 @@ const ContactPage = () => {
       // For now, simulate submission
       await new Promise(resolve => setTimeout(resolve, 1500));
 
-      console.log('Form submitted:', formData);
+      // Form submission successful
       setSubmitStatus('success');
       setFormData({
         name: '',
@@ -47,7 +47,7 @@ const ContactPage = () => {
         agree: false,
       });
     } catch (error) {
-      console.error('Error submitting form:', error);
+      // Handle error gracefully
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -232,10 +232,10 @@ const ContactPage = () => {
 
         {/* Alternative Contact */}
         <div className="mt-8 text-center text-sm text-gray-600">
-          <p>または直接メールでお問い合わせください：</p>
-          <a href="mailto:contact@wonderful-world.example" className="text-accent-gold hover:underline font-medium">
-            contact@wonderful-world.example
-          </a>
+          <p>お問い合わせフォームからご連絡ください</p>
+          <p className="text-xs text-gray-500 mt-2">
+            担当者より3営業日以内にご返信いたします
+          </p>
         </div>
       </div>
     </div>
