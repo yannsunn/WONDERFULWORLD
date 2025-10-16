@@ -40,7 +40,10 @@
       "Bash(xcopy:*)",
       "Bash(taskkill:*)",
       "Bash(powershell:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(for img in \"ceo-presentation-stage.jpg\" \"guests-photo.jpg\" \"finalists-group.jpg\" \"best-of-miss-poster.jpg\")",
+      "Bash(do echo \"=== $img ===\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

@@ -65,6 +65,11 @@ const BestOfMissTokyoPage = () => {
       alt: 'イベントスタッフ',
       caption: 'イベント運営スタッフの皆様',
     },
+    {
+      src: '/images/news/guests-photo.jpg',
+      alt: 'ゲストの皆様',
+      caption: 'イベントにご参加いただいたゲストの皆様',
+    },
   ];
 
   return (

@@ -264,7 +264,7 @@ const AboutPage = () => {
           </h2>
 
           {/* Representative Photo */}
-          <div className="card p-8 md:p-12 mb-12">
+          <div className="card p-8 md:p-12 mb-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
@@ -296,6 +296,22 @@ const AboutPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* CEO Presentation on Stage */}
+          <div className="card p-8 mb-12">
+            <div className="relative h-[500px] rounded-lg overflow-hidden">
+              <Image
+                src="/images/about/ceo-presentation-stage.jpg"
+                alt="Best of Miss Tokyo 2025 代表プレゼンテーション"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+            </div>
+            <p className="text-center text-sm text-gray-600 mt-4">
+              Best of Miss Tokyo 2025 でのプレゼンテーション
+            </p>
           </div>
 
           {/* Sponsors/Partners */}
