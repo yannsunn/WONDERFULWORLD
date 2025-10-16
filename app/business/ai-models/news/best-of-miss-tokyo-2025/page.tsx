@@ -58,7 +58,7 @@ const BestOfMissTokyoPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-16">
+    <div className="min-h-screen bg-white pt-28 pb-16">
       <article className="container max-w-4xl">
         {/* Back Link */}
         <Link

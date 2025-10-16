@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 const TermsPage = () => {
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-white pt-28">
       <div className="container max-w-4xl py-12">
         <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-8">
           利用規約

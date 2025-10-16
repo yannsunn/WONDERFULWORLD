@@ -58,48 +58,48 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-primary-50 to-white border-t border-primary-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gradient-to-b from-orange-50 via-pink-50 to-white border-t-2 border-orange-200">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative w-12 h-12 flex-shrink-0">
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center space-x-4 group">
+              <div className="relative w-14 h-14 flex-shrink-0 rounded-full overflow-hidden ring-2 ring-orange-200 group-hover:ring-orange-400 transition-all duration-300">
                 <Image
                   src="/images/about/company-logo.jpg"
                   alt="WONDERFUL WORLD"
                   fill
-                  className="object-contain transition-transform group-hover:scale-110"
-                  sizes="48px"
+                  className="object-contain transition-transform duration-300 group-hover:scale-110"
+                  sizes="56px"
                 />
               </div>
-              <h3 className="text-xl font-heading font-bold bg-gradient-to-r from-accent-gold to-primary-600 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-heading font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent">
                 WONDERFUL WORLD
               </h3>
             </Link>
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-base text-gray-700 leading-relaxed">
               AI×Beautyで女性が輝く、新しい世界へ。<br />
               ミスコンテストのファイナリストから生まれた<br />
               AIモデルインフルエンサープロジェクト。
             </p>
-            <div className="text-xs text-gray-500">
-              <p>Wonderful World 合同会社</p>
-              <p>所在地: 東京都 | 設立: 2025年9月</p>
+            <div className="text-sm text-gray-600 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-orange-100">
+              <p className="font-semibold">Wonderful World 合同会社</p>
+              <p className="mt-1">所在地: 東京都 | 設立: 2025年9月</p>
             </div>
           </div>
 
           {/* Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-gray-900">サイトマップ</h4>
-            <ul className="space-y-2">
+          <div className="space-y-6">
+            <h4 className="text-xl font-bold text-gray-900">サイトマップ</h4>
+            <ul className="space-y-3">
               {footerLinks.main.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-600 hover:text-accent-gold transition-colors"
+                    className="text-base text-gray-700 hover:text-orange-600 transition-colors font-medium hover:translate-x-1 inline-block transform transition-transform duration-200"
                   >
-                    {link.name}
+                    → {link.name}
                   </Link>
                 </li>
               ))}
@@ -107,8 +107,8 @@ const Footer = () => {
           </div>
 
           {/* Social & Legal */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-gray-900">フォローする</h4>
+          <div className="space-y-6">
+            <h4 className="text-xl font-bold text-gray-900">フォローする</h4>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
@@ -116,7 +116,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-accent-gold transition-colors"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-100 to-pink-100 text-orange-600 hover:from-orange-200 hover:to-pink-200 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                   aria-label={social.name}
                 >
                   <SocialIcon icon={social.icon} />
@@ -124,12 +124,12 @@ const Footer = () => {
               ))}
             </div>
             <div className="pt-4">
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-600 hover:text-accent-gold transition-colors"
+                      className="text-base text-gray-700 hover:text-orange-600 transition-colors font-medium"
                     >
                       {link.name}
                     </Link>
@@ -141,8 +141,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-primary-100">
-          <p className="text-center text-sm text-gray-500">
+        <div className="pt-12 border-t-2 border-orange-200">
+          <p className="text-center text-base font-medium bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent">
             © {currentYear} WONDERFUL WORLD Project. All rights reserved.
           </p>
         </div>

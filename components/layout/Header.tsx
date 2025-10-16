@@ -36,27 +36,27 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="メインナビゲーション">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-12 h-12 flex-shrink-0">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-xl border-b border-gray-100">
+      <nav className="container mx-auto px-6 sm:px-8 lg:px-12" aria-label="メインナビゲーション">
+        <div className="flex items-center justify-between h-24">
+          {/* Logo - Enhanced */}
+          <Link href="/" className="flex items-center space-x-4 group">
+            <div className="relative w-14 h-14 flex-shrink-0 rounded-full overflow-hidden ring-2 ring-orange-200 group-hover:ring-orange-400 transition-all duration-300">
               <Image
                 src="/images/about/company-logo.jpg"
                 alt="WONDERFUL WORLD"
                 fill
-                className="object-contain transition-transform group-hover:scale-110"
-                sizes="48px"
+                className="object-contain transition-transform duration-300 group-hover:scale-110"
+                sizes="56px"
               />
             </div>
-            <div className="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-accent-gold to-primary-600 bg-clip-text text-transparent transition-all group-hover:scale-105">
+            <div className="text-xl md:text-2xl lg:text-3xl font-heading font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105">
               WONDERFUL WORLD
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          {/* Desktop Navigation - Enhanced */}
+          <div className="hidden lg:flex items-center space-x-2">
             {navigation.map((item) => (
               item.dropdown ? (
                 <div
@@ -64,17 +64,17 @@ const Header = () => {
                   className="relative group"
                 >
                   <button
-                    className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-accent-gold transition-colors rounded-lg hover:bg-primary-50 flex items-center gap-1"
+                    className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 flex items-center gap-2"
                     onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                   >
                     {item.name}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   {isBusinessDropdownOpen && (
                     <div
-                      className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2"
+                      className="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200 py-3 overflow-hidden"
                       onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                       onMouseLeave={() => setIsBusinessDropdownOpen(false)}
                     >
@@ -82,7 +82,7 @@ const Header = () => {
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-accent-gold hover:bg-primary-50 transition-colors"
+                          className="block px-6 py-4 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 transition-all duration-200"
                           onClick={() => setIsBusinessDropdownOpen(false)}
                         >
                           {subItem.name}
@@ -97,7 +97,7 @@ const Header = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-accent-gold transition-colors rounded-lg hover:bg-primary-50"
+                  className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50"
                 >
                   {item.name}
                 </a>
@@ -105,60 +105,48 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-accent-gold transition-colors rounded-lg hover:bg-primary-50"
+                  className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50"
                 >
                   {item.name}
                 </Link>
               )
             ))}
             {/* Language switcher placeholder */}
-            <div className="ml-4 px-3 py-2 text-sm text-gray-400 border-l border-gray-200">
-              JP {/* | EN - Coming soon */}
+            <div className="ml-4 px-4 py-2 text-sm font-medium text-gray-400 border-l-2 border-gray-200">
+              <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent font-bold">JP</span>
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - Enhanced */}
           <button
             type="button"
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-600"
+            className="lg:hidden relative w-12 h-12 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-50 to-pink-50 text-orange-600 hover:from-orange-100 hover:to-pink-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all duration-300 shadow-lg"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
           >
-            <svg
-              className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg
-              className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <div className="relative w-6 h-6">
+              <span className={`absolute top-1 left-0 w-6 h-0.5 bg-orange-600 transition-all duration-300 ${isMenuOpen ? 'rotate-45 top-3' : ''}`} />
+              <span className={`absolute top-3 left-0 w-6 h-0.5 bg-orange-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
+              <span className={`absolute top-5 left-0 w-6 h-0.5 bg-orange-600 transition-all duration-300 ${isMenuOpen ? '-rotate-45 top-3' : ''}`} />
+            </div>
           </button>
         </div>
 
-        {/* Mobile menu */}
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden pb-4`}>
-          <div className="space-y-1">
+        {/* Mobile menu - Enhanced with backdrop */}
+        <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
+          <div className="absolute left-0 right-0 top-20 bg-white/98 backdrop-blur-lg shadow-2xl border-t border-gray-100 pb-6 px-4">
+            <div className="space-y-2 py-4">
             {navigation.map((item) => (
               item.dropdown ? (
-                <div key={item.name}>
+                <div key={item.name} className="bg-gradient-to-r from-orange-50/50 to-pink-50/50 rounded-xl overflow-hidden">
                   <button
-                    className="w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-accent-gold hover:bg-primary-50 rounded-lg transition-colors flex items-center justify-between"
+                    className="w-full text-left px-5 py-4 text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors flex items-center justify-between"
                     onClick={() => setIsBusinessDropdownOpen(!isBusinessDropdownOpen)}
                   >
                     {item.name}
                     <svg
-                      className={`w-5 h-5 transition-transform ${isBusinessDropdownOpen ? 'rotate-180' : ''}`}
+                      className={`w-6 h-6 transition-transform duration-300 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -167,12 +155,12 @@ const Header = () => {
                     </svg>
                   </button>
                   {isBusinessDropdownOpen && (
-                    <div className="pl-4 space-y-1 mt-1">
+                    <div className="px-3 pb-3 space-y-1 bg-white/60 backdrop-blur-sm">
                       {item.dropdown.map((subItem) => (
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-accent-gold hover:bg-primary-50 rounded-lg transition-colors"
+                          className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-lg transition-all duration-200"
                           onClick={() => {
                             setIsMenuOpen(false);
                             setIsBusinessDropdownOpen(false);
@@ -190,7 +178,7 @@ const Header = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-accent-gold hover:bg-primary-50 rounded-lg transition-colors"
+                  className="block px-5 py-4 text-lg font-semibold text-gray-800 hover:text-orange-600 hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 rounded-xl transition-all duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -199,13 +187,14 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-accent-gold hover:bg-primary-50 rounded-lg transition-colors"
+                  className="block px-5 py-4 text-lg font-semibold text-gray-800 hover:text-orange-600 hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 rounded-xl transition-all duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               )
             ))}
+            </div>
           </div>
         </div>
       </nav>
