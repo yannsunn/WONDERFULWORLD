@@ -49,7 +49,11 @@
       "Bash(xargs:*)",
       "Bash(while IFS= read -r file)",
       "Bash(do echo \"=== $file ===\")",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(for file in CHATBOT_FREE.md CHATBOT_HYBRID.md CHATBOT_README.md CHATBOT_SETUP.md CODE_REVIEW.md DEPLOY_NOW.md DEPLOY_STEPS.txt deploy-instructions.txt DEPLOYMENT_GUIDE.md DEVELOPMENT_ROADMAP.md GETTING_STARTED.md IMAGE_PLACEMENT_GUIDE.md PHASE2_COMPLETION_REPORT.md PROJECT_SUMMARY.md QUICK_DEPLOY.md SECURITY_AUDIT.md SITE_ARCHITECTURE.md TECHNICAL_SPEC.md)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then mv \"$file\" docs/archive/)",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []
