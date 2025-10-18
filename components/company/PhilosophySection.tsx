@@ -42,14 +42,14 @@ export default function PhilosophySection({ philosophy, vision, mission }: Philo
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {items.map((item, index) => (
             <motion.div
@@ -57,19 +57,19 @@ export default function PhilosophySection({ philosophy, vision, mission }: Philo
               variants={itemVariants}
               className="group"
             >
-              <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 hover:border-orange-200">
+              <div className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 hover:border-orange-200">
                 {/* Icon/Badge */}
-                <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${colors[index]} text-white text-sm font-semibold mb-6 shadow-md`}>
+                <div className={`inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r ${colors[index]} text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 shadow-md`}>
                   {item.title}
                 </div>
 
                 {/* Subtitle */}
-                <h3 className="text-2xl font-bold font-playfair text-gray-900 mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4 leading-tight">
                   {item.subtitle}
                 </h3>
 
                 {/* Content */}
-                <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed whitespace-pre-line">
                   {item.content}
                 </p>
 

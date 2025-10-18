@@ -32,7 +32,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           {/* Main Title - Ultra Enhanced */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 relative">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-8 relative leading-tight">
             <span className="block bg-gradient-to-r from-orange-400 via-orange-500 to-pink-400 bg-clip-text text-transparent animate-shimmer drop-shadow-2xl">
               WONDERFUL
             </span>
@@ -44,23 +44,23 @@ const HeroSection = () => {
           </h1>
 
           {/* Catchphrase - Enhanced */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-white mb-4 font-semibold drop-shadow-2xl animate-fade-in backdrop-blur-sm bg-white/10 inline-block px-8 py-3 rounded-full border border-white/20">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-6 font-semibold drop-shadow-2xl animate-fade-in backdrop-blur-sm bg-white/10 inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/20">
             AI×Beautyで女性が輝く、新しい世界へ
           </p>
 
           {/* Sub-message - Enhanced */}
-          <p className="text-base sm:text-lg md:text-xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-2xl animate-slide-in-left">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-2xl animate-slide-in-left px-4">
             ミスコンテストのファイナリストから生まれた<br className="hidden sm:block" />
             <span className="text-orange-300 font-semibold">AIモデルインフルエンサー</span>
           </p>
 
           {/* CTA Buttons - Ultra Enhanced */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-scale-in px-4">
             <Link
               href="/about"
-              className="btn-primary text-lg px-10 py-5 shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(249,115,22,0.5)] transform hover:-translate-y-2 animate-pulse-glow group relative overflow-hidden"
+              className="btn-primary w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(249,115,22,0.5)] transform hover:-translate-y-2 animate-pulse-glow group relative overflow-hidden"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 flex items-center justify-center gap-2">
                 詳しく見る
                 <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -69,9 +69,9 @@ const HeroSection = () => {
             </Link>
             <Link
               href="/business/ai-models"
-              className="btn-secondary text-lg px-10 py-5 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 group backdrop-blur-md"
+              className="btn-secondary w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 group backdrop-blur-md"
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center justify-center gap-2">
                 モデルを見る
                 <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
