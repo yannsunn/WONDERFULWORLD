@@ -383,23 +383,24 @@ const AboutPage = () => {
 
       {/* FAQ */}
       <section className="section bg-primary-50">
-        <div className="container max-w-4xl">
+        <div className="container max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
-              FAQ
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 sm:mb-10 text-center">
+              よくあるご質問
             </h2>
+            <p className="text-sm sm:text-base text-gray-600 text-center mb-8">FAQ</p>
           </ScrollReveal>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="card p-6">
-                <h3 className="font-bold text-gray-900 mb-3 flex items-start">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-gold text-white flex items-center justify-center text-sm font-bold mr-3">
+                <div className="card p-4 sm:p-6">
+                <h3 className="font-bold text-gray-900 mb-3 flex items-start text-sm sm:text-base leading-relaxed">
+                  <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-accent-gold text-white flex items-center justify-center text-xs sm:text-sm font-bold mr-2 sm:mr-3 mt-0.5">
                     Q
                   </span>
-                  {faq.question}
+                  <span>{faq.question}</span>
                 </h3>
-                <p className="text-gray-700 pl-9">{faq.answer}</p>
+                <p className="text-gray-700 pl-7 sm:pl-9 text-xs sm:text-sm leading-relaxed">{faq.answer}</p>
                 </div>
               </ScrollReveal>
             ))}
