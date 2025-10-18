@@ -132,14 +132,14 @@ export default function ModelDetailPage({ params }: { params: { slug: string } }
         <div className="max-w-4xl mx-auto">
           {/* Profile Section */}
           <section className="mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">
               Profile
             </h2>
             <div className="card p-4 sm:p-6 lg:p-8">
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6 px-4">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
                 {model.description}
               </p>
-              <div className="flex flex-wrap gap-2 px-4">
+              <div className="flex flex-wrap gap-2">
                 {model.tags.map((tag) => (
                   <span
                     key={tag}
@@ -154,7 +154,7 @@ export default function ModelDetailPage({ params }: { params: { slug: string } }
 
           {/* Stats Section */}
           <section className="mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">
               Stats
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
@@ -181,11 +181,11 @@ export default function ModelDetailPage({ params }: { params: { slug: string } }
 
           {/* SNS Section */}
           <section className="mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">
               Social Media
             </h2>
             <div className="card p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-primary-50 to-white">
-              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 px-4">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                 最新の投稿やコンテンツは、各SNSでご覧いただけます
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
@@ -212,7 +212,7 @@ export default function ModelDetailPage({ params }: { params: { slug: string } }
                   TikTok でフォロー
                 </a>
               </div>
-              <p className="text-xs sm:text-sm text-gray-500 mt-4 sm:mt-6 px-4">
+              <p className="text-xs sm:text-sm text-gray-500 mt-4 sm:mt-6">
                 ※ 実際のサイトでは、ここにInstagramとTikTokの投稿が埋め込まれます
               </p>
             </div>
@@ -220,7 +220,7 @@ export default function ModelDetailPage({ params }: { params: { slug: string } }
 
           {/* Achievements Section */}
           <section className="mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">
               Activity Highlights
             </h2>
             <div className="card p-4 sm:p-6 lg:p-8">
