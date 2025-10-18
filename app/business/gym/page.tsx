@@ -47,30 +47,30 @@ export default function GymPage() {
       />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-teal-600 text-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-green-600 to-teal-600 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold font-playfair mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-4 sm:mb-6">
               まずは公式サイトをチェック
             </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               詳しい情報、体験レッスンのお申し込みは公式サイトから
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href={gymInfo.externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-white text-green-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl inline-flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-green-600 font-bold text-base sm:text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl inline-flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 3BGYM 公式サイト
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
               <a
                 href="/contact"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-green-600 transition-all duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white text-white font-bold text-base sm:text-lg rounded-full hover:bg-white hover:text-green-600 transition-all duration-300 w-full sm:w-auto"
               >
                 お問い合わせ
               </a>

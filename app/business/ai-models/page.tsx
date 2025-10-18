@@ -67,29 +67,29 @@ export default function AIModelsBusinessPage() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-20 text-center text-white">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center text-white">
           <ScrollReveal>
-            <div className="mb-8">
-              <h1 className="text-5xl md:text-7xl font-bold font-playfair mb-4">
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-playfair mb-3 sm:mb-4">
                 AIモデルインフルエンサー
               </h1>
-              <p className="text-2xl md:text-3xl font-semibold mb-2">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 px-4">
                 AI Model Influencer Business
               </p>
-              <p className="text-lg md:text-xl opacity-90">
+              <p className="text-base sm:text-lg md:text-xl opacity-90 px-4">
                 次世代のインフルエンサーマーケティング
               </p>
             </div>
 
-            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
               ミスコンテストファイナリストをベースにした、美しく魅力的なAIモデルインフルエンサー。
               最先端のAI技術で、新しい形のマーケティングを実現します。
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Link
                 href="/business/ai-models/models"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
                 モデル一覧を見る
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ export default function AIModelsBusinessPage() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300"
               >
                 お問い合わせ
               </Link>
@@ -108,29 +108,29 @@ export default function AIModelsBusinessPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4">
                 AIモデルの強み
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 px-4">
                 従来のインフルエンサーにはない、新しい価値を提供
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {features.map((feature, index) => (
               <ScrollReveal key={feature.title} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="bg-gradient-to-br from-orange-50 to-pink-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-orange-100">
-                    <div className="text-5xl mb-4">{feature.icon}</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <div className="bg-gradient-to-br from-orange-50 to-pink-50 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-orange-100">
+                    <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{feature.icon}</div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -142,24 +142,24 @@ export default function AIModelsBusinessPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4">
                 提供サービス
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 px-4">
                 多様なニーズに対応したサービスラインナップ
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
               <ScrollReveal key={service.title} delay={index * 0.1}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-                  <div className="relative h-48">
+                  <div className="relative h-40 sm:h-48">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -167,11 +167,11 @@ export default function AIModelsBusinessPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <div className="p-5 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       {service.description}
                     </p>
                   </div>
@@ -183,18 +183,18 @@ export default function AIModelsBusinessPage() {
       </section>
 
       {/* Models CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4 sm:mb-6">
               活躍するAIモデルたち
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               ミスコンテストファイナリストから生まれた、個性豊かなAIモデルをご紹介
             </p>
             <Link
               href="/business/ai-models/models"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold text-lg rounded-full hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold rounded-full hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
             >
               モデル一覧を見る
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -206,18 +206,18 @@ export default function AIModelsBusinessPage() {
       </section>
 
       {/* News CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-pink-50">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-50 to-pink-50">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4 sm:mb-6">
               最新ニュース
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               AIモデルの活動情報やプロジェクトの最新情報をお届けします
             </p>
             <Link
               href="/business/ai-models/news"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl"
             >
               ニュース一覧を見る
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,25 +229,25 @@ export default function AIModelsBusinessPage() {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 to-pink-600 text-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-600 to-pink-600 text-white">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold font-playfair mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-4 sm:mb-6 px-4">
               AIモデルと始めませんか？
             </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               プロジェクトのご相談、お見積もり、その他ご質問など、お気軽にお問い合わせください
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl"
               >
                 お問い合わせ
               </Link>
               <Link
                 href="/about"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300"
               >
                 会社情報
               </Link>

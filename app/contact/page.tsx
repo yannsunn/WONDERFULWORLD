@@ -59,39 +59,39 @@ const ContactPage = () => {
   return (
     <PageTransition>
       <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-28">
-        <div className="container max-w-3xl py-12">
+        <div className="container max-w-3xl py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+            <div className="text-center mb-8 sm:mb-12">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
                 Contact
               </h1>
-              <p className="text-lg text-gray-600">
+              <p className="text-base sm:text-lg text-gray-600 px-4">
                 お問い合わせ
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="card p-8 md:p-12">
-          <p className="text-gray-700 mb-8 leading-relaxed">
+            <div className="card p-4 sm:p-6 md:p-8 lg:p-12">
+          <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed px-4">
             以下のフォームに必要事項をご記入の上、送信してください。<br />
             折り返し担当者よりご連絡いたします。<br />
-            <span className="text-sm text-gray-500">
+            <span className="text-xs sm:text-sm text-gray-500">
               （※スポンサーのご相談や取材依頼もこちらからどうぞ）
             </span>
           </p>
 
           {/* Success Message */}
           {submitStatus === 'success' && (
-            <div className="mb-8 p-6 bg-green-50 border border-green-200 rounded-lg">
+            <div className="mb-6 sm:mb-8 p-4 sm:p-6 bg-green-50 border border-green-200 rounded-lg">
               <div className="flex items-start">
-                <svg className="w-6 h-6 text-green-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2 sm:mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h3 className="font-bold text-green-900 mb-1">送信完了</h3>
-                  <p className="text-green-800 text-sm">
+                  <h3 className="font-bold text-green-900 mb-1 text-sm sm:text-base">送信完了</h3>
+                  <p className="text-green-800 text-xs sm:text-sm">
                     お問い合わせありがとうございました。<br />
                     自動返信メールをお送りしております。担当者より3営業日以内にご連絡いたします。
                   </p>
@@ -102,14 +102,14 @@ const ContactPage = () => {
 
           {/* Error Message */}
           {submitStatus === 'error' && (
-            <div className="mb-8 p-6 bg-red-50 border border-red-200 rounded-lg">
+            <div className="mb-6 sm:mb-8 p-4 sm:p-6 bg-red-50 border border-red-200 rounded-lg">
               <div className="flex items-start">
-                <svg className="w-6 h-6 text-red-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 mr-2 sm:mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h3 className="font-bold text-red-900 mb-1">エラーが発生しました</h3>
-                  <p className="text-red-800 text-sm">
+                  <h3 className="font-bold text-red-900 mb-1 text-sm sm:text-base">エラーが発生しました</h3>
+                  <p className="text-red-800 text-xs sm:text-sm">
                     送信に失敗しました。しばらくしてから再度お試しください。
                   </p>
                 </div>
@@ -118,10 +118,10 @@ const ContactPage = () => {
           )}
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6" aria-label="お問い合わせフォーム">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6" aria-label="お問い合わせフォーム">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+              <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2">
                 お名前 <span className="text-red-500">*</span>
               </label>
               <input
@@ -133,14 +133,14 @@ const ContactPage = () => {
                 required
                 aria-required="true"
                 aria-label="お名前"
-                className="input-primary"
+                className="input-primary text-sm sm:text-base"
                 placeholder="山田太郎"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+              <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2">
                 メールアドレス <span className="text-red-500">*</span>
               </label>
               <input
@@ -152,14 +152,14 @@ const ContactPage = () => {
                 required
                 aria-required="true"
                 aria-label="メールアドレス"
-                className="input-primary"
+                className="input-primary text-sm sm:text-base"
                 placeholder="example@company.com"
               />
             </div>
 
             {/* Subject */}
             <div>
-              <label htmlFor="subject" className="block text-sm font-semibold text-gray-900 mb-2">
+              <label htmlFor="subject" className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2">
                 件名
               </label>
               <select
@@ -167,7 +167,7 @@ const ContactPage = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="input-primary"
+                className="input-primary text-sm sm:text-base"
               >
                 <option value="一般のお問い合わせ">一般のお問い合わせ</option>
                 <option value="スポンサー/協業に関する相談">スポンサー/協業に関する相談</option>
@@ -178,7 +178,7 @@ const ContactPage = () => {
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
+              <label htmlFor="message" className="block text-xs sm:text-sm font-semibold text-gray-900 mb-2">
                 お問い合わせ内容 <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -190,7 +190,7 @@ const ContactPage = () => {
                 aria-required="true"
                 aria-label="お問い合わせ内容"
                 rows={6}
-                className="input-primary resize-none"
+                className="input-primary resize-none text-sm sm:text-base"
                 placeholder="お問い合わせ内容を詳細にご記入ください"
               />
             </div>
@@ -207,7 +207,7 @@ const ContactPage = () => {
                   aria-label="プライバシーポリシーへの同意"
                   className="mt-1 w-4 h-4 text-accent-gold border-gray-300 rounded focus:ring-accent-gold"
                 />
-                <span className="ml-3 text-sm text-gray-700">
+                <span className="ml-3 text-xs sm:text-sm text-gray-700">
                   <a href="/privacy" target="_blank" className="text-accent-gold hover:underline">
                     プライバシーポリシー
                   </a>
@@ -221,11 +221,11 @@ const ContactPage = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-primary text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-primary text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-3 h-4 w-4 sm:h-5 sm:w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -237,7 +237,7 @@ const ContactPage = () => {
               </button>
             </div>
 
-            <p className="text-sm text-gray-500 text-center">
+            <p className="text-xs sm:text-sm text-gray-500 text-center px-4">
               ※ 必須項目は <span className="text-red-500">*</span> 印です。<br />
               お送りいただいた情報はお問い合わせ対応以外の目的で使用いたしません。
             </p>
@@ -247,7 +247,7 @@ const ContactPage = () => {
 
           {/* Alternative Contact */}
           <ScrollReveal delay={0.4}>
-            <div className="mt-8 text-center text-sm text-gray-600">
+            <div className="mt-6 sm:mt-8 text-center text-xs sm:text-sm text-gray-600 px-4">
               <p>お問い合わせフォームからご連絡ください</p>
               <p className="text-xs text-gray-500 mt-2">
                 担当者より3営業日以内にご返信いたします

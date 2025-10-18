@@ -48,7 +48,7 @@ const ModelsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-28">
-      <div className="container">
+      <div className="container px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <ModelsHeader />
 
@@ -56,14 +56,14 @@ const ModelsPage = () => {
         <ModelsGrid models={models} />
 
         {/* Coming Soon Section */}
-        <div className="text-center py-16 border-t border-primary-100">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="text-center py-12 sm:py-16 lg:py-20 border-t border-primary-100">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
             More Models Coming Soon
           </h3>
-          <p className="text-gray-600 mb-8">
+          <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 px-4">
             新しいAIモデルを続々と追加予定です。お楽しみに！
           </p>
-          <Link href="/about" className="btn-secondary">
+          <Link href="/about" className="btn-secondary w-full sm:w-auto inline-block">
             プロジェクトについて
           </Link>
         </div>
