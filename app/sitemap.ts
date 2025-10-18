@@ -8,12 +8,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allNews = getAllNews();
 
   // ニュース記事のsitemapエントリを動的に生成
-  const newsEntries: MetadataRoute.Sitemap = allNews.map((post) => ({
-    url: `${baseUrl}/business/ai-models/news/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  const newsEntries: MetadataRoute.Sitemap = allNews.map((post) => {
+    // 日付が有効かチェックし、無効な場合は現在日時を使用
+    const dateObj = new Date(post.date);
+    const validDate = isNaN(dateObj.getTime()) ? new Date() : dateObj;
+
+    return {
+      url: `${baseUrl}/business/ai-models/news/${post.slug}`,
+      lastModified: validDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    };
+  });
 
   // 静的ページのエントリ
   const staticEntries: MetadataRoute.Sitemap = [
