@@ -17,6 +17,7 @@ export function LoadingSpinner({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
         <div
           className={`${sizeClasses[size]} rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-orange-500 p-0.5 animate-spin`}
           role="status"
+          aria-live="polite"
           aria-label="読み込み中"
         >
           <div className="w-full h-full bg-white rounded-full" />
@@ -47,7 +48,12 @@ export function LoadingPage() {
 
       <div className="relative z-10 text-center">
         {/* Premium spinner */}
-        <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/80 backdrop-blur-sm mb-8 shadow-2xl relative animate-pulse-glow">
+        <div
+          className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-white/80 backdrop-blur-sm mb-8 shadow-2xl relative animate-pulse-glow"
+          role="status"
+          aria-live="polite"
+          aria-label="ページ読み込み中"
+        >
           <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-orange-500 p-1 animate-spin">
             <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
               <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" />
@@ -61,17 +67,6 @@ export function LoadingPage() {
         </h2>
         <p className="text-gray-600 animate-pulse">ページを読み込んでいます...</p>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-        }
-        .animate-blob { animation: blob 7s infinite; }
-        .animation-delay-2000 { animation-delay: 2s; }
-        .animation-delay-4000 { animation-delay: 4s; }
-      `}</style>
     </div>
   );
 }
@@ -125,10 +120,10 @@ export function LoadingCard() {
 /**
  * ニュース一覧のローディングスケルトン
  */
-export function LoadingNewsList() {
+export function LoadingNewsList({ count = 6 }: { count?: number } = {}) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {[1, 2, 3, 4, 5, 6].map((i) => (
+      {Array.from({ length: count }, (_, i) => (
         <LoadingCard key={i} />
       ))}
     </div>
