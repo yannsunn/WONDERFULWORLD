@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュース投稿ガイド - Wonderful World</title>
+    <style>
+        @page {
+            margin: 2cm;
+            size: A4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ヘッダー */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28pt;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 14pt;
+            color: #f0a500;
+            font-weight: 600;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            background: #f0a500;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16pt;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title .emoji {
+            font-size: 20pt;
+            margin-right: 10px;
+        }
+
+        /* ステップ */
+        .steps {
+            margin-left: 0;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 5px solid #f0a500;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #f0a500;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            font-size: 14pt;
+            margin-right: 10px;
+        }
+
+        .step-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .step-content {
+            margin-left: 45px;
+            color: #555;
+        }
+
+        /* コードブロック */
+        .code-block {
+            background: #1a1a2e;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 10pt;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* 注意事項 */
+        .note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .note-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 5px;
+        }
+
+        /* 重要ポイント */
+        .highlight {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .highlight-title {
+            font-weight: bold;
+            color: #155724;
+            margin-bottom: 5px;
+        }
+
+        /* リスト */
+        ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* 例 */
+        .example {
+            background: #e7f3ff;
+            border: 2px dashed #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .example-title {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 12pt;
+        }
+
+        /* フッター */
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+        }
+
+        /* テーブル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #1a1a2e;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* ページブレーク */
+        .page-break {
+            page-break-after: always;
+        }
+
+        /* 強調 */
+        strong {
+            color: #f0a500;
+            font-weight: bold;
+        }
+
+        /* QRコード用スペース */
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #ccc;
+            display: inline-block;
+            text-align: center;
+            line-height: 150px;
+            color: #999;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <div class="header">
+            <h1>📱 ニュース投稿ガイド</h1>
+            <div class="subtitle">スマートフォンから簡単にニュース記事を投稿</div>
+            <div style="margin-top: 15px; font-size: 11pt;">Wonderful World 合同会社</div>
+        </div>
+
+        <!-- イントロダクション -->
+        <div class="section">
+            <div class="highlight">
+                <div class="highlight-title">✨ このガイドでできること</div>
+                <ul>
+                    <li>スマートフォンから<strong>たった5分</strong>でニュース記事を投稿</li>
+                    <li>写真と簡単なメモを送るだけで、<strong>AIが自動的に記事を作成</strong></li>
+                    <li>投稿から<strong>5-10分後</strong>にホームページに自動公開</li>
+                    <li><strong>完全無料</strong>で利用可能</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ステップ1: GitHubアカウント作成 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">🔐</span>
+                <span>STEP 1: GitHubアカウントを作成</span>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GitHubにアクセス
+                </div>
+                <div class="step-content">
+                    <p>スマートフォンまたはパソコンで以下のURLにアクセス：</p>
+                    <div class="code-block">https://github.com/signup</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    メールアドレスを入力
+                </div>
+                <div class="step-content">
+                    <p>普段使っているメールアドレスを入力して「Continue」をクリック</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    パスワードを設定
+                </div>
+                <div class="step-content">
+                    <p>安全なパスワードを入力（8文字以上、英数字を含む）</p>
+                    <div class="note">
+                        <div class="note-title">💡 ヒント</div>
+                        パスワードは忘れないようにメモしておきましょう
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    ユーザー名を決める
+                </div>
+                <div class="step-content">
+                    <p>好きなユーザー名を入力（例: yamada-taro）</p>
+                    <div class="note">
+                        <div class="note-title">⚠️ 重要</div>
+                        このユーザー名を<strong>管理者に伝える</strong>必要があります。メモしておいてください！
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    メール認証
+                </div>
+                <div class="step-content">
+                    <p>登録したメールアドレスに届いた認証コードを入力</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- ステップ2: GitHubアプリのインストール -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">📲</span>
+                <span>STEP 2: GitHubアプリをインストール</span>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    アプリストアを開く
+                </div>
+                <div class="step-content">
+                    <table>
+                        <tr>
+                            <th>iPhone/iPadの場合</th>
+                            <th>Androidの場合</th>
+                        </tr>
+                        <tr>
+                            <td>App Storeを開く</td>
+                            <td>Google Playストアを開く</td>
+                        </tr>
+                        <tr>
+                            <td>「GitHub」で検索</td>
+                            <td>「GitHub」で検索</td>
+                        </tr>
+                        <tr>
+                            <td>「入手」をタップ</td>
+                            <td>「インストール」をタップ</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    アプリを開いてログイン
+                </div>
+                <div class="step-content">
+                    <ul>
+                        <li>インストールしたGitHubアプリを開く</li>
+                        <li>「Sign in」をタップ</li>
+                        <li>作成したユーザー名とパスワードを入力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ステップ3: 管理者に連絡 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">👤</span>
+                <span>STEP 3: 管理者に連絡</span>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    ユーザー名を伝える
+                </div>
+                <div class="step-content">
+                    <p>STEP 1で作成した<strong>GitHubユーザー名</strong>を管理者に伝えてください</p>
+                    <div class="example">
+                        <div class="example-title">📧 管理者への連絡例</div>
+                        <p>「GitHubアカウントを作成しました。」<br>
+                        「ユーザー名: <strong>yamada-taro</strong>」<br>
+                        「招待をお願いします。」</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    招待を承認
+                </div>
+                <div class="step-content">
+                    <ul>
+                        <li>管理者から<strong>招待メール</strong>が届きます</li>
+                        <li>メール内の「<strong>Accept invitation</strong>」をクリック</li>
+                        <li>これで準備完了です！</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- ステップ4: ニュースを投稿 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">✍️</span>
+                <span>STEP 4: ニュースを投稿する</span>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    GitHubアプリでリポジトリを開く
+                </div>
+                <div class="step-content">
+                    <ul>
+                        <li>GitHubアプリを開く</li>
+                        <li>検索で「<strong>WONDERFULWORLD</strong>」と入力</li>
+                        <li>「<strong>yannsunn/WONDERFULWORLD</strong>」を選択</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    Issuesタブを開く
+                </div>
+                <div class="step-content">
+                    <ul>
+                        <li>画面下部のメニューから「<strong>Issues</strong>」をタップ</li>
+                        <li>右上の「<strong>+</strong>」ボタンをタップ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    タイトルを入力
+                </div>
+                <div class="step-content">
+                    <p>以下の形式でタイトルを入力：</p>
+                    <div class="code-block">[ニュース] ここに記事のタイトルを入力</div>
+                    <div class="example">
+                        <div class="example-title">💡 タイトル例</div>
+                        <ul>
+                            <li>[ニュース] AI Hana撮影会を実施</li>
+                            <li>[ニュース] Webデザイン賞を受賞</li>
+                            <li>[ニュース] 新プロジェクト開始</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    本文を入力
+                </div>
+                <div class="step-content">
+                    <p>以下のテンプレートをコピーして使用してください：</p>
+                    <div class="code-block">カテゴリー: イベント
+日付: 2025-10-18
+
+（ここに記事にしたい内容を箇条書きで書く）
+
+例:
+- 今日〇〇で△△のイベントを行いました
+- 参加者は□□人でした
+- とても良いイベントになりました</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    写真を添付
+                </div>
+                <div class="step-content">
+                    <ul>
+                        <li>カメラアイコンをタップ</li>
+                        <li>カメラロールから写真を選択</li>
+                        <li>または、その場で撮影</li>
+                        <li>複数枚の添付も可能（1-10枚推奨）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">6</span>
+                    送信
+                </div>
+                <div class="step-content">
+                    <p>「<strong>Submit new issue</strong>」をタップ</p>
+                    <div class="highlight">
+                        <div class="highlight-title">🎉 完了！</div>
+                        <p>5-10分後に、AIが自動的にプロフェッショナルな記事を作成し、ホームページに公開します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- カテゴリー一覧 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">📁</span>
+                <span>カテゴリー一覧</span>
+            </div>
+
+            <table>
+                <tr>
+                    <th>カテゴリー名</th>
+                    <th>用途</th>
+                    <th>例</th>
+                </tr>
+                <tr>
+                    <td><strong>イベント</strong></td>
+                    <td>セミナー、展示会、授賞式など</td>
+                    <td>撮影会、ミスコンイベント</td>
+                </tr>
+                <tr>
+                    <td><strong>お知らせ</strong></td>
+                    <td>会社の重要な発表</td>
+                    <td>新サービス開始、受賞</td>
+                </tr>
+                <tr>
+                    <td><strong>プロジェクト</strong></td>
+                    <td>プロジェクトの進捗報告</td>
+                    <td>新プロジェクト開始</td>
+                </tr>
+                <tr>
+                    <td><strong>メディア</strong></td>
+                    <td>メディア掲載、取材</td>
+                    <td>雑誌掲載、TV出演</td>
+                </tr>
+                <tr>
+                    <td><strong>モデル</strong></td>
+                    <td>AIモデルの活動報告</td>
+                    <td>新モデルデビュー</td>
+                </tr>
+                <tr>
+                    <td><strong>その他</strong></td>
+                    <td>上記以外</td>
+                    <td>社内報告など</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 投稿例 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">📝</span>
+                <span>投稿例</span>
+            </div>
+
+            <div class="example">
+                <div class="example-title">例1: イベント報告</div>
+                <p><strong>タイトル:</strong></p>
+                <div class="code-block">[ニュース] AI Hana撮影会を新宿で実施</div>
+                <p><strong>本文:</strong></p>
+                <div class="code-block">カテゴリー: イベント
+日付: 2025-10-18
+
+今日、新宿でAI Hanaの撮影会を行いました。
+天気も良く、素晴らしい写真が撮れました。
+参加者は約50名で、大盛況でした。
+
+[写真2枚添付]</div>
+            </div>
+
+            <div class="example">
+                <div class="example-title">例2: 受賞報告</div>
+                <p><strong>タイトル:</strong></p>
+                <div class="code-block">[ニュース] AI Reina Webデザイン賞を受賞</div>
+                <p><strong>本文:</strong></p>
+                <div class="code-block">カテゴリー: お知らせ
+日付: 2025-10-18
+
+AI Reinaが「2025年Webデザインアワード」で
+優秀賞を受賞しました！
+
+審査員からは「革新的なビジュアル表現」と
+高い評価をいただきました。
+
+[授賞式の写真1枚添付]</div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- よくある質問 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">❓</span>
+                <span>よくある質問</span>
+            </div>
+
+            <div class="step">
+                <div class="step-title">Q1: 投稿した記事はいつ公開されますか？</div>
+                <div class="step-content">
+                    <p><strong>A:</strong> 投稿から5-10分後に自動的にホームページに公開されます。</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">Q2: 写真は何枚まで添付できますか？</div>
+                <div class="step-content">
+                    <p><strong>A:</strong> 1-10枚程度を推奨していますが、それ以上でも問題ありません。</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">Q3: 投稿した内容を修正できますか？</div>
+                <div class="step-content">
+                    <p><strong>A:</strong> はい。Issueを開いて内容を編集するか、管理者またはAIに修正を依頼してください。</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">Q4: 緊急で公開したい場合は？</div>
+                <div class="step-content">
+                    <p><strong>A:</strong> タイトルに「[緊急]」を追加するか、管理者に直接連絡してください。</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">Q5: パソコンからも投稿できますか？</div>
+                <div class="step-content">
+                    <p><strong>A:</strong> はい。GitHubのウェブサイト（https://github.com）から同じ手順で投稿できます。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- トラブルシューティング -->
+        <div class="section">
+            <div class="section-title">
+                <span class="emoji">🔧</span>
+                <span>困ったときは</span>
+            </div>
+
+            <div class="note">
+                <div class="note-title">📞 サポート</div>
+                <ul>
+                    <li>わからないことがあれば、管理者に連絡してください</li>
+                    <li>または、GitHubのIssueで「@claude」とメンションすることで、AIが質問に答えます</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- フッター -->
+        <div class="footer">
+            <p><strong>Wonderful World 合同会社</strong></p>
+            <p>ニュース投稿システム - 使い方ガイド</p>
+            <p style="margin-top: 10px; color: #999;">最終更新: 2025年10月18日</p>
+            <p style="margin-top: 5px; font-size: 9pt; color: #999;">作成: Claude Code | PDF version 1.0</p>
+        </div>
+    </div>
+</body>
+</html>
