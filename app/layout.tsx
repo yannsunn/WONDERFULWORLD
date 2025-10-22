@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import StructuredData from "@/components/seo/StructuredData";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
+import { WebVitals } from "@/components/analytics/WebVitals";
 import dynamic from "next/dynamic";
 
 // Dynamic imports for heavy components
@@ -131,6 +132,7 @@ export default function RootLayout({
             description: 'AI×Beautyで女性が輝く、新しい世界へ',
           }}
         />
+        <WebVitals />
         <ScrollProgress />
         <Header />
         <main className="min-h-screen">
