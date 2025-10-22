@@ -175,14 +175,14 @@ const HeroSection = () => {
           </h1>
 
           {/* Catchphrase - Enhanced */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-6 font-semibold drop-shadow-2xl animate-fade-in backdrop-blur-sm bg-white/10 inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/20">
-            AI×Beautyで女性が輝く、新しい世界へ
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-6 font-semibold drop-shadow-2xl animate-fade-in backdrop-blur-sm bg-white/10 inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/20 leading-relaxed ja-text">
+            AI×Beautyで女性が輝く、<wbr />新しい世界へ
           </p>
 
           {/* Sub-message - Enhanced */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-2xl animate-slide-in-left px-4">
-            ミスコンテストのファイナリストから生まれた<br className="hidden sm:block" />
-            <span className="text-orange-300 font-semibold">AIモデルインフルエンサー</span>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-12 max-w-3xl mx-auto drop-shadow-2xl animate-slide-in-left px-4 ja-text" style={{lineHeight: '1.9'}}>
+            ミスコンテストの<wbr />ファイナリストから生まれた<br className="hidden sm:block" />
+            <span className="text-orange-300 font-semibold">AIモデル<wbr />インフルエンサー</span>
           </p>
 
           {/* CTA Buttons - Ultra Enhanced */}

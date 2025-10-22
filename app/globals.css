@@ -30,6 +30,35 @@ html {
     -webkit-user-select: none;
     user-select: none;
   }
+
+  /* Japanese typography optimization */
+  body {
+    font-feature-settings: "palt" 1; /* Proportional alternates for better spacing */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Japanese line breaking and wrapping */
+  p, li, td, th, div, span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: keep-all; /* Keep words together */
+    line-break: strict;
+  }
+
+  /* Prevent awkward line breaks in Japanese */
+  .ja-text {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+  }
+
+  /* Better line height for Japanese headings */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+    word-break: keep-all;
+  }
 }
 
 :root {

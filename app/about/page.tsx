@@ -44,11 +44,11 @@ const AboutPage = () => {
         <section className="section bg-gradient-to-br from-primary-50 via-accent-sand/20 to-white">
           <div className="container text-center">
             <ScrollReveal>
-              <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+              <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6" style={{lineHeight: '1.6'}}>
                 About Us
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                誰もが主役になれる素晴らしい世界を
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto ja-text" style={{lineHeight: '1.9'}}>
+                誰もが主役になれる<wbr />素晴らしい世界を
               </p>
             </ScrollReveal>
           </div>
@@ -62,18 +62,18 @@ const AboutPage = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
                 Our Mission
               </h2>
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 ja-text" style={{lineHeight: '2'}}>
                 <p>
-                  本プロジェクトは、AI技術と美の力で女性たちの可能性を広げることを使命としています。
+                  本プロジェクトは、<wbr />AI技術と美の力で<wbr />女性たちの可能性を<wbr />広げることを<wbr />使命としています。
                 </p>
                 <p>
-                  ミスコンテスト出場者は、大会後のキャリア構築が課題となることが少なくありません。
-                  私たちは、そうした女性たちにAIを用いた新たな活躍の場を提供し、
-                  継続的な収入とキャリア形成の機会を創出します。
+                  ミスコンテスト出場者は、<wbr />大会後の<wbr />キャリア構築が<wbr />課題となることが<wbr />少なくありません。
+                  私たちは、<wbr />そうした女性たちに<wbr />AIを用いた<wbr />新たな活躍の場を提供し、<wbr />
+                  継続的な収入と<wbr />キャリア形成の<wbr />機会を創出します。
                 </p>
                 <p>
-                  これは単なるエンタメビジネスではなく、女性のエンパワーメントと社会的支援を実現する
-                  イノベーションプロジェクトです。
+                  これは単なる<wbr />エンタメビジネスではなく、<wbr />女性の<wbr />エンパワーメントと<wbr />社会的支援を<wbr />実現する
+                  イノベーション<wbr />プロジェクトです。
                 </p>
               </div>
             </div>
@@ -169,31 +169,31 @@ const AboutPage = () => {
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>高品質なビジュアル：</strong>美しく自然なビジュアルコンテンツを提供します。実在のミスコンテストファイナリストの美しさを活かした表現が可能です。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>高品質な<wbr />ビジュアル：</strong>美しく<wbr />自然な<wbr />ビジュアル<wbr />コンテンツを<wbr />提供します。実在の<wbr />ミスコンテスト<wbr />ファイナリストの<wbr />美しさを<wbr />活かした<wbr />表現が<wbr />可能です。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>多様な表現力：</strong>様々なシーンやテーマに対応した柔軟なコンテンツ制作が可能です。ファッション、ビューティー、ライフスタイルなど幅広い分野で活躍できます。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>多様な<wbr />表現力：</strong>様々な<wbr />シーンや<wbr />テーマに<wbr />対応した<wbr />柔軟な<wbr />コンテンツ制作が<wbr />可能です。ファッション、<wbr />ビューティー、<wbr />ライフスタイルなど<wbr />幅広い分野で<wbr />活躍できます。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>24/7グローバル活動：</strong>時間や場所の制約を超えて、グローバルに活動できます。多言語対応により、世界中のファンとコミュニケーションが可能です。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>24/7<wbr />グローバル活動：</strong>時間や<wbr />場所の<wbr />制約を<wbr />超えて、<wbr />グローバルに<wbr />活動できます。多言語対応により、<wbr />世界中の<wbr />ファンと<wbr />コミュニケーションが<wbr />可能です。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>ブランドコラボ対応：</strong>企業様のご要望に応じたカスタマイズが可能です。ブランドイメージに合わせたコンテンツ制作をサポートします。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>ブランド<wbr />コラボ対応：</strong>企業様の<wbr />ご要望に<wbr />応じた<wbr />カスタマイズが<wbr />可能です。ブランド<wbr />イメージに<wbr />合わせた<wbr />コンテンツ制作を<wbr />サポートします。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>持続可能なキャリア：</strong>従来のモデル活動の制約を超え、長期的に持続可能なキャリアモデルを実現します。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>持続可能な<wbr />キャリア：</strong>従来の<wbr />モデル活動の<wbr />制約を<wbr />超え、<wbr />長期的に<wbr />持続可能な<wbr />キャリア<wbr />モデルを<wbr />実現します。</span>
                 </li>
               </ul>
               <p className="mt-6 text-sm text-gray-600 italic">
