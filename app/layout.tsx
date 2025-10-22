@@ -37,6 +37,18 @@ const playfair = Playfair_Display({
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
+// Viewport configuration (separate from metadata in Next.js 14)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f97316' },
+    { media: '(prefers-color-scheme: dark)', color: '#ea580c' }
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
@@ -50,6 +62,11 @@ export const metadata: Metadata = {
   publisher: "Wonderful World 合同会社",
   formatDetection: {
     telephone: false,
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'WONDERFUL WORLD',
   },
   openGraph: {
     title: "WONDERFUL WORLD - AI×Beautyで女性が輝く、新しい世界へ",

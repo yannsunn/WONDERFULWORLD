@@ -26,6 +26,8 @@ const SLIDES = [
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   // 次のスライドへ
   const nextSlide = useCallback(() => {
@@ -43,6 +45,32 @@ const HeroSection = () => {
     setIsAutoPlay(false); // 手動操作時は自動再生を停止
   }, []);
 
+  // Touch handlers for swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+      setIsAutoPlay(false);
+    }
+    if (isRightSwipe) {
+      prevSlide();
+      setIsAutoPlay(false);
+    }
+  };
+
   // 自動スライド（5秒間隔）
   useEffect(() => {
     if (!isAutoPlay) return;
@@ -52,7 +80,12 @@ const HeroSection = () => {
   }, [isAutoPlay, nextSlide]);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Background Slideshow */}
       <div className="absolute inset-0">
         {SLIDES.map((slide, index) => (

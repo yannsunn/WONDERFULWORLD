@@ -7,10 +7,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Mobile-optimized touch targets and viewport */
+@supports (height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
 /* Improved focus styles for accessibility */
 @layer base {
   *:focus-visible {
     @apply outline-none ring-2 ring-orange-500 ring-offset-2;
+  }
+
+  /* Touch-friendly tap targets */
+  button, a {
+    -webkit-tap-highlight-color: rgba(249, 115, 22, 0.2);
+  }
+
+  /* Prevent text selection on touch devices for UI elements */
+  button, .btn-primary, .btn-secondary {
+    -webkit-user-select: none;
+    user-select: none;
   }
 }
 
