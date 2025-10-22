@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ChatbotHybrid from "@/components/ChatbotHybrid";
+import StructuredData from "@/components/seo/StructuredData";
 import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({
@@ -63,6 +64,23 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${inter.variable} ${playfair.variable}`}>
       <body className="antialiased">
+        <StructuredData
+          type="organization"
+          data={{
+            name: 'Wonderful World 合同会社',
+            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://wonderfulworld.jp',
+            description: 'AI技術と美の力で女性たちの可能性を広げる、AIモデルインフルエンサー事業',
+            foundingDate: '2015-10-01',
+          }}
+        />
+        <StructuredData
+          type="website"
+          data={{
+            name: 'WONDERFUL WORLD',
+            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://wonderfulworld.jp',
+            description: 'AI×Beautyで女性が輝く、新しい世界へ',
+          }}
+        />
         <Header />
         <main className="min-h-screen">
           {children}
