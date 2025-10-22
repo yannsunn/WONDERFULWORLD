@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import CountUp from '@/components/animations/CountUp';
 
 interface CompanyInfoSectionProps {
   name: string;
@@ -14,10 +15,10 @@ interface CompanyInfoSectionProps {
 
 export default function CompanyInfoSection({ name, established, representative, offices }: CompanyInfoSectionProps) {
   const stats = [
-    { icon: '🏢', label: '設立', value: established },
-    { icon: '👤', label: '代表', value: representative },
-    { icon: '📍', label: '拠点', value: '2拠点' },
-    { icon: '💼', label: '事業', value: '2事業' },
+    { icon: '🏢', label: '設立', value: established, countUp: false },
+    { icon: '👤', label: '代表', value: representative, countUp: false },
+    { icon: '📍', label: '拠点', value: '拠点', countUp: true, end: 2 },
+    { icon: '💼', label: '事業', value: '事業', countUp: true, end: 2 },
   ];
 
   return (
@@ -53,7 +54,16 @@ export default function CompanyInfoSection({ name, established, representative, 
               >
                 <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{stat.icon}</div>
                 <p className="text-xs sm:text-sm text-gray-500 mb-1">{stat.label}</p>
-                <p className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">{stat.value}</p>
+                <p className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">
+                  {stat.countUp ? (
+                    <>
+                      <CountUp end={stat.end!} duration={2000} />
+                      {stat.value}
+                    </>
+                  ) : (
+                    stat.value
+                  )}
+                </p>
               </motion.div>
             ))}
           </div>
