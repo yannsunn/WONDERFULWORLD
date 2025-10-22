@@ -3,9 +3,19 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ChatbotHybrid from "@/components/ChatbotHybrid";
 import StructuredData from "@/components/seo/StructuredData";
-import { Analytics } from '@vercel/analytics/react';
+import dynamic from "next/dynamic";
+
+// Dynamic imports for heavy components
+const ChatbotHybrid = dynamic(() => import("@/components/ChatbotHybrid"), {
+  ssr: false,
+  loading: () => null,
+});
+
+const Analytics = dynamic(
+  () => import('@vercel/analytics/react').then((mod) => mod.Analytics),
+  { ssr: false }
+);
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,22 +23,32 @@ const inter = Inter({
   display: "swap",
   preload: true,
   adjustFontFallback: true,
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
-  preload: true,
+  preload: false, // Only preload main font
   adjustFontFallback: true,
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: "WONDERFUL WORLD - AI×Beautyで女性が輝く、新しい世界へ",
+  title: {
+    default: "WONDERFUL WORLD - AI×Beautyで女性が輝く、新しい世界へ",
+    template: "%s | WONDERFUL WORLD"
+  },
   description: "ミスコンテストのファイナリストから生まれたAIモデルインフルエンサー。独自開発のAI技術で、女性たちに新たなチャンスを提供し、世界へ羽ばたくプロジェクトです。",
   keywords: ["AIモデル", "バーチャルインフルエンサー", "女性支援", "AI×Beauty", "ミスコンテスト"],
   authors: [{ name: "WONDERFUL WORLD Project" }],
+  creator: "WONDERFUL WORLD Project",
+  publisher: "Wonderful World 合同会社",
+  formatDetection: {
+    telephone: false,
+  },
   openGraph: {
     title: "WONDERFUL WORLD - AI×Beautyで女性が輝く、新しい世界へ",
     description: "ミスコンテストのファイナリストから生まれたAIモデルインフルエンサー",
@@ -53,6 +73,17 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add Google Search Console verification when available
+    // google: 'your-verification-code',
   },
 };
 
