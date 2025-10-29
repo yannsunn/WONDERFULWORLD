@@ -739,3 +739,178 @@ a.text-accent-gold {
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   line-height: 1.4;
 }
+
+/* ====================
+   AUTO LAYOUT SYSTEM (Figma-inspired)
+   Flexible layout system with automatic spacing and alignment
+   ==================== */
+
+/* Auto Layout Container - Main wrapper */
+.auto-layout {
+  display: flex;
+  position: relative;
+}
+
+/* Direction */
+.auto-layout-horizontal { flex-direction: row; }
+.auto-layout-vertical { flex-direction: column; }
+
+/* Alignment (Cross Axis) */
+.auto-layout-align-start { align-items: flex-start; }
+.auto-layout-align-center { align-items: center; }
+.auto-layout-align-end { align-items: flex-end; }
+.auto-layout-align-stretch { align-items: stretch; }
+.auto-layout-align-baseline { align-items: baseline; }
+
+/* Justification (Main Axis) */
+.auto-layout-justify-start { justify-content: flex-start; }
+.auto-layout-justify-center { justify-content: center; }
+.auto-layout-justify-end { justify-content: flex-end; }
+.auto-layout-justify-between { justify-content: space-between; }
+.auto-layout-justify-around { justify-content: space-around; }
+.auto-layout-justify-evenly { justify-content: space-evenly; }
+
+/* Gap (Spacing between items) - Figma style */
+.auto-layout-gap-0 { gap: 0; }
+.auto-layout-gap-2 { gap: 2px; }
+.auto-layout-gap-4 { gap: 4px; }
+.auto-layout-gap-8 { gap: 8px; }
+.auto-layout-gap-12 { gap: 12px; }
+.auto-layout-gap-16 { gap: 16px; }
+.auto-layout-gap-20 { gap: 20px; }
+.auto-layout-gap-24 { gap: 24px; }
+.auto-layout-gap-32 { gap: 32px; }
+.auto-layout-gap-40 { gap: 40px; }
+.auto-layout-gap-48 { gap: 48px; }
+.auto-layout-gap-64 { gap: 64px; }
+
+/* Padding (Internal spacing) - Figma style */
+.auto-layout-padding-0 { padding: 0; }
+.auto-layout-padding-4 { padding: 4px; }
+.auto-layout-padding-8 { padding: 8px; }
+.auto-layout-padding-12 { padding: 12px; }
+.auto-layout-padding-16 { padding: 16px; }
+.auto-layout-padding-20 { padding: 20px; }
+.auto-layout-padding-24 { padding: 24px; }
+.auto-layout-padding-32 { padding: 32px; }
+.auto-layout-padding-40 { padding: 40px; }
+.auto-layout-padding-48 { padding: 48px; }
+.auto-layout-padding-64 { padding: 64px; }
+
+/* Individual padding sides */
+.auto-layout-padding-h-16 { padding-left: 16px; padding-right: 16px; }
+.auto-layout-padding-h-24 { padding-left: 24px; padding-right: 24px; }
+.auto-layout-padding-h-32 { padding-left: 32px; padding-right: 32px; }
+.auto-layout-padding-v-16 { padding-top: 16px; padding-bottom: 16px; }
+.auto-layout-padding-v-24 { padding-top: 24px; padding-bottom: 24px; }
+.auto-layout-padding-v-32 { padding-top: 32px; padding-bottom: 32px; }
+
+/* Wrap */
+.auto-layout-wrap { flex-wrap: wrap; }
+.auto-layout-nowrap { flex-wrap: nowrap; }
+
+/* Child behavior - Figma's Resizing behavior */
+.auto-layout-hug { flex: 0 0 auto; }        /* Hug contents */
+.auto-layout-fill { flex: 1 1 0%; }         /* Fill container */
+.auto-layout-fixed { flex: 0 0 auto; }      /* Fixed size */
+
+/* Child alignment override */
+.auto-layout-self-start { align-self: flex-start; }
+.auto-layout-self-center { align-self: center; }
+.auto-layout-self-end { align-self: flex-end; }
+.auto-layout-self-stretch { align-self: stretch; }
+
+/* Preset layouts - Common Figma patterns */
+.auto-layout-stack {
+  @apply auto-layout auto-layout-vertical auto-layout-gap-16 auto-layout-align-stretch;
+}
+
+.auto-layout-inline {
+  @apply auto-layout auto-layout-horizontal auto-layout-gap-8 auto-layout-align-center;
+}
+
+.auto-layout-grid {
+  @apply auto-layout auto-layout-horizontal auto-layout-wrap auto-layout-gap-16;
+}
+
+.auto-layout-center {
+  @apply auto-layout auto-layout-vertical auto-layout-justify-center auto-layout-align-center;
+}
+
+.auto-layout-sidebar {
+  @apply auto-layout auto-layout-horizontal auto-layout-gap-24;
+}
+
+.auto-layout-header {
+  @apply auto-layout auto-layout-horizontal auto-layout-justify-between auto-layout-align-center auto-layout-padding-h-24 auto-layout-padding-v-16;
+}
+
+/* Responsive Auto Layout */
+@media (max-width: 768px) {
+  .auto-layout-mobile-vertical {
+    flex-direction: column;
+  }
+
+  .auto-layout-mobile-align-stretch {
+    align-items: stretch;
+  }
+
+  .auto-layout-mobile-gap-16 {
+    gap: 16px;
+  }
+
+  .auto-layout-mobile-padding-16 {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .auto-layout-sm-vertical {
+    flex-direction: column;
+  }
+
+  .auto-layout-sm-gap-12 {
+    gap: 12px;
+  }
+}
+
+/* Auto Layout with Premium Design */
+.auto-layout-premium {
+  @apply auto-layout card-premium;
+}
+
+.auto-layout-glass {
+  @apply auto-layout glass-premium;
+}
+
+/* Width constraints - Figma style */
+.auto-layout-w-fill { width: 100%; }
+.auto-layout-w-hug { width: fit-content; }
+.auto-layout-w-fixed-320 { width: 320px; }
+.auto-layout-w-fixed-480 { width: 480px; }
+.auto-layout-w-fixed-640 { width: 640px; }
+.auto-layout-w-fixed-960 { width: 960px; }
+
+/* Height constraints */
+.auto-layout-h-fill { height: 100%; }
+.auto-layout-h-hug { height: fit-content; }
+.auto-layout-h-fixed-480 { height: 480px; }
+.auto-layout-h-fixed-640 { height: 640px; }
+
+/* Auto Layout with animations */
+.auto-layout-animated {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auto-layout-animated-slow {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Debug mode - visualize layout */
+.auto-layout-debug {
+  outline: 2px dashed #ff6b6b;
+}
+
+.auto-layout-debug > * {
+  outline: 1px dashed #4ecdc4;
+}
