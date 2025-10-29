@@ -58,13 +58,13 @@ const ContactPage = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-28">
-        <div className="container max-w-3xl py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen mesh-gradient pt-28">
+        <div className="container-narrow py-8 sm:py-12">
           {/* Header */}
           <ScrollReveal>
             <div className="text-center mb-8 sm:mb-12">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-                Contact
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6 px-4">
+                <span className="gradient-text-vibrant">Contact</span>
               </h1>
               <p className="text-base sm:text-lg text-gray-600 px-4">
                 お問い合わせ
@@ -73,7 +73,7 @@ const ContactPage = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="card p-4 sm:p-6 md:p-8 lg:p-12">
+            <div className="card-premium hover-lift p-4 sm:p-6 md:p-8 lg:p-12">
           <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed px-4">
             以下のフォームに必要事項をご記入の上、送信してください。<br />
             折り返し担当者よりご連絡いたします。<br />

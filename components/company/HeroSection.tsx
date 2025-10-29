@@ -15,11 +15,12 @@ interface HeroSectionProps {
 
 export default function HeroSection({ title, subtitle, message, ctaButtons }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-white to-green-50">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500 rounded-full filter blur-3xl" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-gradient">
+      {/* Premium Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-400 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -36,7 +37,7 @@ export default function HeroSection({ title, subtitle, message, ctaButtons }: He
             className="mb-6 sm:mb-8"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-playfair mb-3 sm:mb-4">
-              <span className="bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
+              <span className="gradient-text-sunset drop-shadow-lg">
                 WONDERFUL WORLD
               </span>
             </h1>
@@ -73,13 +74,13 @@ export default function HeroSection({ title, subtitle, message, ctaButtons }: He
           >
             <Link
               href={ctaButtons.primary.href}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover-lift shadow-layered hover:shadow-premium"
             >
               {ctaButtons.primary.text}
             </Link>
             <Link
               href={ctaButtons.secondary.href}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-white text-gray-800 font-semibold rounded-full border-2 border-gray-300 hover:border-orange-500 hover:text-orange-600 transition-all duration-300 shadow hover:shadow-lg"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg glass-premium text-gray-800 font-semibold rounded-full border border-white/40 hover:border-orange-400 hover:text-orange-600 transition-all duration-300 hover-lift"
             >
               {ctaButtons.secondary.text}
             </Link>

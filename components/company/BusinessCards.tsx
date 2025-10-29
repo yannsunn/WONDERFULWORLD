@@ -20,8 +20,8 @@ interface BusinessCardsProps {
 
 export default function BusinessCards({ businesses }: BusinessCardsProps) {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section mesh-gradient">
+      <div className="container-premium">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,8 +30,8 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4">
-            事業案内
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4">
+            <span className="gradient-text-vibrant">事業案内</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             私たちの2つの事業で、人々の可能性を最大限に引き出します
@@ -49,7 +49,7 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
               transition={{ delay: index * 0.2, duration: 0.6 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="card-premium hover-lift overflow-hidden border border-gray-100">
                 {/* Image */}
                 <div className="relative h-56 sm:h-64 overflow-hidden">
                   <Image
@@ -61,7 +61,7 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
                   {/* Badge */}
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/90 backdrop-blur-sm rounded-full text-xs sm:text-sm font-semibold text-gray-800">
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 glass-premium rounded-full text-xs sm:text-sm font-semibold text-gray-800 border-glow">
                     {index === 0 ? 'AI×Beauty' : 'Health×Beauty'}
                   </div>
                 </div>

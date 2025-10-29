@@ -71,11 +71,11 @@ const PartnersPage = () => {
     <PageTransition>
       <div className="min-h-screen bg-white pt-20">
         {/* Hero */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-accent-gold/10 via-accent-sand/30 to-primary-50">
-          <div className="container px-4 sm:px-6 lg:px-8 text-center">
+        <section className="section mesh-gradient">
+          <div className="container-premium text-center">
             <ScrollReveal>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-                Partner with Us
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6 px-4">
+                <span className="gradient-text-luxury">Partner with Us</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
                 AIモデルとのコラボで<br className="hidden sm:block" />
@@ -86,8 +86,8 @@ const PartnersPage = () => {
         </section>
 
         {/* Benefits */}
-        <section className="py-16 sm:py-20 lg:py-24">
-          <div className="container px-4 sm:px-6 lg:px-8">
+        <section className="section">
+          <div className="container-premium">
             <ScrollReveal>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
                 協業のメリット
@@ -96,7 +96,7 @@ const PartnersPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {benefits.map((benefit, index) => (
                 <ScrollReveal key={index} delay={index * 0.1}>
-                  <div className="card p-4 sm:p-6 lg:p-8">
+                  <div className="card-premium hover-lift p-4 sm:p-6 lg:p-8">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-accent-gold to-primary-600 text-white flex items-center justify-center mb-4 sm:mb-6">
                   {benefit.icon}
                 </div>
@@ -114,8 +114,8 @@ const PartnersPage = () => {
         </section>
 
         {/* Menu */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-primary-50">
-          <div className="container max-w-4xl px-4 sm:px-6 lg:px-8">
+        <section className="section mesh-gradient">
+          <div className="container-narrow">
             <ScrollReveal>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
                 提供可能なコラボメニュー
@@ -124,7 +124,7 @@ const PartnersPage = () => {
             <div className="space-y-4 sm:space-y-6">
               {menus.map((menu, index) => (
                 <ScrollReveal key={index} delay={index * 0.1}>
-                  <div className="card p-4 sm:p-6 md:p-8">
+                  <div className="card-premium hover-lift p-4 sm:p-6 md:p-8">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 px-4">
                   {menu.title}
                 </h3>
@@ -144,15 +144,15 @@ const PartnersPage = () => {
         </section>
 
         {/* Case Studies Placeholder */}
-        <section className="py-16 sm:py-20 lg:py-24">
-          <div className="container max-w-4xl px-4 sm:px-6 lg:px-8">
+        <section className="section">
+          <div className="container-narrow">
             <ScrollReveal>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
                 導入実績
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="card p-4 sm:p-6 md:p-8 lg:p-12 text-center">
+              <div className="card-premium p-4 sm:p-6 md:p-8 lg:p-12 text-center">
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 px-4">
               現在、複数の企業様とタイアップの協議を進めております。<br />
               実績が公開可能になり次第、こちらに掲載いたします。
@@ -166,8 +166,8 @@ const PartnersPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-accent-gold/10 to-primary-50">
-          <div className="container max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+        <section className="section mesh-gradient">
+          <div className="container-narrow text-center">
             <ScrollReveal>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
                 お問い合わせ・ご相談
@@ -179,7 +179,7 @@ const PartnersPage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="card p-4 sm:p-6 lg:p-8 bg-white/80 backdrop-blur-sm mb-6 sm:mb-8">
+              <div className="glass-premium p-4 sm:p-6 lg:p-8 rounded-2xl mb-6 sm:mb-8">
                 <h3 className="font-bold text-gray-900 mb-3 sm:mb-4 text-base sm:text-lg">お問い合わせ窓口</h3>
                 <div className="text-gray-700 space-y-2">
                   <p className="text-sm sm:text-base">WONDERFUL WORLD事業部 パートナー担当</p>

@@ -42,8 +42,8 @@ export default function PhilosophySection({ philosophy, vision, mission }: Philo
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section bg-gradient-to-b from-white via-gray-50 to-white">
+      <div className="container-premium">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -57,7 +57,7 @@ export default function PhilosophySection({ philosophy, vision, mission }: Philo
               variants={itemVariants}
               className="group"
             >
-              <div className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 hover:border-orange-200">
+              <div className="card-premium hover-lift p-6 sm:p-8 h-full border border-gray-100 hover:border-orange-200">
                 {/* Icon/Badge */}
                 <div className={`inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r ${colors[index]} text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6 shadow-md`}>
                   {item.title}

@@ -14,8 +14,8 @@ interface CEOMessageSectionProps {
 
 export default function CEOMessageSection({ name, title, message, photo, fullMessageUrl }: CEOMessageSectionProps) {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section bg-gradient-to-b from-white via-orange-50/30 to-white">
+      <div className="container-premium">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,8 +25,8 @@ export default function CEOMessageSection({ name, title, message, photo, fullMes
         >
           {/* Section Header */}
           <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4">
-              代表挨拶
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4">
+              <span className="gradient-text-luxury">代表挨拶</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
               Message from CEO
@@ -43,7 +43,7 @@ export default function CEOMessageSection({ name, title, message, photo, fullMes
               transition={{ delay: 0.2, duration: 0.6 }}
               className="md:col-span-2"
             >
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl max-w-sm mx-auto md:max-w-none">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-premium hover:shadow-layered transition-shadow duration-500 max-w-sm mx-auto md:max-w-none">
                 <Image
                   src={photo}
                   alt={`${name} - ${title}`}
@@ -68,7 +68,7 @@ export default function CEOMessageSection({ name, title, message, photo, fullMes
               transition={{ delay: 0.4, duration: 0.6 }}
               className="md:col-span-3"
             >
-              <div className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-gray-100">
+              <div className="card-premium hover-lift p-6 sm:p-8 lg:p-10 border border-gray-100">
                 <div className="relative">
                   {/* Quote Mark */}
                   <div className="absolute -top-2 -left-2 text-4xl sm:text-6xl text-orange-500/20 font-serif">&ldquo;</div>

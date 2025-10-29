@@ -22,8 +22,8 @@ export default function CompanyInfoSection({ name, established, representative, 
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section mesh-gradient">
+      <div className="container-premium">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,8 +33,8 @@ export default function CompanyInfoSection({ name, established, representative, 
         >
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4">
-              会社情報
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4">
+              <span className="gradient-text-ocean">会社情報</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
               Company Information
@@ -50,7 +50,7 @@ export default function CompanyInfoSection({ name, established, representative, 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+                className="text-center p-4 sm:p-6 card-premium hover-lift border border-gray-100"
               >
                 <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{stat.icon}</div>
                 <p className="text-xs sm:text-sm text-gray-500 mb-1">{stat.label}</p>
@@ -77,7 +77,7 @@ export default function CompanyInfoSection({ name, established, representative, 
             className="grid md:grid-cols-2 gap-6 sm:gap-8"
           >
             {/* Headquarters */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
+            <div className="card-premium hover-lift p-6 sm:p-8 border border-gray-100">
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center text-xl sm:text-2xl">
                   🏢
@@ -91,7 +91,7 @@ export default function CompanyInfoSection({ name, established, representative, 
             </div>
 
             {/* Tokyo Office */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
+            <div className="card-premium hover-lift p-6 sm:p-8 border border-gray-100">
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center text-xl sm:text-2xl">
                   🗼
