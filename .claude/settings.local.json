@@ -59,7 +59,14 @@
       "Bash(do basename \"$file\")",
       "Bash(rm:*)",
       "Bash(mv:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(cat:*)",
+      "Bash(if [ -f \".env\" ])",
+      "Bash(then grep \"GEMINI_API_KEY\" .env)",
+      "Bash(else echo \".env file not found\")",
+      "Bash(if [ -f \".env.production\" ])",
+      "Bash(then cat .env.production)",
+      "Bash(else echo \".env.production not found\")"
     ],
     "deny": [],
     "ask": []

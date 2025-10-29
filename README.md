@@ -71,7 +71,18 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 - **Privacy** (`/privacy`) - プライバシーポリシー
 - **Terms** (`/terms`) - 利用規約
 
-## 🎨 Design System
+## 🎨 Design System & Figma Integration
+
+### Premium Design Features
+
+WordPress/Studio-inspired design system with modern visual effects:
+
+- **Multi-layered Shadows**: Professional depth with 3-layer shadow system
+- **Glassmorphism**: Frosted glass effects with backdrop filters
+- **Neumorphism**: Soft 3D effects for premium feel
+- **Mesh Gradients**: Subtle radial gradient backgrounds
+- **Smooth Animations**: Bounce and lift effects on hover
+- **Gradient Text**: Eye-catching headline styles
 
 ### Colors
 - **Primary**: Sand beige tones (#F5E6D3)
@@ -81,16 +92,62 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 ### Typography
 - **Headings**: Playfair Display
 - **Body**: Inter
+- **Japanese Optimization**: Proportional alternates (palt) enabled
+
+### Figma Integration
+
+Complete Figma design system integration for design token synchronization.
+
+**Quick Start**: See [docs/FIGMA_QUICK_START.md](docs/FIGMA_QUICK_START.md) for 5-minute setup
+
+**Full Documentation**:
+- [Design System Reference](docs/FIGMA_DESIGN_SYSTEM.md) - Complete token catalog
+- [Setup Guide](docs/FIGMA_SETUP_GUIDE.md) - Step-by-step configuration
+- [Pre-exported Tokens](docs/DESIGN_TOKENS_EXPORT.json) - Ready-to-use design tokens
+
+**Available Commands**:
+```bash
+# Sync design tokens from Figma
+npm run figma:sync
+
+# Short alias
+npm run design:tokens
+```
+
+**Premium Utility Classes**:
+```css
+.mesh-gradient        /* Radial gradient background */
+.card-premium         /* Multi-layered shadow card */
+.hover-lift           /* Smooth lift on hover */
+.glass-premium        /* Glassmorphism effect */
+.neumorphism          /* Soft 3D effect */
+.gradient-text-sunset /* Gradient text effect */
+.border-glow          /* Animated border glow */
+```
 
 ## 🔧 Configuration
 
 ### Environment Variables
-Create a `.env.local` file:
+
+Create a `.env.local` file (see [.env.local.example](.env.local.example)):
 
 ```env
-# Add your environment variables here
+# Figma API Configuration (for design token sync)
+FIGMA_ACCESS_TOKEN=your_figma_personal_access_token
+FIGMA_FILE_KEY=your_figma_file_key
+
+# Google Gemini API (for chatbot)
+GEMINI_API_KEY=your_gemini_api_key
+
+# Other APIs (optional)
 # NEXT_PUBLIC_API_URL=your_api_url
 ```
+
+**Getting Figma Credentials**:
+1. **Access Token**: Visit [Figma Settings](https://www.figma.com/settings) → Security → Generate Personal Access Token
+2. **File Key**: Copy from Figma file URL: `https://www.figma.com/file/FILE_KEY/...`
+
+See [docs/FIGMA_QUICK_START.md](docs/FIGMA_QUICK_START.md) for detailed instructions.
 
 ### External Integrations
 
