@@ -58,7 +58,8 @@
       "Bash(while read file)",
       "Bash(do basename \"$file\")",
       "Bash(rm:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(chmod:*)"
     ],
     "deny": [],
     "ask": []
