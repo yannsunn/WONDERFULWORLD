@@ -3,7 +3,64 @@
 import { useEffect } from 'react';
 import { useReportWebVitals } from 'next/web-vitals';
 
+// Track AI referrers for LLMO analytics
+const AI_REFERRERS = [
+  'chat.openai.com',
+  'chatgpt.com',
+  'perplexity.ai',
+  'claude.ai',
+  'gemini.google.com',
+  'bard.google.com',
+  'copilot.microsoft.com',
+  'you.com',
+  'phind.com',
+  'poe.com',
+];
+
+function trackAIReferrer() {
+  if (typeof window === 'undefined') return;
+
+  const referrer = document.referrer;
+  const isAIReferrer = AI_REFERRERS.some(ai => referrer.includes(ai));
+
+  if (isAIReferrer) {
+    const aiSource = AI_REFERRERS.find(ai => referrer.includes(ai)) || 'unknown_ai';
+
+    // Track to Google Analytics
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((window as any).gtag) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (window as any).gtag('event', 'ai_referral', {
+        event_category: 'LLMO',
+        event_label: aiSource,
+        ai_source: aiSource,
+        page_path: window.location.pathname,
+        non_interaction: false,
+      });
+    }
+
+    // Store in sessionStorage for analytics
+    const aiVisits = JSON.parse(sessionStorage.getItem('ai-visits') || '[]');
+    aiVisits.push({
+      source: aiSource,
+      timestamp: new Date().toISOString(),
+      page: window.location.pathname,
+    });
+    sessionStorage.setItem('ai-visits', JSON.stringify(aiVisits));
+
+    // Log in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('🤖 AI Referral detected:', aiSource);
+    }
+  }
+}
+
 export function WebVitals() {
+  // Track AI referrers on mount
+  useEffect(() => {
+    trackAIReferrer();
+  }, []);
+
   useReportWebVitals((metric) => {
     // Log metrics to console in development
     if (process.env.NODE_ENV === 'development') {

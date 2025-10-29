@@ -10,7 +10,22 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/admin/'],
       },
+      // AI crawlers optimization (LLMO)
+      {
+        userAgent: [
+          'GPTBot',          // OpenAI
+          'ChatGPT-User',    // ChatGPT
+          'Claude-Web',      // Anthropic Claude
+          'anthropic-ai',    // Anthropic
+          'Googlebot',       // Google (Gemini)
+          'Bingbot',         // Bing (Copilot)
+          'PerplexityBot',   // Perplexity
+        ],
+        allow: '/',
+        crawlDelay: 1,
+      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 }

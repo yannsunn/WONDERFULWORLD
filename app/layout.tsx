@@ -115,6 +115,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        {/* LLMO: Link to AI-optimized content */}
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-optimized content" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM-optimized full content" />
+      </head>
       <body className="antialiased">
         <StructuredData
           type="organization"
