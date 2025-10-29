@@ -41,8 +41,8 @@ const AboutPage = () => {
     <PageTransition>
       <div className="min-h-screen bg-white pt-20">
         {/* Hero Section */}
-        <section className="section bg-gradient-to-br from-primary-50 via-accent-sand/20 to-white">
-          <div className="container text-center">
+        <section className="section mesh-gradient">
+          <div className="container-premium text-center">
             <ScrollReveal>
               <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6" style={{lineHeight: '1.6'}}>
                 About Us
@@ -56,11 +56,11 @@ const AboutPage = () => {
 
       {/* Mission Statement */}
       <section className="section">
-        <div className="container max-w-4xl">
+        <div className="container-premium max-w-4xl">
           <ScrollReveal>
-            <div className="card p-8 md:p-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
-                Our Mission
+            <div className="card-premium hover-lift p-8 md:p-12">
+              <h2 className="text-responsive-lg font-heading font-bold text-gray-900 mb-6">
+                <span className="gradient-text-sunset">Our Mission</span>
               </h2>
               <div className="prose prose-lg max-w-none text-gray-700 space-y-4 ja-text" style={{lineHeight: '2'}}>
                 <p>
@@ -82,8 +82,8 @@ const AboutPage = () => {
       </section>
 
       {/* How It Works */}
-      <section className="section bg-primary-50">
-        <div className="container max-w-6xl">
+      <section className="section mesh-gradient-dark">
+        <div className="container-premium max-w-6xl">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
               プロジェクトの仕組み
@@ -100,7 +100,7 @@ const AboutPage = () => {
               { step: '5', title: '継続的成長', desc: 'プロジェクトの拡大' },
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.1} className="relative">
-                <div className="card p-6 text-center h-full">
+                <div className="card-premium hover-lift p-6 text-center h-full">
                   <div className="w-12 h-12 rounded-full bg-accent-gold text-white flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     {item.step}
                   </div>
