@@ -89,7 +89,7 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
             </div>
           </motion.div>
 
-          {/* Map Placeholder */}
+          {/* Google Map Embed */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -97,16 +97,31 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
           >
-            <iframe
-              src={`https://www.google.com/maps?q=${encodeURIComponent(location.address)}&output=embed`}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="3BGYM Location"
-            />
+            {location.latitude && location.longitude ? (
+              // 座標がある場合は正確な埋め込み
+              <iframe
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2916.5!2d${location.longitude}!3d${location.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDU1JzA5LjUiTiAxNDPCsDEyJzE0LjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="3BGYM Location Map"
+              />
+            ) : (
+              // 座標がない場合は住所検索
+              <iframe
+                src={`https://www.google.com/maps?q=${encodeURIComponent(location.address)}&output=embed`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="3BGYM Location"
+              />
+            )}
           </motion.div>
         </div>
       </div>

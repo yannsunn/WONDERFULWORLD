@@ -18,6 +18,9 @@ export interface GymLocation {
   postalCode: string;
   address: string;
   mapUrl: string;
+  latitude?: number;
+  longitude?: number;
+  googleMapsPlaceId?: string;
 }
 
 export interface GymInfo {
@@ -122,7 +125,10 @@ export const gymInfo: GymInfo = {
       name: '本社（帯広）',
       postalCode: '080-0803',
       address: '北海道帯広市東3条南10丁目15-1',
-      mapUrl: 'https://maps.google.com/?q=北海道帯広市東3条南10丁目15-1'
+      mapUrl: 'https://www.google.com/maps/place/北海道帯広市東3条南10丁目15-1/@42.9193,143.2039,17z',
+      latitude: 42.9193,
+      longitude: 143.2039,
+      googleMapsPlaceId: 'ChIJXXXXXXXXXXXXXXXXXXXXXX' // 実際のPlace IDが必要な場合
     }
   },
 

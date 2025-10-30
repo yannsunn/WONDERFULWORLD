@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import GymHero from '@/components/business/GymHero';
 import GymFeatures from '@/components/business/GymFeatures';
 import GymPricing from '@/components/business/GymPricing';
@@ -18,9 +19,65 @@ export const metadata: Metadata = {
   },
 };
 
+// LocalBusiness 構造化データ
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HealthAndBeautyBusiness',
+  '@id': 'https://3bgym.net/#organization',
+  name: '3BGYM',
+  alternateName: '3B body build beauty',
+  description: '健康的な身体が美しさを作る！セミプライベートジムでダイエットと健康維持を総合的にサポートします。',
+  url: 'https://3bgym.net',
+  sameAs: [
+    'https://www.instagram.com/3bobihiro'
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '東3条南10丁目15-1',
+    addressLocality: '帯広市',
+    addressRegion: '北海道',
+    postalCode: '080-0803',
+    addressCountry: 'JP'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 42.9193,
+    longitude: 143.2039
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ],
+    opens: '09:00',
+    closes: '21:00'
+  },
+  priceRange: '¥6,600〜',
+  telephone: '',
+  email: '',
+  image: 'https://wonderfulworld.jp/images/about/company-logo.jpg',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Wonderful World 合同会社',
+    url: 'https://wonderfulworld.jp'
+  }
+};
+
 export default function GymPage() {
   return (
     <PageTransition>
+      {/* LocalBusiness 構造化データ */}
+      <Script
+        id="gym-local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       {/* Hero Section */}
       <GymHero
         name={gymInfo.name}
