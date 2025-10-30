@@ -99,9 +99,9 @@ export const gymInfo: GymInfo = {
       ]
     },
     entry: {
-      name: '入会費',
+      name: '事務手数料',
       price: 3300,
-      features: []
+      features: ['入会時のみ']
     },
     visitor: {
       name: 'ビジター',

@@ -134,7 +134,7 @@ export const companyInfo: CompanyInfo = {
       features: [
         'AIモデルの育成・運営',
         'ミスコンテストファイナリスト支援',
-        'Best of Miss Tokyo 2025',
+        'Best of Miss Tokyo 2026運営協力会社',
         'グローバル展開'
       ]
     },

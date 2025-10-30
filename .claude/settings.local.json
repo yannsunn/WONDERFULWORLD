@@ -66,7 +66,8 @@
       "Bash(else echo \".env file not found\")",
       "Bash(if [ -f \".env.production\" ])",
       "Bash(then cat .env.production)",
-      "Bash(else echo \".env.production not found\")"
+      "Bash(else echo \".env.production not found\")",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

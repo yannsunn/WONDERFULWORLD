@@ -20,10 +20,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'Instagram', href: 'https://instagram.com/wonderfulworld', icon: 'instagram' },
+    { name: 'Instagram WW', href: 'https://www.instagram.com/wonderful_world.2015', icon: 'instagram' },
+    { name: 'Instagram 3B', href: 'https://www.instagram.com/3bobihiro', icon: 'instagram' },
     { name: 'TikTok', href: 'https://tiktok.com/@wonderfulworld', icon: 'tiktok' },
     { name: 'X (Twitter)', href: 'https://x.com/wonderfulworld', icon: 'twitter' },
-    { name: 'YouTube', href: 'https://youtube.com/@wonderfulworld', icon: 'youtube' },
   ];
 
   const SocialIcon = ({ icon }: { icon: string }) => {
