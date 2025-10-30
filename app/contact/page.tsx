@@ -63,7 +63,7 @@ const ContactPage = () => {
           {/* Header */}
           <ScrollReveal>
             <div className="text-center mb-8 sm:mb-12">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6 px-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 sm:mb-6 px-4">
                 <span className="gradient-text-vibrant">Contact</span>
               </h1>
               <p className="text-base sm:text-lg text-gray-600 px-4">

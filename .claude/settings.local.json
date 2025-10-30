@@ -67,7 +67,9 @@
       "Bash(if [ -f \".env.production\" ])",
       "Bash(then cat .env.production)",
       "Bash(else echo \".env.production not found\")",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(nslookup:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []

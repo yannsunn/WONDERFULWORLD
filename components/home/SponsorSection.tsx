@@ -19,7 +19,7 @@ const SponsorSection = () => {
           >
             {/* Header */}
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-4">
                 Partner with Us
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">

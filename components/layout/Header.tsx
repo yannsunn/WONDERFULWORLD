@@ -53,7 +53,7 @@ const Header = () => {
                 sizes="56px"
               />
             </div>
-            <div className="text-xl md:text-2xl lg:text-3xl font-heading font-bold gradient-text transition-all duration-500 group-hover:scale-105 relative">
+            <div className="text-xl md:text-2xl lg:text-3xl font-playfair font-bold gradient-text transition-all duration-500 group-hover:scale-105 relative">
               WONDERFUL WORLD
               <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 group-hover:w-full transition-all duration-500"></div>
             </div>

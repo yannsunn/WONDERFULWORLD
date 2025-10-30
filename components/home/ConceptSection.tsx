@@ -45,7 +45,7 @@ const ConceptSection = () => {
           whileInView="visible"
           viewport={scrollViewport}
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-gray-900 mb-4">
             3つの柱
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

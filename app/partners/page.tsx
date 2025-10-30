@@ -74,7 +74,7 @@ const PartnersPage = () => {
         <section className="section mesh-gradient">
           <div className="container-premium text-center">
             <ScrollReveal>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 sm:mb-6 px-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 sm:mb-6 px-4">
                 <span className="gradient-text-luxury">Partner with Us</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
@@ -89,7 +89,7 @@ const PartnersPage = () => {
         <section className="section">
           <div className="container-premium">
             <ScrollReveal>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
                 協業のメリット
               </h2>
             </ScrollReveal>
@@ -117,7 +117,7 @@ const PartnersPage = () => {
         <section className="section mesh-gradient">
           <div className="container-narrow">
             <ScrollReveal>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
                 提供可能なコラボメニュー
               </h2>
             </ScrollReveal>
@@ -147,7 +147,7 @@ const PartnersPage = () => {
         <section className="section">
           <div className="container-narrow">
             <ScrollReveal>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
                 導入実績
               </h2>
             </ScrollReveal>
@@ -169,7 +169,7 @@ const PartnersPage = () => {
         <section className="section mesh-gradient">
           <div className="container-narrow text-center">
             <ScrollReveal>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-4 sm:mb-6 px-4">
                 お問い合わせ・ご相談
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed px-4">

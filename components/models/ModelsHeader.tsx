@@ -12,7 +12,7 @@ const ModelsHeader = () => {
       whileInView="visible"
       viewport={scrollViewport}
     >
-      <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+      <h1 className="text-5xl md:text-6xl font-playfair font-bold text-gray-900 mb-6">
         Our Models
       </h1>
       <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">

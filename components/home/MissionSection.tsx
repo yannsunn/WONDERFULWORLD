@@ -25,7 +25,7 @@ const MissionSection = () => {
                 </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900">
                 Empowering Women
               </h2>
 

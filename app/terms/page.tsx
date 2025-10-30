@@ -12,7 +12,7 @@ const TermsPage = () => {
       <div className="min-h-screen bg-gradient-to-b from-orange-50/30 via-white to-white pt-28">
         <div className="container max-w-4xl py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-6 sm:mb-8 px-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-6 sm:mb-8 px-4">
               利用規約
             </h1>
           </ScrollReveal>

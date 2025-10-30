@@ -163,7 +163,7 @@ const HeroSection = () => {
       <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           {/* Main Title - Ultra Enhanced */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-8 relative leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-playfair font-bold mb-8 relative leading-tight">
             <span className="block bg-gradient-to-r from-orange-400 via-orange-500 to-pink-400 bg-clip-text text-transparent animate-shimmer drop-shadow-2xl">
               WONDERFUL
             </span>

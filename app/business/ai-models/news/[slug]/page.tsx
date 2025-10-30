@@ -65,7 +65,7 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
                   </span>
                 </div>
 
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-gray-900 mb-4 sm:mb-6">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-playfair font-bold text-gray-900 mb-4 sm:mb-6">
                   {post.title}
                 </h1>
               </div>
@@ -91,7 +91,7 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
             <ScrollReveal delay={0.3}>
               <div
                 className="prose prose-sm sm:prose-base max-w-none
-                  prose-headings:font-heading prose-headings:font-bold prose-headings:text-gray-900
+                  prose-headings:font-playfair prose-headings:font-bold prose-headings:text-gray-900
                   prose-p:text-gray-700 prose-p:leading-relaxed
                   prose-a:text-accent-gold prose-a:no-underline hover:prose-a:underline
                   prose-strong:text-gray-900 prose-strong:font-bold

@@ -62,7 +62,7 @@ export function LoadingPage() {
         </div>
 
         {/* Text */}
-        <h2 className="text-3xl font-heading font-bold gradient-text mb-3 animate-shimmer">
+        <h2 className="text-3xl font-playfair font-bold gradient-text mb-3 animate-shimmer">
           WONDERFUL WORLD
         </h2>
         <p className="text-gray-600 animate-pulse">ページを読み込んでいます...</p>

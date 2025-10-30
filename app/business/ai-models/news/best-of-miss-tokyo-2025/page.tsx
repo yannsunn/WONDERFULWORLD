@@ -82,7 +82,7 @@ const BestOfMissTokyoPage = () => {
               NEW
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-6 leading-tight">
             Best of Miss Tokyo 2025<br />プラチナスポンサーとして参加
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
@@ -106,7 +106,7 @@ const BestOfMissTokyoPage = () => {
 
         {/* Article Content */}
         <div className="prose prose-sm sm:prose-base max-w-none mb-16">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-4">
             3大ミスコンテストが集結
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -115,7 +115,7 @@ const BestOfMissTokyoPage = () => {
             日本を代表する3つのミスコンテストのファイナリストたちが一堂に会する特別な機会となりました。
           </p>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4 mt-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-4 mt-12">
             プラチナスポンサーとして参加
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -127,7 +127,7 @@ const BestOfMissTokyoPage = () => {
             AIモデルインフルエンサーとしての活動機会や、様々なキャリアサポートを受けることができます。
           </p>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4 mt-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-4 mt-12">
             女性のエンパワーメントを支援
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -170,7 +170,7 @@ const BestOfMissTokyoPage = () => {
 
         {/* Photo Gallery */}
         <section className="mb-16">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-8 text-center">
             イベントフォトギャラリー
           </h2>
           <ImageGallery images={galleryImages} columns={3} />

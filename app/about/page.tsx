@@ -44,7 +44,7 @@ const AboutPage = () => {
         <section className="section mesh-gradient">
           <div className="container-premium text-center">
             <ScrollReveal>
-              <h1 className="text-5xl md:text-6xl font-heading font-bold text-gray-900 mb-6" style={{lineHeight: '1.6'}}>
+              <h1 className="text-5xl md:text-6xl font-playfair font-bold text-gray-900 mb-6" style={{lineHeight: '1.6'}}>
                 About Us
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto ja-text" style={{lineHeight: '1.9'}}>
@@ -59,7 +59,7 @@ const AboutPage = () => {
         <div className="container-premium max-w-4xl">
           <ScrollReveal>
             <div className="card-premium hover-lift p-8 md:p-12">
-              <h2 className="text-responsive-lg font-heading font-bold text-gray-900 mb-6">
+              <h2 className="text-responsive-lg font-playfair font-bold text-gray-900 mb-6">
                 <span className="gradient-text-sunset">Our Mission</span>
               </h2>
               <div className="prose prose-lg max-w-none text-gray-700 space-y-4 ja-text" style={{lineHeight: '2'}}>
@@ -85,7 +85,7 @@ const AboutPage = () => {
       <section className="section mesh-gradient-dark">
         <div className="container-premium max-w-6xl">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-12 text-center">
               プロジェクトの仕組み
             </h2>
           </ScrollReveal>
@@ -152,7 +152,7 @@ const AboutPage = () => {
       <section className="section">
         <div className="container max-w-4xl">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-8 text-center">
               AI技術について
             </h2>
           </ScrollReveal>
@@ -209,7 +209,7 @@ const AboutPage = () => {
       <section className="section bg-gradient-to-br from-accent-gold/10 to-primary-50">
         <div className="container max-w-4xl">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-8 text-center">
               女性のキャリア支援
             </h2>
           </ScrollReveal>
@@ -274,7 +274,7 @@ const AboutPage = () => {
       <section className="section">
         <div className="container max-w-6xl">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-12 text-center">
               運営チーム
             </h2>
           </ScrollReveal>
@@ -385,7 +385,7 @@ const AboutPage = () => {
       <section className="section bg-primary-50">
         <div className="container max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8 sm:mb-10 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-8 sm:mb-10 text-center">
               よくあるご質問
             </h2>
             <p className="text-sm sm:text-base text-gray-600 text-center mb-8">FAQ</p>
@@ -412,7 +412,7 @@ const AboutPage = () => {
       <section className="section">
         <div className="container text-center">
           <ScrollReveal>
-            <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-6">
               私たちと一緒に、新しい世界を創りませんか？
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

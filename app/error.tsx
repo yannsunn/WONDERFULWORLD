@@ -34,7 +34,7 @@ export default function Error({
               />
             </svg>
           </div>
-          <h1 className="text-3xl font-heading font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-playfair font-bold text-gray-900 mb-4">
             エラーが発生しました
           </h1>
           <p className="text-gray-600 mb-8">

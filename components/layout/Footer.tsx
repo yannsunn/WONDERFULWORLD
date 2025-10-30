@@ -74,7 +74,7 @@ const Footer = () => {
                   sizes="56px"
                 />
               </div>
-              <h3 className="text-2xl font-heading font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-playfair font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent">
                 WONDERFUL WORLD
               </h3>
             </Link>
