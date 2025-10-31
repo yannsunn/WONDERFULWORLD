@@ -12,7 +12,11 @@ export default function Error({
 }) {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error('Error:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error:', error);
+    }
+    // TODO: 本番環境ではSentry、Datadog、LogRocketなどのエラー監視サービスに送信
+    // Example: reportErrorToService(error);
   }, [error]);
 
   return (

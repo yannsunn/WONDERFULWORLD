@@ -62,7 +62,7 @@ export function WebVitals() {
   }, []);
 
   useReportWebVitals((metric) => {
-    // Log metrics to console in development
+    // Log metrics to console in development only
     if (process.env.NODE_ENV === 'development') {
       console.log({
         name: metric.name,
@@ -73,7 +73,7 @@ export function WebVitals() {
       });
     }
 
-    // Log for now - can be extended to send to analytics service
+    // Store metrics for analysis
     if (typeof window !== 'undefined') {
       // Store metrics in sessionStorage for debugging
       const metrics = JSON.parse(sessionStorage.getItem('web-vitals') || '[]');
@@ -85,13 +85,24 @@ export function WebVitals() {
       });
       sessionStorage.setItem('web-vitals', JSON.stringify(metrics));
 
-      // Create a visual indicator for poor metrics
-      if (metric.rating === 'poor') {
-        console.warn(`⚠️ Poor ${metric.name}: ${Math.round(metric.value)}`);
-      } else if (metric.rating === 'needs-improvement') {
-        console.log(`⚡ ${metric.name} needs improvement: ${Math.round(metric.value)}`);
-      } else {
-        console.log(`✅ Good ${metric.name}: ${Math.round(metric.value)}`);
+      // Development-only console warnings for poor metrics
+      if (process.env.NODE_ENV === 'development') {
+        if (metric.rating === 'poor') {
+          console.warn(`⚠️ Poor ${metric.name}: ${Math.round(metric.value)}`);
+        } else if (metric.rating === 'needs-improvement') {
+          console.log(`⚡ ${metric.name} needs improvement: ${Math.round(metric.value)}`);
+        } else {
+          console.log(`✅ Good ${metric.name}: ${Math.round(metric.value)}`);
+        }
+      }
+
+      // Production: Send poor metrics to error reporting service
+      if (process.env.NODE_ENV === 'production' && metric.rating === 'poor') {
+        // TODO: 本番環境でのパフォーマンス問題を監視サービスに送信
+        // Example integrations:
+        // - Sentry.captureMessage(`Poor Web Vital: ${metric.name}`, { level: 'warning', extra: metric });
+        // - Datadog RUM: window.DD_RUM?.addError(new Error(`Poor ${metric.name}`), { metric });
+        // - LogRocket.captureMessage(`Poor ${metric.name}`, { extra: metric });
       }
     }
 

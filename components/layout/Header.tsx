@@ -70,9 +70,12 @@ const Header = () => {
                   <button
                     className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-300 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 flex items-center gap-2 relative group/nav"
                     onMouseEnter={() => setIsBusinessDropdownOpen(true)}
+                    aria-expanded={isBusinessDropdownOpen}
+                    aria-haspopup="true"
+                    aria-label="事業案内メニュー"
                   >
                     {item.name}
-                    <svg className="w-5 h-5 transition-transform duration-300 group-hover/nav:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 transition-transform duration-300 group-hover/nav:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                     <div className="absolute -bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 origin-left"></div>
@@ -82,6 +85,8 @@ const Header = () => {
                       className="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200 py-3 overflow-hidden"
                       onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                       onMouseLeave={() => setIsBusinessDropdownOpen(false)}
+                      role="menu"
+                      aria-label="事業案内サブメニュー"
                     >
                       {item.dropdown.map((subItem) => (
                         <Link
@@ -149,6 +154,9 @@ const Header = () => {
                   <button
                     className="w-full text-left px-5 py-4 text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors flex items-center justify-between"
                     onClick={() => setIsBusinessDropdownOpen(!isBusinessDropdownOpen)}
+                    aria-expanded={isBusinessDropdownOpen}
+                    aria-haspopup="true"
+                    aria-label="事業案内メニュー"
                   >
                     {item.name}
                     <svg
@@ -156,12 +164,13 @@ const Header = () => {
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   {isBusinessDropdownOpen && (
-                    <div className="px-3 pb-3 space-y-1 bg-white/60 backdrop-blur-sm">
+                    <div className="px-3 pb-3 space-y-1 bg-white/60 backdrop-blur-sm" role="menu" aria-label="事業案内サブメニュー">
                       {item.dropdown.map((subItem) => (
                         <Link
                           key={subItem.name}

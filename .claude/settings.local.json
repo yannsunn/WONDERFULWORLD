@@ -69,7 +69,8 @@
       "Bash(else echo \".env.production not found\")",
       "Bash(curl:*)",
       "Bash(nslookup:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []
