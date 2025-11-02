@@ -5,6 +5,8 @@
  * for AI/LLM understanding and citation.
  */
 
+import { companyInfo } from '@/data/company-info';
+
 export interface LLMOSchemaConfig {
   includeDetailed?: boolean;
   includeServices?: boolean;
@@ -38,8 +40,8 @@ export function generateOrganizationSchema(config: LLMOSchemaConfig = {}) {
     founders: [
       {
         '@type': 'Person',
-        name: '佐藤正樹',
-        jobTitle: '代表',
+        name: companyInfo.representative,
+        jobTitle: '代表社員',
       },
     ],
     address: {

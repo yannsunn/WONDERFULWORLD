@@ -27,10 +27,8 @@ function trackAIReferrer() {
     const aiSource = AI_REFERRERS.find(ai => referrer.includes(ai)) || 'unknown_ai';
 
     // Track to Google Analytics
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    if ((window as any).gtag) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).gtag('event', 'ai_referral', {
+    if (window.gtag) {
+      window.gtag('event', 'ai_referral', {
         event_category: 'LLMO',
         event_label: aiSource,
         ai_source: aiSource,
@@ -107,10 +105,8 @@ export function WebVitals() {
     }
 
     // Send to analytics service (Google Analytics example)
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).gtag('event', metric.name, {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', metric.name, {
         value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
         event_category: 'Web Vitals',
         event_label: metric.id,
@@ -126,8 +122,14 @@ export function WebVitals() {
         const metrics = JSON.parse(sessionStorage.getItem('web-vitals') || '[]');
         if (metrics.length === 0) return;
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const latest = metrics.reduce((acc: any, curr: any) => {
+        interface MetricRecord {
+          name: string;
+          value: number;
+          rating: string;
+          timestamp: string;
+        }
+
+        const latest = metrics.reduce((acc: Record<string, MetricRecord>, curr: MetricRecord) => {
           acc[curr.name] = curr;
           return acc;
         }, {});

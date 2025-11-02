@@ -7,9 +7,9 @@ const Footer = () => {
   const footerLinks = {
     main: [
       { name: 'ホーム', href: '/' },
-      { name: 'モデル', href: '/models' },
-      { name: 'プロジェクト', href: '/about' },
-      { name: 'ニュース', href: '/news' },
+      { name: 'モデル', href: '/business/ai-models/models' },
+      { name: '会社情報', href: '/about' },
+      { name: 'ニュース', href: '/business/ai-models/news' },
       { name: 'パートナー', href: '/partners' },
       { name: 'お問い合わせ', href: '/contact' },
     ],

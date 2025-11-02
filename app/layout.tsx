@@ -34,7 +34,8 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
-  preload: false, // Only preload main font
+  preload: true, // Preload heading font for better LCP
+  weight: ['400', '700'], // Only load required weights
   adjustFontFallback: true,
   fallback: ["Georgia", "Times New Roman", "serif"],
 });

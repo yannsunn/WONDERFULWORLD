@@ -33,11 +33,22 @@ const ContactPage = () => {
     }
 
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
     try {
-      // In production, this would send to your API endpoint
-      // For now, simulate submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || '送信に失敗しました');
+      }
 
       // Form submission successful
       setSubmitStatus('success');
@@ -48,8 +59,8 @@ const ContactPage = () => {
         message: '',
         agree: false,
       });
-    } catch {
-      // Handle error gracefully
+    } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
