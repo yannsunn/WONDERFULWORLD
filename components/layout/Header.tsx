@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface DropdownItem {
   name: string;
@@ -19,6 +19,19 @@ interface NavigationItem {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false);
+
+  // Close mobile menu on window resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) { // lg breakpoint
+        setIsMenuOpen(false);
+        setIsBusinessDropdownOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const navigation: NavigationItem[] = [
     { name: 'ホーム', href: '/' },

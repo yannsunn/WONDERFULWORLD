@@ -90,6 +90,7 @@ body {
 }
 
 /* Custom scrollbar - Premium style */
+/* Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -107,6 +108,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #ea580c, #db2777);
   box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f97316 #fff5f0;
 }
 
 /* Smooth scroll */

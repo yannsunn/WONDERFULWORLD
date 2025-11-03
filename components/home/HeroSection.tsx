@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -26,8 +26,8 @@ const SLIDES = [
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const touchStartRef = useRef(0);
+  const touchEndRef = useRef(0);
 
   // 次のスライドへ
   const nextSlide = useCallback(() => {
@@ -47,17 +47,17 @@ const HeroSection = () => {
 
   // Touch handlers for swipe gestures
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
+    touchStartRef.current = e.targetTouches[0].clientX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    touchEndRef.current = e.targetTouches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (!touchStartRef.current || !touchEndRef.current) return;
 
-    const distance = touchStart - touchEnd;
+    const distance = touchStartRef.current - touchEndRef.current;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
 
@@ -102,6 +102,7 @@ const HeroSection = () => {
               className="object-cover scale-105 animate-slow-zoom"
               priority={index === 0}
               sizes="100vw"
+              quality={90}
             />
           </div>
         ))}

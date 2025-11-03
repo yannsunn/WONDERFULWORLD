@@ -93,16 +93,28 @@ export default function ChatbotHybrid() {
             content: msg.content
           }));
 
-        const response = await fetch('/api/chat-hybrid', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            message: messageText,
-            conversationHistory
-          })
-        });
+        // AbortController for timeout handling
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15秒タイムアウト
 
-        const data = await response.json();
+        try {
+          const response = await fetch('/api/chat-hybrid', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: messageText,
+              conversationHistory
+            }),
+            signal: controller.signal,
+          });
+
+          clearTimeout(timeoutId);
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
 
         if (data.error) {
           // APIエラー時はデフォルトFAQ応答を使用
@@ -128,6 +140,23 @@ export default function ChatbotHybrid() {
             source: 'gemini'
           };
           setMessages(prev => [...prev, assistantMessage]);
+        }
+        } catch (fetchError) {
+          clearTimeout(timeoutId);
+
+          if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+            // タイムアウトエラー
+            const timeoutMessage: Message = {
+              role: 'assistant',
+              content: '申し訳ございません。応答時間が長くなっております。\n\nもう一度お試しいただくか、「お問い合わせ」ページからご連絡ください。💁‍♀️',
+              timestamp: new Date(),
+              suggestions: ['もう一度質問する', 'お問い合わせ方法は？'],
+              source: 'faq'
+            };
+            setMessages(prev => [...prev, timeoutMessage]);
+          } else {
+            throw fetchError; // 他のエラーは外側のcatchで処理
+          }
         }
         setIsTyping(false);
       }
