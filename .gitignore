@@ -29,6 +29,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env*
 .env*.local
 .env
 
@@ -39,4 +40,19 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# test files and screenshots
+test-*.png
+test-*.js
+verify-*.png
+local-*.png
+*.test.png
+/screenshots/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+*.swp
+*.swo
