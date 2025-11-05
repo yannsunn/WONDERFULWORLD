@@ -49,7 +49,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl shadow-2xl border-b-2 border-gradient-to-r from-orange-200/50 via-pink-200/50 to-orange-200/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl border-b-2 border-gradient-to-r from-orange-200/50 via-pink-200/50 to-orange-200/50">
       {/* Gradient accent line */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-pink-500 to-orange-500 opacity-80"></div>
 
@@ -159,7 +159,7 @@ const Header = () => {
 
         {/* Mobile menu - Enhanced with backdrop */}
         <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
-          <div className="fixed inset-0 top-20 bg-white z-40 shadow-2xl border-t border-gray-100 overflow-y-auto">
+          <div className="fixed left-0 right-0 top-20 bottom-0 bg-white z-[60] shadow-2xl border-t border-gray-100 overflow-y-auto">
             <div className="space-y-2 py-4 px-4">
             {navigation.map((item) => (
               item.dropdown ? (
