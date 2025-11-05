@@ -49,6 +49,9 @@ export default function CEOMessageSection({ name, title, message, photo, fullMes
                   alt={`${name} - ${title}`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
+                  quality={90}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
