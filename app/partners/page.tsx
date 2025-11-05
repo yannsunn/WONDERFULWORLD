@@ -51,19 +51,19 @@ const PartnersPage = () => {
   const menus = [
     {
       title: 'SNSタイアップ投稿',
-      description: 'AIモデルが貴社商品を紹介する投稿を作成・拡散。静止画・短尺動画対応。',
+      description: '静止画・短尺動画で商品をPR',
     },
     {
       title: 'モデル起用広告',
-      description: 'Web広告や店頭ポスターにAIモデルのビジュアルを使用。高解像度素材を提供。',
+      description: 'Web・店頭用ビジュアル素材提供',
     },
     {
       title: 'イベント出演',
-      description: '展示会やオンラインイベントでAIモデルがバーチャル出演。CG合成によりリアルタイム参加も可能。',
+      description: 'バーチャル・リアルタイム出演',
     },
     {
       title: 'オリジナルAIモデル開発',
-      description: '貴社専用のAIキャラクターを弊社技術で制作（要相談）。長期ブランドアンバサダーとして活用。',
+      description: '貴社専用AIキャラクター制作',
     },
   ];
 
@@ -139,28 +139,6 @@ const PartnersPage = () => {
               <p className="text-center text-sm sm:text-base text-gray-600 mt-6 sm:mt-8 px-4">
                 ※上記以外の施策もご要望に応じ企画いたします。お気軽にご相談ください。
               </p>
-            </ScrollReveal>
-          </div>
-        </section>
-
-        {/* Case Studies Placeholder */}
-        <section className="section">
-          <div className="container-narrow">
-            <ScrollReveal>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-gray-900 mb-8 sm:mb-12 text-center px-4">
-                導入実績
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <div className="card-premium p-4 sm:p-6 md:p-8 lg:p-12 text-center">
-            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 px-4">
-              現在、複数の企業様とタイアップの協議を進めております。<br />
-              実績が公開可能になり次第、こちらに掲載いたします。
-            </p>
-            <p className="text-xs sm:text-sm text-gray-500 px-4">
-              ※守秘義務により詳細は非公開
-            </p>
-              </div>
             </ScrollReveal>
           </div>
         </section>

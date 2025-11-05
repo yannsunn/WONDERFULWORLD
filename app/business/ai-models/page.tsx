@@ -179,51 +179,30 @@ export default function AIModelsBusinessPage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Models CTA Section */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4 sm:mb-6">
-              活躍するAIモデルたち
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-              ミスコンテストファイナリストから生まれた、個性豊かなAIモデルをご紹介
-            </p>
-            <Link
-              href="/business/ai-models/models"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold rounded-full hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-            >
-              モデル一覧を見る
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* News CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-50 to-pink-50">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4 sm:mb-6">
-              最新ニュース
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-              AIモデルの活動情報やプロジェクトの最新情報をお届けします
-            </p>
-            <Link
-              href="/business/ai-models/news"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl"
-            >
-              ニュース一覧を見る
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+          {/* Inline Navigation Links */}
+          <ScrollReveal delay={0.3}>
+            <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base">
+              <Link
+                href="/business/ai-models/models"
+                className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700 font-semibold transition-colors"
+              >
+                モデル一覧
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+              <span className="text-gray-300">|</span>
+              <Link
+                href="/business/ai-models/news"
+                className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700 font-semibold transition-colors"
+              >
+                最新ニュース
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

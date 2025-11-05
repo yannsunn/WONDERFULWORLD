@@ -13,27 +13,27 @@ const AboutPage = () => {
   const faqs = [
     {
       question: 'AIモデルインフルエンサーとは何ですか？',
-      answer: 'ミスコンテストファイナリストとAI技術を融合した、新しいタイプのインフルエンサーです。実在のミスコンテストファイナリストの経験と知識をベースに、AI技術でコンテンツ制作を効率化し、グローバルに活動できる持続可能なキャリアモデルを実現しています。',
+      answer: 'ミスコンテストファイナリストとAI技術を融合した新しいインフルエンサーです。グローバルに活動できる持続可能なキャリアモデルを実現します。',
     },
     {
       question: 'どのようなサービスを提供していますか？',
-      answer: 'SNSマーケティング、広告・PR活動、コンテンツ制作など、多様なインフルエンサーマーケティングサービスを提供しています。企業様とのブランドコラボレーション、イベント共催、キャンペーン展開など、様々な形でのパートナーシップが可能です。',
+      answer: 'SNSマーケティング、広告・PR活動、コンテンツ制作など、多様なサービスを提供しています。',
     },
     {
       question: 'ミスコンテスト出場者の支援について教えてください',
-      answer: '私たちは、ミスコンテスト出場者に新たな活躍の場を提供しています。AIモデルインフルエンサーとして、継続的な収入とキャリア形成の機会を創出し、経済的自立を後押しします。定期的なコミュニケーションを大切にし、共に成長していくことを目指しています。',
+      answer: 'AIモデルインフルエンサーとして、継続的な収入とキャリア形成の機会を提供し、経済的自立を後押しします。',
     },
     {
       question: '本人とAIモデルの関係性はどうなっていますか？',
-      answer: 'AIモデルは実在のミスコンテストファイナリストをベースにしており、本人とは定期的にコミュニケーションを取りながらプロジェクトを進めています。本人の個性や魅力を活かしつつ、AI技術により活動の幅を広げることができます。',
+      answer: '本人とは定期的にコミュニケーションを取りながら、個性や魅力を活かしてプロジェクトを進めています。',
     },
     {
       question: '企業とのコラボレーションは可能ですか？',
-      answer: 'はい、大歓迎です！商品・サービスのプロモーション、イベント共催、SNSキャンペーン、ブランドアンバサダーなど、多様な形でのコラボレーションが可能です。詳しくは「パートナー」ページまたは「お問い合わせ」からご相談ください。',
+      answer: 'はい、大歓迎です！詳しくは「パートナー」ページまたは「お問い合わせ」からご相談ください。',
     },
     {
       question: 'プロジェクトの社会的意義は何ですか？',
-      answer: 'このプロジェクトは、女性のエンパワーメントと社会的支援を実現するイノベーションプロジェクトです。ミスコンテスト出場者の大会後のキャリア構築という社会課題に対し、AI技術を活用した新しいソリューションを提供しています。',
+      answer: 'ミスコンテスト出場者の大会後のキャリア構築という社会課題に対し、AI技術で新しいソリューションを提供しています。',
     },
   ];
 
@@ -117,34 +117,6 @@ const AboutPage = () => {
               </ScrollReveal>
             ))}
           </div>
-
-          {/* Description */}
-          <ScrollReveal delay={0.3}>
-            <div className="card p-8">
-              <div className="prose max-w-none text-gray-700 space-y-4">
-                <p>
-                  <strong className="text-accent-gold">1. モデル選出：</strong>
-                  ミスコンテストで活躍した女性と提携し、新たなキャリアの場を提供します。
-                </p>
-                <p>
-                  <strong className="text-accent-gold">2. AIモデル制作：</strong>
-                  最先端のAI技術を活用して、魅力的なビジュアルコンテンツを制作します。
-                </p>
-                <p>
-                  <strong className="text-accent-gold">3. コンテンツ発信：</strong>
-                  Instagram、TikTok等のSNSで定期的にコンテンツを発信し、ファンとのつながりを築きます。
-                </p>
-                <p>
-                  <strong className="text-accent-gold">4. ブランド協業：</strong>
-                  企業様とのタイアップ、キャンペーン、イベント協賛など、多様なパートナーシップを展開します。
-                </p>
-                <p>
-                  <strong className="text-accent-gold">5. 継続的成長：</strong>
-                  プロジェクトを拡大し、より多くの女性に活躍の機会を提供していきます。
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
@@ -160,45 +132,29 @@ const AboutPage = () => {
             <div className="card p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
               <p>
-                私たちは最先端のAI技術を活用し、ミスコンテストファイナリストをベースにした魅力的で親しみやすいAIモデルを制作しています。
-                実在の人物の美しさと個性を尊重しながら、AI技術により表情豊かでリアルなビジュアルコンテンツを作り出します。
+                最先端のAI技術でミスコンテストファイナリストをベースにした魅力的なAIモデルを制作しています。
               </p>
-              <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">AIモデルインフルエンサーの特徴</h3>
+              <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">AIモデルの特徴</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>高品質な<wbr />ビジュアル：</strong>美しく<wbr />自然な<wbr />ビジュアル<wbr />コンテンツを<wbr />提供します。実在の<wbr />ミスコンテスト<wbr />ファイナリストの<wbr />美しさを<wbr />活かした<wbr />表現が<wbr />可能です。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>高品質なビジュアル：</strong>実在のミスコンテストファイナリストの美しさを活かした自然なコンテンツを提供します。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>多様な<wbr />表現力：</strong>様々な<wbr />シーンや<wbr />テーマに<wbr />対応した<wbr />柔軟な<wbr />コンテンツ制作が<wbr />可能です。ファッション、<wbr />ビューティー、<wbr />ライフスタイルなど<wbr />幅広い分野で<wbr />活躍できます。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>多様な表現力：</strong>ファッション、ビューティー、ライフスタイルなど幅広い分野で柔軟なコンテンツ制作が可能です。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>24/7<wbr />グローバル活動：</strong>時間や<wbr />場所の<wbr />制約を<wbr />超えて、<wbr />グローバルに<wbr />活動できます。多言語対応により、<wbr />世界中の<wbr />ファンと<wbr />コミュニケーションが<wbr />可能です。</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>ブランド<wbr />コラボ対応：</strong>企業様の<wbr />ご要望に<wbr />応じた<wbr />カスタマイズが<wbr />可能です。ブランド<wbr />イメージに<wbr />合わせた<wbr />コンテンツ制作を<wbr />サポートします。</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>持続可能な<wbr />キャリア：</strong>従来の<wbr />モデル活動の<wbr />制約を<wbr />超え、<wbr />長期的に<wbr />持続可能な<wbr />キャリア<wbr />モデルを<wbr />実現します。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>グローバル活動：</strong>時間や場所の制約を超えて、世界中で活動できます。</span>
                 </li>
               </ul>
-              <p className="mt-6 text-sm text-gray-600 italic">
-                ※ 私たちは最新のAI技術を活用しつつ、倫理的配慮と透明性を大切にしています。
-              </p>
             </div>
             </div>
           </ScrollReveal>
@@ -217,9 +173,7 @@ const AboutPage = () => {
             <div className="card p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
               <p>
-                WONDERFUL WORLDは単なるエンタメビジネスではなく、女性のエンパワーメントと社会的支援を実現するイノベーションプロジェクトです。
-                ミスコンテスト出場者は、大会後のキャリア構築が課題となることが少なくありません。
-                私たちは、そうした女性たちにAIを用いた新たな活躍の場を提供し、継続的な収入とキャリア形成の機会を創出します。
+                ミスコンテスト出場者の大会後のキャリア構築をAI技術で支援し、継続的な収入とキャリア形成の機会を創出します。
               </p>
 
               <h3 className="text-xl font-bold text-gray-900 mt-6 mb-4">支援の内容</h3>
@@ -228,42 +182,28 @@ const AboutPage = () => {
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>新しいキャリアパスの提供：</strong>ミスコンテスト後の活躍の場として、AIモデルインフルエンサーという新しいキャリアの可能性を提供します。</span>
+                  <span><strong>新しいキャリアパス：</strong>AIモデルインフルエンサーという新しい活躍の場を提供します。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>経済的支援：</strong>プロジェクトから得られる収益を通じて、継続的な収入とキャリア形成の機会を創出し、経済的自立を後押しします。</span>
+                  <span><strong>経済的支援：</strong>継続的な収入で経済的自立を後押しします。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span><strong>パートナーシップ：</strong>本人とは定期的にコミュニケーションを取り、アイデア出しやインスピレーション源として協力いただきながら、共に成長していくことを目指しています。</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span><strong>グローバル展開：</strong>AIモデルの特性を活かし、時間や場所の制約を超えたグローバルな活動を支援します。</span>
+                  <span><strong>パートナーシップ：</strong>本人と定期的にコミュニケーションを取り、共に成長することを目指しています。</span>
                 </li>
               </ul>
 
               <div className="bg-primary-50 border-l-4 border-accent-gold p-6 my-6">
                 <p className="font-bold text-gray-900 mb-3">プロジェクトビジョン</p>
-                <p className="text-gray-700 mb-3">
+                <p className="text-gray-700">
                   AI技術と美の力で女性たちの可能性を広げ、「誰もが主役になれる素晴らしい世界」を創造します。
                 </p>
-                <p className="text-gray-700">
-                  ミスコンテスト出場という経験を、一時的なものではなく、長期的なキャリアとして活かせる仕組みを作り、
-                  より多くの女性に活躍の機会を提供していきます。
-                </p>
               </div>
-              <p>
-                今後も支援対象を拡大し、より多くの女性の夢を応援していきます。
-                企業様とのコラボレーションを通じて、さらに多様な活躍の場を創出してまいります。
-              </p>
             </div>
             </div>
           </ScrollReveal>
