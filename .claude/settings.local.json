@@ -75,7 +75,11 @@
       "Bash(codex:*)",
       "Bash(nul)",
       "Bash(del \"pages\\api\\chat-hybrid.js\")",
-      "Bash(copy \"C:\\Users\\march\\Downloads\\1A17AA96-BD9E-4C88-B722-26310522AB83.jpg\" \"c:\\Users\\march\\Projects\\websites\\WONDERFULWORLD\\public\\images\\about\\representative-new.jpg\")"
+      "Bash(copy \"C:\\Users\\march\\Downloads\\1A17AA96-BD9E-4C88-B722-26310522AB83.jpg\" \"c:\\Users\\march\\Projects\\websites\\WONDERFULWORLD\\public\\images\\about\\representative-new.jpg\")",
+      "Bash(git check-ignore:*)",
+      "Bash(git rm:*)",
+      "Bash(if [ -f .env.local ])",
+      "Bash(then echo \"WARNING: .env.local contains real tokens and should be removed!\")"
     ],
     "deny": [],
     "ask": []
