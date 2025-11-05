@@ -159,8 +159,8 @@ const Header = () => {
 
         {/* Mobile menu - Enhanced with backdrop */}
         <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
-          <div className="absolute left-0 right-0 top-20 bg-white/98 backdrop-blur-lg shadow-2xl border-t border-gray-100 pb-6 px-4">
-            <div className="space-y-2 py-4">
+          <div className="fixed inset-0 top-20 bg-white z-40 shadow-2xl border-t border-gray-100 overflow-y-auto">
+            <div className="space-y-2 py-4 px-4">
             {navigation.map((item) => (
               item.dropdown ? (
                 <div key={item.name} className="bg-gradient-to-r from-orange-50/50 to-pink-50/50 rounded-xl overflow-hidden">
