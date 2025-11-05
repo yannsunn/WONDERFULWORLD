@@ -271,7 +271,7 @@ const AboutPage = () => {
       </section>
 
       {/* Representative & Company */}
-      <section className="section">
+      <section className="section" id="ceo-message">
         <div className="container max-w-6xl">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-12 text-center">

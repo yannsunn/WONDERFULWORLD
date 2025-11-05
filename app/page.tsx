@@ -13,7 +13,6 @@ const PhilosophySection = dynamic(() => import('@/components/company/PhilosophyS
 
 const BusinessCards = dynamic(() => import('@/components/company/BusinessCards'));
 const CEOMessageSection = dynamic(() => import('@/components/company/CEOMessageSection'));
-const CompanyInfoSection = dynamic(() => import('@/components/company/CompanyInfoSection'));
 
 export default function Home() {
   return (
@@ -25,7 +24,7 @@ export default function Home() {
         message={companyInfo.message}
         ctaButtons={{
           primary: { text: '事業案内を見る', href: '#business' },
-          secondary: { text: '会社情報', href: '#company' }
+          secondary: { text: '会社情報', href: '/about' }
         }}
       />
 
@@ -49,16 +48,6 @@ export default function Home() {
         photo={ceoMessage.photo}
         fullMessageUrl="/about#ceo-message"
       />
-
-      {/* 会社情報 */}
-      <div id="company">
-        <CompanyInfoSection
-          name={companyInfo.name}
-          established={companyInfo.established}
-          representative={companyInfo.representative}
-          offices={companyInfo.offices}
-        />
-      </div>
     </>
   );
 }
