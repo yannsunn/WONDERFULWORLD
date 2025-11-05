@@ -43,21 +43,22 @@ html {
   p, li, td, th, div, span {
     word-wrap: break-word;
     overflow-wrap: break-word;
-    word-break: keep-all; /* Keep words together */
-    line-break: strict;
+    word-break: normal; /* Allow natural line breaks */
+    line-break: auto;
   }
 
   /* Prevent awkward line breaks in Japanese */
   .ja-text {
-    word-break: keep-all;
+    word-break: normal;
     overflow-wrap: anywhere;
-    line-height: 1.8;
+    line-height: 1.9;
   }
 
   /* Better line height for Japanese headings */
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.5;
-    word-break: keep-all;
+    line-height: 1.6;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 }
 
