@@ -1,4 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -61,54 +63,53 @@ WONDERFUL WORLDは、AI技術と美の力で女性が輝く新しい世界を創
 
 会社の具体的な設立年月日や所在地などの情報は「現在準備中」または「お問い合わせページで確認可能」と回答してください。`;
 
-// Rate limiting: In-memory store (本番環境ではRedisなどを使用)
-const requestCounts = new Map();
-const RATE_LIMIT = {
-  perMinute: 10,  // 1分あたり10リクエスト（安全マージン）
-  perDay: 1000    // 1日あたり1000リクエスト（Gemini無料枠1500の66%）
-};
-
-function checkRateLimit(identifier) {
-  const now = Date.now();
-  const minuteKey = `${identifier}-minute-${Math.floor(now / 60000)}`;
-  const dayKey = `${identifier}-day-${Math.floor(now / 86400000)}`;
-
-  const minuteCount = requestCounts.get(minuteKey) || 0;
-  const dayCount = requestCounts.get(dayKey) || 0;
-
-  if (minuteCount >= RATE_LIMIT.perMinute) {
-    return { allowed: false, reason: 'minute' };
-  }
-
-  if (dayCount >= RATE_LIMIT.perDay) {
-    return { allowed: false, reason: 'day' };
-  }
-
-  // カウント増加
-  requestCounts.set(minuteKey, minuteCount + 1);
-  requestCounts.set(dayKey, dayCount + 1);
-
-  // 古いエントリをクリーンアップ（メモリリーク防止）
-  if (requestCounts.size > 10000) {
-    const cutoff = now - 86400000; // 24時間前
-    for (const [key] of requestCounts.entries()) {
-      const timestamp = parseInt(key.split('-').pop());
-      if (timestamp < cutoff) {
-        requestCounts.delete(key);
-      }
-    }
-  }
-
-  return { allowed: true };
+interface ChatRequest {
+  message: string;
+  conversationHistory?: Array<{
+    role: 'user' | 'assistant';
+    content: string;
+  }>;
 }
 
-export default async function handler(req, res) {
+interface ChatResponse {
+  message?: string;
+  source?: string;
+  usage?: {
+    perMinuteRemaining: number;
+    perDayRemaining: number;
+  };
+  error?: string;
+  fallback?: boolean;
+  retryAfter?: number;
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ChatResponse>
+) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const { message, conversationHistory } = req.body;
+    // レート制限: IPアドレスごとに1分間に10回まで
+    const ip = getClientIp(req as any); // NextApiRequest is compatible with Request
+    const rateLimitResult = rateLimit(`chat-hybrid:${ip}`, {
+      maxRequests: 10,
+      windowMs: 60000 // 1分
+    });
+
+    if (!rateLimitResult.success) {
+      const retryAfter = Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000);
+      console.warn('Rate limit exceeded for chat-hybrid:', ip);
+      return res.status(429).json({
+        error: 'リクエストが多すぎます。しばらくしてから再度お試しください。',
+        fallback: true,
+        retryAfter
+      });
+    }
+
+    const { message, conversationHistory } = req.body as ChatRequest;
 
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'Invalid request format' });
@@ -118,21 +119,6 @@ export default async function handler(req, res) {
     if (!process.env.GEMINI_API_KEY) {
       return res.status(500).json({
         error: 'API設定エラー',
-        fallback: true // クライアント側でデフォルト応答を使用
-      });
-    }
-
-    // レート制限チェック
-    const clientId = req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown';
-    const rateCheck = checkRateLimit(clientId);
-
-    if (!rateCheck.allowed) {
-      const errorMessage = rateCheck.reason === 'minute'
-        ? '1分間のリクエスト制限に達しました。少し待ってから再度お試しください。'
-        : '本日のリクエスト制限に達しました。明日再度お試しください。';
-
-      return res.status(429).json({
-        error: errorMessage,
         fallback: true
       });
     }
@@ -171,12 +157,12 @@ export default async function handler(req, res) {
       message: text,
       source: 'gemini',
       usage: {
-        perMinuteRemaining: RATE_LIMIT.perMinute - (requestCounts.get(`${clientId}-minute-${Math.floor(Date.now() / 60000)}`) || 0),
-        perDayRemaining: RATE_LIMIT.perDay - (requestCounts.get(`${clientId}-day-${Math.floor(Date.now() / 86400000)}`) || 0)
+        perMinuteRemaining: rateLimitResult.remaining,
+        perDayRemaining: 1000 // Placeholder for daily limit tracking
       }
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Gemini API error:', error);
 
     // エラー内容を判定

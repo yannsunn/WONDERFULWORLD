@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 interface ContactFormData {
   name: string;
@@ -8,8 +9,67 @@ interface ContactFormData {
   agree: boolean;
 }
 
+// CSRF保護: 許可されたオリジンのリスト
+const ALLOWED_ORIGINS = [
+  'https://wonderfulworld.jp',
+  'https://www.wonderfulworld.jp',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+];
+
 export async function POST(request: NextRequest) {
   try {
+    // CSRF保護: Origin/Refererヘッダーのチェック
+    const origin = request.headers.get('origin');
+    const referer = request.headers.get('referer');
+
+    // OriginまたはRefererヘッダーが存在しない場合は拒否
+    if (!origin && !referer) {
+      return NextResponse.json(
+        { error: 'Invalid request - missing origin' },
+        { status: 403 }
+      );
+    }
+
+    // リクエスト元のオリジンを取得
+    const requestOrigin = origin || (referer ? new URL(referer).origin : '');
+
+    // 許可されたオリジンからのリクエストかチェック
+    if (!ALLOWED_ORIGINS.includes(requestOrigin)) {
+      console.warn('Blocked request from unauthorized origin:', requestOrigin);
+      return NextResponse.json(
+        { error: 'Forbidden - invalid origin' },
+        { status: 403 }
+      );
+    }
+
+    // レート制限: IPアドレスごとに1分間に5回まで
+    const ip = getClientIp(request);
+    const rateLimitResult = rateLimit(`contact:${ip}`, {
+      maxRequests: 5,
+      windowMs: 60000 // 1分
+    });
+
+    if (!rateLimitResult.success) {
+      const retryAfter = Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000);
+      console.warn('Rate limit exceeded for contact form:', ip);
+      return NextResponse.json(
+        {
+          error: 'リクエストが多すぎます。しばらくしてから再度お試しください。',
+          retryAfter
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(retryAfter),
+            'X-RateLimit-Limit': '5',
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(Math.ceil(rateLimitResult.resetTime / 1000))
+          }
+        }
+      );
+    }
+
     const body: ContactFormData = await request.json();
 
     // Validation

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useReportWebVitals } from 'next/web-vitals';
+import { env } from '@/lib/env';
 
 // Track AI referrers for LLMO analytics
 const AI_REFERRERS = [
@@ -47,7 +48,7 @@ function trackAIReferrer() {
     sessionStorage.setItem('ai-visits', JSON.stringify(aiVisits));
 
     // Log in development
-    if (process.env.NODE_ENV === 'development') {
+    if (env.NODE_ENV === 'development') {
       console.log('🤖 AI Referral detected:', aiSource);
     }
   }
@@ -61,7 +62,7 @@ export function WebVitals() {
 
   useReportWebVitals((metric) => {
     // Log metrics to console in development only
-    if (process.env.NODE_ENV === 'development') {
+    if (env.NODE_ENV === 'development') {
       console.log({
         name: metric.name,
         value: metric.value,
@@ -84,7 +85,7 @@ export function WebVitals() {
       sessionStorage.setItem('web-vitals', JSON.stringify(metrics));
 
       // Development-only console warnings for poor metrics
-      if (process.env.NODE_ENV === 'development') {
+      if (env.NODE_ENV === 'development') {
         if (metric.rating === 'poor') {
           console.warn(`⚠️ Poor ${metric.name}: ${Math.round(metric.value)}`);
         } else if (metric.rating === 'needs-improvement') {
@@ -95,7 +96,7 @@ export function WebVitals() {
       }
 
       // Production: Send poor metrics to error reporting service
-      if (process.env.NODE_ENV === 'production' && metric.rating === 'poor') {
+      if (env.NODE_ENV === 'production' && metric.rating === 'poor') {
         // TODO: 本番環境でのパフォーマンス問題を監視サービスに送信
         // Example integrations:
         // - Sentry.captureMessage(`Poor Web Vital: ${metric.name}`, { level: 'warning', extra: metric });
@@ -117,7 +118,7 @@ export function WebVitals() {
 
   // Display Web Vitals overlay in development
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
+    if (env.NODE_ENV === 'development') {
       const showVitalsOverlay = () => {
         const metrics = JSON.parse(sessionStorage.getItem('web-vitals') || '[]');
         if (metrics.length === 0) return;

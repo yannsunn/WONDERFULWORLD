@@ -9,17 +9,18 @@
  */
 
 import OpenAI from 'openai';
+import { env, checkEnvVar } from '@/lib/env';
 
 // OpenAI client initialization (lazy)
 let openaiClient: OpenAI | null = null;
 
 function getOpenAIClient(): OpenAI {
   if (!openaiClient) {
-    if (!process.env.OPENAI_API_KEY) {
+    if (!checkEnvVar('OPENAI_API_KEY')) {
       throw new Error('OPENAI_API_KEY is not defined in environment variables');
     }
     openaiClient = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: env.OPENAI_API_KEY,
     });
   }
   return openaiClient;

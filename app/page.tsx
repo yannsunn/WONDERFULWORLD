@@ -1,9 +1,19 @@
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/company/HeroSection';
-import PhilosophySection from '@/components/company/PhilosophySection';
-import BusinessCards from '@/components/company/BusinessCards';
-import CEOMessageSection from '@/components/company/CEOMessageSection';
-import CompanyInfoSection from '@/components/company/CompanyInfoSection';
 import { companyInfo, ceoMessage } from '@/data/company-info';
+
+// 初期表示に不要なコンポーネントを動的インポート（Below-the-fold content）
+const PhilosophySection = dynamic(() => import('@/components/company/PhilosophySection'), {
+  loading: () => (
+    <div className="flex items-center justify-center py-20">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+    </div>
+  ),
+});
+
+const BusinessCards = dynamic(() => import('@/components/company/BusinessCards'));
+const CEOMessageSection = dynamic(() => import('@/components/company/CEOMessageSection'));
+const CompanyInfoSection = dynamic(() => import('@/components/company/CompanyInfoSection'));
 
 export default function Home() {
   return (

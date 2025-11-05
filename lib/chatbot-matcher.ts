@@ -124,7 +124,7 @@ export function getSuggestedQuestions(category?: FAQItem['category'], limit: num
  * デバッグ用：マッチング詳細を表示（開発環境のみ）
  */
 export function debugMatch(userInput: string): void {
-  if (process.env.NODE_ENV !== 'development') return;
+  if (typeof process !== 'undefined' && process.env.NODE_ENV !== 'development') return;
 
   const matches = chatbotFAQ
     .map(faq => calculateMatchScore(userInput, faq))

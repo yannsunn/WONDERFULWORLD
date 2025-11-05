@@ -139,9 +139,41 @@ FIGMA_FILE_KEY=your_figma_file_key
 # Google Gemini API (for chatbot)
 GEMINI_API_KEY=your_gemini_api_key
 
-# Other APIs (optional)
-# NEXT_PUBLIC_API_URL=your_api_url
+# OpenAI API (for AI features)
+OPENAI_API_KEY=your_openai_api_key
+
+# Google Analytics
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=https://wonderful-world.com
+NEXT_PUBLIC_CONTACT_EMAIL=contact@wonderful-world.com
 ```
+
+**Type Safety & Validation**:
+
+This project uses Zod for environment variable validation to ensure type safety and prevent runtime errors:
+
+- All environment variables are validated at build time
+- Type-safe access through `lib/env.ts`
+- Automatic transformation of empty strings to undefined
+- Clear error messages for invalid configurations
+
+**Usage Example**:
+```typescript
+import { env, checkEnvVar } from '@/lib/env';
+
+// Type-safe access
+const apiKey = env.OPENAI_API_KEY; // string | undefined
+const nodeEnv = env.NODE_ENV; // 'development' | 'production' | 'test'
+
+// Check if variable is set
+if (checkEnvVar('OPENAI_API_KEY')) {
+  // Use the API key safely
+}
+```
+
+See `lib/env.example.ts` for more usage examples.
 
 **Getting Figma Credentials**:
 1. **Access Token**: Visit [Figma Settings](https://www.figma.com/settings) → Security → Generate Personal Access Token

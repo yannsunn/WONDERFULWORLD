@@ -1,7 +1,22 @@
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import ModelsHeader from '@/components/models/ModelsHeader';
-import ModelsGrid from '@/components/models/ModelsGrid';
+
+// モデルグリッドを動的インポート（メインコンテンツだがデータ量が多い）
+const ModelsGrid = dynamic(() => import('@/components/models/ModelsGrid'), {
+  loading: () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12">
+      {[...Array(3)].map((_, i) => (
+        <div key={i} className="card p-6 animate-pulse">
+          <div className="aspect-[3/4] bg-gray-200 rounded-lg mb-4"></div>
+          <div className="h-6 bg-gray-200 rounded mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+        </div>
+      ))}
+    </div>
+  ),
+});
 
 export const metadata: Metadata = {
   title: 'モデル一覧 | WONDERFUL WORLD',

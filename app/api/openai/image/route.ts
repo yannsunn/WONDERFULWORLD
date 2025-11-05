@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateImage } from '@/lib/openai';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 /**
  * OpenAI Image Generation API Route (DALL-E)
@@ -9,6 +10,33 @@ import { generateImage } from '@/lib/openai';
  */
 export async function POST(request: NextRequest) {
   try {
+    // レート制限: IPアドレスごとに1分間に3回まで（画像生成は高コスト）
+    const ip = getClientIp(request);
+    const rateLimitResult = rateLimit(`openai-image:${ip}`, {
+      maxRequests: 3,
+      windowMs: 60000 // 1分
+    });
+
+    if (!rateLimitResult.success) {
+      const retryAfter = Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000);
+      console.warn('Rate limit exceeded for OpenAI image generation:', ip);
+      return NextResponse.json(
+        {
+          error: 'リクエストが多すぎます。しばらくしてから再度お試しください。',
+          retryAfter
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(retryAfter),
+            'X-RateLimit-Limit': '3',
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(Math.ceil(rateLimitResult.resetTime / 1000))
+          }
+        }
+      );
+    }
+
     const { prompt, size, quality } = await request.json();
 
     if (!prompt) {

@@ -70,7 +70,11 @@
       "Bash(curl:*)",
       "Bash(nslookup:*)",
       "Bash(git restore:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(codex --version:*)",
+      "Bash(codex:*)",
+      "Bash(nul)",
+      "Bash(del \"pages\\api\\chat-hybrid.js\")"
     ],
     "deny": [],
     "ask": []

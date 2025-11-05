@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/openai';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 /**
  * OpenAI Text Generation API Route
@@ -9,6 +10,33 @@ import { generateText } from '@/lib/openai';
  */
 export async function POST(request: NextRequest) {
   try {
+    // レート制限: IPアドレスごとに1分間に10回まで
+    const ip = getClientIp(request);
+    const rateLimitResult = rateLimit(`openai-text:${ip}`, {
+      maxRequests: 10,
+      windowMs: 60000 // 1分
+    });
+
+    if (!rateLimitResult.success) {
+      const retryAfter = Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000);
+      console.warn('Rate limit exceeded for OpenAI text generation:', ip);
+      return NextResponse.json(
+        {
+          error: 'リクエストが多すぎます。しばらくしてから再度お試しください。',
+          retryAfter
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(retryAfter),
+            'X-RateLimit-Limit': '10',
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(Math.ceil(rateLimitResult.resetTime / 1000))
+          }
+        }
+      );
+    }
+
     const { prompt, model, maxTokens, temperature } = await request.json();
 
     if (!prompt) {

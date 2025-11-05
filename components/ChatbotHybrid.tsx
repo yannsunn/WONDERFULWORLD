@@ -4,6 +4,10 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { findBestMatch, getSuggestedQuestions } from '@/lib/chatbot-matcher';
 
+// 会話履歴制限の定数
+const MAX_CONVERSATION_HISTORY = 10; // APIに送信する会話履歴の最大数
+const MAX_DISPLAYED_MESSAGES = 50; // 画面に表示する最大メッセージ数
+
 interface Message {
   role: 'user' | 'assistant';
   content: string;
@@ -60,7 +64,11 @@ export default function ChatbotHybrid() {
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages(prev => {
+      const newMessages = [...prev, userMessage];
+      // 最新50件のみ保持（メモリリーク防止）
+      return newMessages.slice(-MAX_DISPLAYED_MESSAGES);
+    });
     setInput('');
     setIsTyping(true);
 
@@ -81,13 +89,16 @@ export default function ChatbotHybrid() {
             suggestions: getSuggestedQuestions(faqMatch.category, 3),
             source: 'faq'
           };
-          setMessages(prev => [...prev, assistantMessage]);
+          setMessages(prev => {
+            const newMessages = [...prev, assistantMessage];
+            return newMessages.slice(-MAX_DISPLAYED_MESSAGES);
+          });
           setIsTyping(false);
         }, 500 + Math.random() * 500);
       } else {
         // ステップ2: FAQに適切な回答がない場合、Gemini APIを使用
         const conversationHistory = messages
-          .slice(-6) // 直近3往復のみ送信（コスト削減）
+          .slice(-MAX_CONVERSATION_HISTORY) // 最新10件のみ送信（メモリリーク防止）
           .map(msg => ({
             role: msg.role,
             content: msg.content
@@ -126,7 +137,10 @@ export default function ChatbotHybrid() {
               suggestions: getSuggestedQuestions('contact', 3),
               source: 'faq'
             };
-            setMessages(prev => [...prev, assistantMessage]);
+            setMessages(prev => {
+              const newMessages = [...prev, assistantMessage];
+              return newMessages.slice(-MAX_DISPLAYED_MESSAGES);
+            });
           } else {
             throw new Error(data.error);
           }
@@ -139,7 +153,10 @@ export default function ChatbotHybrid() {
             suggestions: getSuggestedQuestions(undefined, 3),
             source: 'gemini'
           };
-          setMessages(prev => [...prev, assistantMessage]);
+          setMessages(prev => {
+            const newMessages = [...prev, assistantMessage];
+            return newMessages.slice(-MAX_DISPLAYED_MESSAGES);
+          });
         }
         } catch (fetchError) {
           clearTimeout(timeoutId);
@@ -153,7 +170,10 @@ export default function ChatbotHybrid() {
               suggestions: ['もう一度質問する', 'お問い合わせ方法は？'],
               source: 'faq'
             };
-            setMessages(prev => [...prev, timeoutMessage]);
+            setMessages(prev => {
+              const newMessages = [...prev, timeoutMessage];
+              return newMessages.slice(-MAX_DISPLAYED_MESSAGES);
+            });
           } else {
             throw fetchError; // 他のエラーは外側のcatchで処理
           }
@@ -169,7 +189,10 @@ export default function ChatbotHybrid() {
         suggestions: ['お問い合わせ方法は？', 'WONDERFUL WORLDとは？', 'ヘルプ'],
         source: 'faq'
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => {
+        const newMessages = [...prev, errorMessage];
+        return newMessages.slice(-MAX_DISPLAYED_MESSAGES);
+      });
       setIsTyping(false);
     }
   };
