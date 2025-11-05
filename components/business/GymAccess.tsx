@@ -40,9 +40,9 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
             className="grid md:grid-cols-2 gap-8 mb-8"
           >
             {/* Address Card */}
-            <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg border border-green-100">
+            <div className="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl shadow-lg border border-orange-100">
               <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl">
+                <div className="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-2xl">
                   📍
                 </div>
                 <div>
@@ -56,7 +56,7 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
                 href={location.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 transition-colors"
+                className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors"
               >
                 Google Mapsで開く
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,9 +66,9 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
             </div>
 
             {/* Hours Card */}
-            <div className="bg-gradient-to-br from-teal-50 to-white p-8 rounded-2xl shadow-lg border border-teal-100">
+            <div className="bg-gradient-to-br from-pink-50 to-white p-8 rounded-2xl shadow-lg border border-pink-100">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white text-2xl">
+                <div className="flex-shrink-0 w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white text-2xl">
                   🕐
                 </div>
                 <div>

@@ -564,6 +564,10 @@ a.text-accent-gold {
   animation: shimmer-text 3s ease-in-out infinite;
 }
 
+.gradient-text-vibrant {
+  @apply bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-400 bg-clip-text text-transparent;
+}
+
 @keyframes shimmer-text {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

@@ -104,7 +104,7 @@ export default function GymPage() {
       />
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-green-600 to-teal-600 text-white">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-orange-600 to-pink-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-4 sm:mb-6">
@@ -118,7 +118,7 @@ export default function GymPage() {
                 href={gymInfo.externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-green-600 font-bold text-base sm:text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-orange-600 font-bold text-base sm:text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl inline-flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 3BGYM 公式サイト
                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ export default function GymPage() {
               </a>
               <a
                 href="/contact"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white text-white font-bold text-base sm:text-lg rounded-full hover:bg-white hover:text-green-600 transition-all duration-300 w-full sm:w-auto"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white text-white font-bold text-base sm:text-lg rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300 w-full sm:w-auto"
               >
                 お問い合わせ
               </a>

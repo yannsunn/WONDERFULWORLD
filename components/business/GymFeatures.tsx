@@ -36,7 +36,7 @@ export default function GymFeatures({ features }: GymFeaturesProps) {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="text-center"
             >
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-green-100">
+              <div className="bg-gradient-to-br from-orange-50 to-pink-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-orange-100">
                 <div className="text-5xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {feature.title}

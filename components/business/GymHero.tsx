@@ -12,7 +12,7 @@ interface GymHeroProps {
 
 export default function GymHero({ name, tagline, subtitle, description, externalUrl }: GymHeroProps) {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-600 via-green-500 to-teal-500">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-pink-500">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl" />
@@ -63,7 +63,7 @@ export default function GymHero({ name, tagline, subtitle, description, external
               href={externalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-green-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
             >
               公式サイトで詳しく見る
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
