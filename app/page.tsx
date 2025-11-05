@@ -17,16 +17,18 @@ const CEOMessageSection = dynamic(() => import('@/components/company/CEOMessageS
 export default function Home() {
   return (
     <>
-      {/* Hero Section - キャッチコピー */}
-      <HeroSection
-        title={companyInfo.submessage}
-        subtitle="Wonderful World 合同会社"
-        message={companyInfo.message}
-        ctaButtons={{
-          primary: { text: '事業案内を見る', href: '#business' },
-          secondary: { text: '会社情報', href: '/about' }
-        }}
-      />
+      {/* Hero Section - キャッチコピー (negative margin to compensate for layout padding) */}
+      <div className="-mt-24">
+        <HeroSection
+          title={companyInfo.submessage}
+          subtitle="Wonderful World 合同会社"
+          message={companyInfo.message}
+          ctaButtons={{
+            primary: { text: '事業案内を見る', href: '#business' },
+            secondary: { text: '会社情報', href: '/about' }
+          }}
+        />
+      </div>
 
       {/* Philosophy/Vision/Mission */}
       <PhilosophySection

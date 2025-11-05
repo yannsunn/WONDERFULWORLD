@@ -59,8 +59,9 @@ export default function AIModelsBusinessPage() {
 
   return (
     <PageTransition>
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-pink-500">
+      {/* Hero Section (negative margin to compensate for layout padding) */}
+      <div className="-mt-24">
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-pink-500">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl" />
@@ -105,7 +106,8 @@ export default function AIModelsBusinessPage() {
             </div>
           </ScrollReveal>
         </div>
-      </section>
+        </section>
+      </div>
 
       {/* Features Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">

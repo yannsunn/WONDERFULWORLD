@@ -78,14 +78,16 @@ export default function GymPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      {/* Hero Section */}
-      <GymHero
-        name={gymInfo.name}
-        tagline={gymInfo.tagline}
-        subtitle={gymInfo.subtitle}
-        description={gymInfo.description}
-        externalUrl={gymInfo.externalUrl}
-      />
+      {/* Hero Section (negative margin to compensate for layout padding) */}
+      <div className="-mt-24">
+        <GymHero
+          name={gymInfo.name}
+          tagline={gymInfo.tagline}
+          subtitle={gymInfo.subtitle}
+          description={gymInfo.description}
+          externalUrl={gymInfo.externalUrl}
+        />
+      </div>
 
       {/* Features Section */}
       <GymFeatures features={gymInfo.features} />
