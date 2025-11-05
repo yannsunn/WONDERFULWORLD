@@ -158,7 +158,7 @@ export const companyInfo: CompanyInfo = {
 export const ceoMessage = {
   name: '藤山 嘉彦',
   title: '代表社員',
-  photo: '/images/about/representative-presentation.jpg',
+  photo: '/images/about/representative-new.jpg',
 
   excerpt: `「人に富を与える」——この言葉こそが、Wonderful World 合同会社の原点です。\n\n私たちは、AIの力と人のつながりをかけ合わせ、挑戦するすべての人が"心の豊かさ"と"経済的な豊かさ"の両方を得られる未来を目指しています。`,
 
