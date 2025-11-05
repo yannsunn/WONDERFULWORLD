@@ -82,7 +82,7 @@ export default function HeroSection({ title, subtitle, message, ctaButtons }: He
             </Link>
             <Link
               href={ctaButtons.secondary.href}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg glass-premium text-gray-800 font-semibold rounded-full border border-white/40 hover:border-orange-400 hover:text-orange-600 transition-all duration-300 hover-lift"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-white text-gray-800 font-semibold rounded-full border-2 border-orange-400 hover:bg-orange-50 hover:text-orange-600 transition-all duration-300 hover-lift shadow-lg hover:shadow-xl"
             >
               {ctaButtons.secondary.text}
             </Link>
