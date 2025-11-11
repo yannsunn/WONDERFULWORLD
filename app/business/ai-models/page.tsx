@@ -61,11 +61,17 @@ export default function AIModelsBusinessPage() {
     <PageTransition>
       {/* Hero Section (negative margin to compensate for layout padding) */}
       <div className="-mt-24">
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-pink-500">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl" />
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/news/top3-group.jpg"
+            alt="AIモデルインフルエンサー"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-600/90 via-orange-500/90 to-pink-500/90" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center text-white">
@@ -190,16 +196,6 @@ export default function AIModelsBusinessPage() {
                 className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700 font-semibold transition-colors"
               >
                 モデル一覧
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-              <span className="text-gray-300">|</span>
-              <Link
-                href="/business/ai-models/news"
-                className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700 font-semibold transition-colors"
-              >
-                最新ニュース
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
