@@ -51,7 +51,7 @@ export interface CompanyInfo {
 export const companyInfo: CompanyInfo = {
   name: 'Wonderful World 合同会社',
   nameEn: 'Wonderful World LLC',
-  established: '2015年10月',
+  established: '2024年8月',
   representative: '藤山 嘉彦',
 
   offices: {

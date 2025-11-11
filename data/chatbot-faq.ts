@@ -41,7 +41,7 @@ export const chatbotFAQ: FAQItem[] = [
   {
     id: 'about-004',
     question: '会社情報を教えてください',
-    answer: 'Wonderful World 合同会社の会社情報です🏢\n\n【会社名】\nWonderful World 合同会社（Wonderful World LLC）\n\n【設立】\n2015年10月\n\n【代表】\n藤山 嘉彦\n\n【拠点】\n・本社: 北海道帯広市\n・東京オフィス: 東京都新宿区\n\n詳しくは「会社情報」ページをご覧ください！',
+    answer: 'Wonderful World 合同会社の会社情報です🏢\n\n【会社名】\nWonderful World 合同会社（Wonderful World LLC）\n\n【設立】\n2024年8月\n\n【代表】\n藤山 嘉彦\n\n【拠点】\n・本社: 北海道帯広市\n・東京オフィス: 東京都新宿区\n\n詳しくは「会社情報」ページをご覧ください！',
     keywords: ['会社', '会社情報', '企業情報', '設立', '設立年月日', '所在地', '住所', '法人', '運営会社', '運営元', '代表'],
     category: 'about',
     priority: 75

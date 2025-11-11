@@ -85,7 +85,7 @@ const Footer = () => {
             </p>
             <div className="text-sm text-gray-600 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-orange-100">
               <p className="font-semibold">Wonderful World 合同会社</p>
-              <p className="mt-1">所在地: 東京都 | 設立: 2025年9月</p>
+              <p className="mt-1">所在地: 東京都 | 設立: 2024年8月</p>
             </div>
           </div>
 
