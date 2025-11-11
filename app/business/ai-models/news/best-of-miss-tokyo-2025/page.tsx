@@ -143,25 +143,25 @@ const BestOfMissTokyoPage = () => {
             <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3">
               イベント概要
             </h3>
-            <dl className="space-y-2 text-gray-700">
-              <div className="flex">
-                <dt className="font-semibold min-w-[120px]">イベント名:</dt>
+            <dl className="space-y-2 text-gray-700 text-sm sm:text-base">
+              <div className="flex flex-col sm:flex-row">
+                <dt className="font-semibold w-full sm:w-auto sm:min-w-[120px] mb-1 sm:mb-0">イベント名:</dt>
                 <dd>Best of Miss Tokyo 2025</dd>
               </div>
-              <div className="flex">
-                <dt className="font-semibold min-w-[120px]">開催日:</dt>
+              <div className="flex flex-col sm:flex-row">
+                <dt className="font-semibold w-full sm:w-auto sm:min-w-[120px] mb-1 sm:mb-0">開催日:</dt>
                 <dd>2025年10月</dd>
               </div>
-              <div className="flex">
-                <dt className="font-semibold min-w-[120px]">会場:</dt>
+              <div className="flex flex-col sm:flex-row">
+                <dt className="font-semibold w-full sm:w-auto sm:min-w-[120px] mb-1 sm:mb-0">会場:</dt>
                 <dd>東京都内</dd>
               </div>
-              <div className="flex">
-                <dt className="font-semibold min-w-[120px]">参加大会:</dt>
+              <div className="flex flex-col sm:flex-row">
+                <dt className="font-semibold w-full sm:w-auto sm:min-w-[120px] mb-1 sm:mb-0">参加大会:</dt>
                 <dd>Miss Universe Japan、Miss Planet Japan、Miss University</dd>
               </div>
-              <div className="flex">
-                <dt className="font-semibold min-w-[120px]">協賛:</dt>
+              <div className="flex flex-col sm:flex-row">
+                <dt className="font-semibold w-full sm:w-auto sm:min-w-[120px] mb-1 sm:mb-0">協賛:</dt>
                 <dd>Wonderful World 合同会社（プラチナスポンサー）他多数</dd>
               </div>
             </dl>
