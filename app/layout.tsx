@@ -11,11 +11,6 @@ import { WebVitals } from "@/components/analytics/WebVitals";
 import dynamic from "next/dynamic";
 
 // Dynamic imports for heavy components
-const ChatbotHybrid = dynamic(() => import("@/components/ChatbotHybrid"), {
-  ssr: false,
-  loading: () => null,
-});
-
 const Analytics = dynamic(
   () => import('@vercel/analytics/react').then((mod) => mod.Analytics),
   { ssr: false }
@@ -147,7 +142,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <BackToTop />
-        <ChatbotHybrid />
         <Analytics />
       </body>
     </html>

@@ -40,17 +40,17 @@ const nextConfig = {
       },
       {
         source: '/models/:slug',
-        destination: '/business/ai-models/models/:slug',
+        destination: '/business/ai-models/models',
         permanent: true,
       },
       {
         source: '/news',
-        destination: '/business/ai-models/news',
+        destination: '/business/ai-models',
         permanent: true,
       },
       {
         source: '/news/:slug',
-        destination: '/business/ai-models/news/:slug',
+        destination: '/business/ai-models',
         permanent: true,
       },
     ];
