@@ -59,7 +59,11 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
                 {/* Icon Section */}
                 <div className="relative bg-gradient-to-br from-orange-500 to-pink-500 p-10 sm:p-12 md:p-16 overflow-hidden">
                   <div className="text-center">
-                    <div className="text-6xl sm:text-7xl md:text-8xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500">
+                    <div
+                      className="text-6xl sm:text-7xl md:text-8xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500"
+                      role="img"
+                      aria-label={index === 0 ? 'AIモデルインフルエンサー' : 'フィットネス'}
+                    >
                       {index === 0 ? '🤖' : '💪'}
                     </div>
                   </div>

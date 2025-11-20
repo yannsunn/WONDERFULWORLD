@@ -37,8 +37,8 @@ export default function PhilosophySection({ philosophy, vision, mission }: Philo
   const items = [philosophy, vision, mission];
   const colors = [
     'from-orange-500 to-orange-600',
-    'from-green-500 to-green-600',
-    'from-blue-500 to-blue-600'
+    'from-pink-500 to-pink-600',
+    'from-purple-500 to-purple-600'
   ];
 
   return (
