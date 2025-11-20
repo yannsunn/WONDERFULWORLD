@@ -79,7 +79,10 @@
       "Bash(git check-ignore:*)",
       "Bash(git rm:*)",
       "Bash(if [ -f .env.local ])",
-      "Bash(then echo \"WARNING: .env.local contains real tokens and should be removed!\")"
+      "Bash(then echo \"WARNING: .env.local contains real tokens and should be removed!\")",
+      "Bash(then echo \"⚠️ .env.localが存在します（.gitignoreで保護済み）\")",
+      "Bash(else echo \"✅ .env.localは存在しません\")",
+      "Bash(git rev-parse:*)"
     ],
     "deny": [],
     "ask": []

@@ -12,18 +12,18 @@ export const metadata: Metadata = {
 export default function ModelsPage() {
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-28 pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pt-28 pb-12 sm:pb-16">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           {/* Coming Soon Header */}
           <ScrollReveal>
-            <div className="text-center mb-12 sm:mb-16">
-              <div className="inline-block px-4 sm:px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-sm sm:text-base font-semibold mb-4 sm:mb-6">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <div className="inline-block px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-xs sm:text-sm md:text-base font-semibold mb-3 sm:mb-4 md:mb-6">
                 Coming Soon
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-playfair text-gray-900 mb-4 sm:mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4 md:mb-6 px-2">
                 AIモデルインフルエンサー
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2 sm:px-4">
                 ミス・ベスト・オブ・ミス東京大会2026運営協力会社として、<br className="hidden sm:block" />
                 魅力的なAIモデルインフルエンサーを近日公開予定です
               </p>
@@ -32,7 +32,7 @@ export default function ModelsPage() {
 
           {/* Hero Image */}
           <ScrollReveal delay={0.2}>
-            <div className="relative w-full max-w-4xl mx-auto mb-12 sm:mb-16 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
               <div className="aspect-[16/9] relative">
                 <Image
                   src="/images/news/top3-group.jpg"
@@ -47,11 +47,11 @@ export default function ModelsPage() {
 
           {/* Features */}
           <ScrollReveal delay={0.3}>
-            <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-playfair text-gray-900 mb-6 sm:mb-8 text-center">
+            <div className="max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-playfair text-gray-900 mb-4 sm:mb-6 md:mb-8 text-center px-2">
                 準備中の機能
               </h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                   <div className="text-4xl mb-4">🎭</div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
@@ -85,24 +85,24 @@ export default function ModelsPage() {
 
           {/* CTA Section */}
           <ScrollReveal delay={0.4}>
-            <div className="text-center bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl p-8 sm:p-12 max-w-3xl mx-auto border border-orange-100">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-playfair text-gray-900 mb-4">
+            <div className="text-center bg-gradient-to-br from-orange-50 to-pink-50 rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-12 max-w-3xl mx-auto border border-orange-100">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4 px-2">
                 事前のお問い合わせはこちら
               </h3>
-              <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 md:mb-8 px-2">
                 AIモデルインフルエンサーの活用にご興味のある企業様は、<br className="hidden sm:block" />
                 お気軽にお問い合わせください
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center px-2">
                 <Link
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold text-lg rounded-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold text-sm sm:text-base md:text-lg rounded-full hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   お問い合わせ
                 </Link>
                 <Link
                   href="/business/ai-models"
-                  className="px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-full border-2 border-orange-500 hover:bg-orange-50 transition-all duration-300"
+                  className="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-white text-orange-600 font-bold text-sm sm:text-base md:text-lg rounded-full border-2 border-orange-500 hover:bg-orange-50 transition-all duration-300"
                 >
                   事業詳細を見る
                 </Link>

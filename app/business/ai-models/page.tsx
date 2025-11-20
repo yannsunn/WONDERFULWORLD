@@ -74,38 +74,38 @@ export default function AIModelsBusinessPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-orange-600/90 via-orange-500/90 to-pink-500/90" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center text-white">
+        <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center text-white">
           <ScrollReveal>
-            <div className="mb-6 sm:mb-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-playfair mb-3 sm:mb-4">
+            <div className="mb-4 sm:mb-6 md:mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-playfair mb-2 sm:mb-3 md:mb-4">
                 AIモデルインフルエンサー
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 px-4">
+              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-1 sm:mb-2 px-2 sm:px-4">
                 AI Model Influencer Business
               </p>
-              <p className="text-base sm:text-lg md:text-xl opacity-90 px-4">
+              <p className="text-xs sm:text-base md:text-lg lg:text-xl opacity-90 px-2 sm:px-4">
                 次世代のインフルエンサーマーケティング
               </p>
             </div>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">
               ミスコンテストファイナリストをベースにした、美しく魅力的なAIモデルインフルエンサー。
               最先端のAI技術で、新しい形のマーケティングを実現します。
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center px-2 sm:px-4">
               <Link
                 href="/business/ai-models/models"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
                 モデル一覧を見る
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300"
               >
                 お問い合わせ
               </Link>
