@@ -19,12 +19,12 @@ interface BusinessCardsProps {
 
 export default function BusinessCards({ businesses }: BusinessCardsProps) {
   return (
-    <section className="section relative overflow-hidden bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
+    <section className="section relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
       {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full filter blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-purple-400 to-orange-400 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-orange-500 rounded-full filter blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-pink-400 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="container-premium relative z-10">
@@ -37,7 +37,7 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-playfair mb-2 sm:mb-3 md:mb-4 px-2">
-            <span className="gradient-text-vibrant">事業案内</span>
+            <span className="gradient-text-sunset">事業案内</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
             私たちの2つの事業で、人々の可能性を最大限に引き出します
