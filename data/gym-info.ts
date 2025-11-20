@@ -102,9 +102,9 @@ export const gymInfo: GymInfo = {
       ]
     },
     entry: {
-      name: '事務手数料',
+      name: '入会手数料',
       price: 3300,
-      features: ['入会時のみ']
+      features: ['入会時のみ', '※月額料金とは別途']
     },
     visitor: {
       name: 'ビジター',

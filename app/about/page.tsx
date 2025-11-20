@@ -275,6 +275,46 @@ const AboutPage = () => {
             </div>
           </ScrollReveal>
 
+          {/* OEM Business Collaboration */}
+          <ScrollReveal delay={0.35}>
+            <div className="card p-6 sm:p-8 mt-8 bg-gradient-to-br from-orange-50 to-pink-50 border border-orange-100">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">OEM事業・協業</h3>
+              <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
+                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
+                      🌟
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">川崎カイヤ様 OEM商品制作</h4>
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        タレント・実業家の川崎カイヤ様のOEM商品開発・製造を手がけています。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
+                      🍶
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">お酒メーカー「ラッシュ」</h4>
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        川崎カイヤ様のOEM商品として、お酒メーカー「ラッシュ」の企画・製造を担当しています。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center mt-4">
+                  <p className="text-xs sm:text-sm text-gray-500 italic">
+                    ※パートナー企業情報は随時更新してまいります
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
           {/* Company Info */}
           <ScrollReveal delay={0.4}>
             <div className="card p-8 mt-8">

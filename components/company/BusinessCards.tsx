@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 
 interface Business {
   id: string;
@@ -20,8 +19,15 @@ interface BusinessCardsProps {
 
 export default function BusinessCards({ businesses }: BusinessCardsProps) {
   return (
-    <section className="section mesh-gradient">
-      <div className="container-premium">
+    <section className="section relative overflow-hidden bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full filter blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-purple-400 to-orange-400 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="container-premium relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,18 +56,16 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
               className="group"
             >
               <div className="card-premium hover-lift overflow-hidden border border-gray-100">
-                {/* Image */}
-                <div className="relative h-56 sm:h-64 overflow-hidden">
-                  <Image
-                    src={business.image}
-                    alt={business.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                {/* Icon Section */}
+                <div className="relative bg-gradient-to-br from-orange-500 to-pink-500 p-10 sm:p-12 md:p-16 overflow-hidden">
+                  <div className="text-center">
+                    <div className="text-6xl sm:text-7xl md:text-8xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500">
+                      {index === 0 ? '🤖' : '💪'}
+                    </div>
+                  </div>
 
                   {/* Badge */}
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 glass-premium rounded-full text-xs sm:text-sm font-semibold text-gray-800 border-glow">
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/90 backdrop-blur-sm rounded-full text-xs sm:text-sm font-semibold text-gray-800 shadow-md">
                     {index === 0 ? 'AI×Beauty' : 'Health×Beauty'}
                   </div>
                 </div>

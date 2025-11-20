@@ -43,17 +43,17 @@ export default function AIModelsBusinessPage() {
     {
       title: 'SNSマーケティング',
       description: 'Instagram、X、TikTokなど各種SNSでのインフルエンサーマーケティング',
-      image: '/images/hero/best-of-miss-poster.jpg'
+      icon: '📱'
     },
     {
       title: '広告・PR活動',
       description: '商品プロモーション、ブランドアンバサダー、キャンペーンモデル',
-      image: '/images/news/best-of-miss-top3-with-ceo.jpg'
+      icon: '📺'
     },
     {
       title: 'コンテンツ制作',
       description: '写真、動画、音声など多様なコンテンツ制作に対応',
-      image: '/images/news/top3-group.jpg'
+      icon: '🎬'
     }
   ];
 
@@ -167,13 +167,8 @@ export default function AIModelsBusinessPage() {
             {services.map((service, index) => (
               <ScrollReveal key={service.title} delay={index * 0.1}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-                  <div className="relative h-40 sm:h-48">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="bg-gradient-to-br from-orange-500 to-pink-500 p-8 sm:p-12 text-center">
+                    <div className="text-5xl sm:text-6xl md:text-7xl">{service.icon}</div>
                   </div>
                   <div className="p-5 sm:p-6">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
