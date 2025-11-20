@@ -14,7 +14,7 @@ interface CEOMessageSectionProps {
 
 export default function CEOMessageSection({ name, title, message, photo, fullMessageUrl }: CEOMessageSectionProps) {
   return (
-    <section className="section bg-gradient-to-b from-white via-orange-50/30 to-white">
+    <section className="section bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="container-premium">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

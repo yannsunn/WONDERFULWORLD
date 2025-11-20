@@ -22,7 +22,7 @@ export default function CompanyInfoSection({ name, established, representative, 
   ];
 
   return (
-    <section className="section mesh-gradient">
+    <section className="section bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="container-premium">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ export default function CompanyInfoSection({ name, established, representative, 
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4">
-              <span className="gradient-text-ocean">会社情報</span>
+              <span className="gradient-text-sunset">会社情報</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600">
               Company Information
