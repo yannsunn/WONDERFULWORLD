@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeroSectionProps {
   title: string;
@@ -29,6 +30,25 @@ export default function HeroSection({ title, subtitle, message, ctaButtons }: He
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Company Logo */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="mb-6 sm:mb-8 md:mb-10"
+          >
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 mx-auto mb-4 sm:mb-6">
+              <Image
+                src="/images/about/company-logo.jpg"
+                alt="WONDERFUL WORLD ロゴ"
+                fill
+                className="object-contain drop-shadow-2xl"
+                priority
+                sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, (max-width: 1280px) 224px, 256px"
+              />
+            </div>
+          </motion.div>
+
           {/* Logo/Brand */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
