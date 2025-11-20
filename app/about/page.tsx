@@ -223,7 +223,7 @@ const AboutPage = () => {
           <ScrollReveal delay={0.2}>
             <div className="card p-8 md:p-12 mb-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
                 <Image
                   src="/images/about/representative-presentation.jpg"
                   alt="WONDERFUL WORLD 代表者プレゼンテーション"
@@ -260,7 +260,7 @@ const AboutPage = () => {
           <ScrollReveal delay={0.3}>
             <div className="card p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">パートナー企業</h3>
-            <div className="relative h-[300px] rounded-lg overflow-hidden mb-6">
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-6">
               <Image
                 src="/images/about/sponsors-screen.jpg"
                 alt="Best of Miss Tokyo 2025 パートナー企業"
@@ -298,7 +298,7 @@ const AboutPage = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">設立</p>
-                  <p>2015年10月</p>
+                  <p>2024年8月</p>
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">代表社員</p>

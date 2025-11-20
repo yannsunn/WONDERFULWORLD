@@ -116,7 +116,7 @@ export default function AIModelsBusinessPage() {
       </div>
 
       {/* Features Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12 sm:mb-16">
@@ -150,7 +150,7 @@ export default function AIModelsBusinessPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12 sm:mb-16">
@@ -206,7 +206,7 @@ export default function AIModelsBusinessPage() {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-orange-600 to-pink-600 text-white">
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-orange-600 to-pink-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-4 sm:mb-6 px-4">
