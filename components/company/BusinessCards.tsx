@@ -55,9 +55,9 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
               transition={{ delay: index * 0.2, duration: 0.6 }}
               className="group"
             >
-              <div className="card-premium hover-lift overflow-hidden border border-gray-100">
+              <div className="card-premium hover-lift overflow-hidden border border-gray-200">
                 {/* Icon Section */}
-                <div className="relative bg-gradient-to-br from-orange-500 to-pink-500 p-10 sm:p-12 md:p-16 overflow-hidden">
+                <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 p-10 sm:p-12 md:p-16 overflow-hidden">
                   <div className="text-center">
                     <div
                       className="text-6xl sm:text-7xl md:text-8xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500"
@@ -69,7 +69,7 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
                   </div>
 
                   {/* Badge */}
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/90 backdrop-blur-sm rounded-full text-xs sm:text-sm font-semibold text-gray-800 shadow-md">
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-xs sm:text-sm font-semibold shadow-md">
                     {index === 0 ? 'AI×Beauty' : 'Health×Beauty'}
                   </div>
                 </div>
