@@ -15,7 +15,8 @@
     "lighthouse": "node scripts/lighthouse-audit.js",
     "audit": "npm run build && npm run start & sleep 5 && npm run lighthouse",
     "figma:sync": "node scripts/figma-sync-tokens.js",
-    "design:tokens": "node scripts/figma-sync-tokens.js"
+    "design:tokens": "node scripts/figma-sync-tokens.js",
+    "start:test": "next build && next start -H 0.0.0.0 -p 3000"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

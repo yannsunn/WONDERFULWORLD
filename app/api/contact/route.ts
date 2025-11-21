@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '@/lib/rate-limit';
+import { env } from '@/lib/env';
 
 interface ContactFormData {
   name: string;
@@ -10,12 +11,38 @@ interface ContactFormData {
 }
 
 // CSRF保護: 許可されたオリジンのリスト
-const ALLOWED_ORIGINS = [
+const KNOWN_ORIGINS = [
   'https://wonderfulworld.jp',
   'https://www.wonderfulworld.jp',
+  'https://wonderful-world.com',
+  'https://www.wonderful-world.com',
   'http://localhost:3000',
   'http://127.0.0.1:3000',
 ];
+
+const dynamicOrigins = [
+  process.env.NEXT_PUBLIC_SITE_URL,
+  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined,
+];
+
+const envOrigins = env.ALLOWED_ORIGINS ?? [];
+
+const normalizeOrigin = (origin?: string | null) => {
+  if (!origin) return null;
+  try {
+    return new URL(origin).origin;
+  } catch {
+    return null;
+  }
+};
+
+const ALLOWED_ORIGINS = Array.from(
+  new Set(
+    [...KNOWN_ORIGINS, ...dynamicOrigins, ...envOrigins]
+      .map(normalizeOrigin)
+      .filter((origin): origin is string => Boolean(origin))
+  )
+);
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,10 +59,10 @@ export async function POST(request: NextRequest) {
     }
 
     // リクエスト元のオリジンを取得
-    const requestOrigin = origin || (referer ? new URL(referer).origin : '');
+    const requestOrigin = normalizeOrigin(origin) || normalizeOrigin(referer);
 
     // 許可されたオリジンからのリクエストかチェック
-    if (!ALLOWED_ORIGINS.includes(requestOrigin)) {
+    if (!requestOrigin || !ALLOWED_ORIGINS.includes(requestOrigin)) {
       console.warn('Blocked request from unauthorized origin:', requestOrigin);
       return NextResponse.json(
         { error: 'Forbidden - invalid origin' },

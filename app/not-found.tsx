@@ -63,8 +63,8 @@ export default function NotFound() {
             <Link href="/business/gym" className="px-4 py-2 text-sm text-gray-700 hover:text-orange-600 border border-gray-300 rounded-full hover:border-orange-500 transition-colors">
               ジム事業
             </Link>
-            <Link href="/business/ai-models/news" className="px-4 py-2 text-sm text-gray-700 hover:text-orange-600 border border-gray-300 rounded-full hover:border-orange-500 transition-colors">
-              ニュース
+            <Link href="/partners" className="px-4 py-2 text-sm text-gray-700 hover:text-orange-600 border border-gray-300 rounded-full hover:border-orange-500 transition-colors">
+              パートナー
             </Link>
           </div>
         </div>

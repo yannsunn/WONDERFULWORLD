@@ -275,12 +275,12 @@ const AboutPage = () => {
             </div>
           </ScrollReveal>
 
-          {/* OEM Business Collaboration */}
+          {/* OEM Business & SNS Collaboration */}
           <ScrollReveal delay={0.35}>
             <div className="card p-6 sm:p-8 mt-8 bg-gradient-to-br from-orange-50 to-pink-50 border border-orange-100">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">OEM事業・協業</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">OEM事業・SNS運用協業</h3>
               <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
-                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
+                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md hover-lift">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
                       🌟
@@ -293,7 +293,7 @@ const AboutPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md">
+                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md hover-lift">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
                       🍶
@@ -306,9 +306,41 @@ const AboutPage = () => {
                     </div>
                   </div>
                 </div>
+                <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md hover-lift border-2 border-orange-200">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
+                      📱
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">SNS運用・マーケティング協業</h4>
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3">
+                        企業様のSNSアカウント運用、インフルエンサーマーケティング、
+                        コンテンツ制作など、デジタルマーケティング全般をサポートしています。
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full font-medium">Instagram運用</span>
+                        <span className="px-2 py-1 bg-pink-100 text-pink-700 text-xs rounded-full font-medium">TikTok運用</span>
+                        <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full font-medium">X(Twitter)運用</span>
+                        <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">コンテンツ制作</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg p-4 sm:p-6 text-white text-center">
+                  <p className="text-sm sm:text-base font-semibold mb-2">パートナーシップにご興味のある企業様へ</p>
+                  <p className="text-xs sm:text-sm mb-4 opacity-90">
+                    OEM事業、SNS運用、AIモデル活用など、様々な形でのコラボレーションが可能です
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="inline-block px-6 py-2 bg-white text-orange-600 rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-300"
+                  >
+                    お問い合わせはこちら
+                  </Link>
+                </div>
                 <div className="text-center mt-4">
                   <p className="text-xs sm:text-sm text-gray-500 italic">
-                    ※パートナー企業情報は随時更新してまいります
+                    ※協業事例は随時更新してまいります
                   </p>
                 </div>
               </div>

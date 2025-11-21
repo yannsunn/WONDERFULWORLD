@@ -12,6 +12,7 @@ const PhilosophySection = dynamic(() => import('@/components/company/PhilosophyS
 });
 
 const BusinessCards = dynamic(() => import('@/components/company/BusinessCards'));
+const DesignLanguageShowcase = dynamic(() => import('@/components/home/DesignLanguageShowcase'));
 const CEOMessageSection = dynamic(() => import('@/components/company/CEOMessageSection'));
 
 export default function Home() {
@@ -41,6 +42,9 @@ export default function Home() {
       <div id="business">
         <BusinessCards businesses={companyInfo.businesses} />
       </div>
+
+      {/* Figma design language showcase */}
+      <DesignLanguageShowcase />
 
       {/* 代表挨拶 */}
       <CEOMessageSection

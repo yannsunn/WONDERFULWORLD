@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface DropdownItem {
   name: string;
@@ -19,6 +19,10 @@ interface NavigationItem {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false);
+  const businessMenuButtonRef = useRef<HTMLButtonElement | null>(null);
+  const businessDropdownRef = useRef<HTMLDivElement | null>(null);
+  const businessDropdownId = 'business-menu-dropdown';
+  const mobileBusinessDropdownId = 'mobile-business-menu';
 
   // Close mobile menu on window resize to desktop
   useEffect(() => {
@@ -32,6 +36,38 @@ const Header = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Close dropdown when clicking outside (desktop) or pressing Escape
+  useEffect(() => {
+    if (!isBusinessDropdownOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (typeof window === 'undefined' || window.innerWidth < 1024) return;
+      const target = event.target as Node;
+      if (
+        businessMenuButtonRef.current?.contains(target) ||
+        businessDropdownRef.current?.contains(target)
+      ) {
+        return;
+      }
+      setIsBusinessDropdownOpen(false);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsBusinessDropdownOpen(false);
+        businessMenuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isBusinessDropdownOpen]);
 
   const navigation: NavigationItem[] = [
     { name: 'ホーム', href: '/' },
@@ -79,13 +115,18 @@ const Header = () => {
                 <div
                   key={item.name}
                   className="relative group"
+                  onMouseEnter={() => setIsBusinessDropdownOpen(true)}
+                  onMouseLeave={() => setIsBusinessDropdownOpen(false)}
                 >
                   <button
+                    ref={businessMenuButtonRef}
                     className="px-5 py-3 text-base font-semibold text-gray-700 hover:text-orange-600 transition-all duration-300 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 flex items-center gap-2 relative group/nav"
-                    onMouseEnter={() => setIsBusinessDropdownOpen(true)}
+                    onClick={() => setIsBusinessDropdownOpen(prev => !prev)}
+                    onFocus={() => setIsBusinessDropdownOpen(true)}
                     aria-expanded={isBusinessDropdownOpen}
                     aria-haspopup="true"
                     aria-label="事業案内メニュー"
+                    aria-controls={businessDropdownId}
                   >
                     {item.name}
                     <svg className="w-5 h-5 transition-transform duration-300 group-hover/nav:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -95,6 +136,8 @@ const Header = () => {
                   </button>
                   {isBusinessDropdownOpen && (
                     <div
+                      id={businessDropdownId}
+                      ref={businessDropdownRef}
                       className="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200 py-3 overflow-hidden"
                       onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                       onMouseLeave={() => setIsBusinessDropdownOpen(false)}
@@ -170,6 +213,7 @@ const Header = () => {
                     aria-expanded={isBusinessDropdownOpen}
                     aria-haspopup="true"
                     aria-label="事業案内メニュー"
+                    aria-controls={mobileBusinessDropdownId}
                   >
                     {item.name}
                     <svg
@@ -183,7 +227,7 @@ const Header = () => {
                     </svg>
                   </button>
                   {isBusinessDropdownOpen && (
-                    <div className="px-3 pb-3 space-y-1 bg-white/60 backdrop-blur-sm" role="menu" aria-label="事業案内サブメニュー">
+                    <div id={mobileBusinessDropdownId} className="px-3 pb-3 space-y-1 bg-white/60 backdrop-blur-sm" role="menu" aria-label="事業案内サブメニュー">
                       {item.dropdown.map((subItem) => (
                         <Link
                           key={subItem.name}

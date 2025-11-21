@@ -148,6 +148,10 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 # Site Configuration
 NEXT_PUBLIC_SITE_URL=https://wonderful-world.com
 NEXT_PUBLIC_CONTACT_EMAIL=contact@wonderful-world.com
+
+# Secure API Routes
+OPENAI_API_AUTH_TOKEN=shared_secret_for_api_routes
+ALLOWED_ORIGINS=https://wonderful-world.com,https://www.wonderful-world.com
 ```
 
 **Type Safety & Validation**:
@@ -173,7 +177,7 @@ if (checkEnvVar('OPENAI_API_KEY')) {
 }
 ```
 
-See `lib/env.example.ts` for more usage examples.
+See `lib/env.example.ts` for more usage examples. The `OPENAI_API_AUTH_TOKEN` protects `/api/openai/*` endpoints (set the same Bearer token on trusted clients), and `ALLOWED_ORIGINS` lets you extend the CSRF allowlist for `/api/contact`.
 
 **Getting Figma Credentials**:
 1. **Access Token**: Visit [Figma Settings](https://www.figma.com/settings) → Security → Generate Personal Access Token

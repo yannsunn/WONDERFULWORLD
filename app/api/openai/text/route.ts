@@ -1,6 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateText } from '@/lib/openai';
 import { rateLimit, getClientIp } from '@/lib/rate-limit';
+import { env } from '@/lib/env';
+
+const authToken = env.OPENAI_API_AUTH_TOKEN;
+
+function authorize(request: NextRequest) {
+  if (!authToken) {
+    console.error('OPENAI_API_AUTH_TOKEN is not configured');
+    return NextResponse.json(
+      { error: 'Server configuration error' },
+      { status: 500 }
+    );
+  }
+
+  const authHeader = request.headers.get('authorization');
+  if (!authHeader?.startsWith('Bearer ')) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const providedToken = authHeader.slice(7).trim();
+  if (providedToken !== authToken) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  return null;
+}
 
 /**
  * OpenAI Text Generation API Route
@@ -10,6 +35,11 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit';
  */
 export async function POST(request: NextRequest) {
   try {
+    const authResponse = authorize(request);
+    if (authResponse) {
+      return authResponse;
+    }
+
     // レート制限: IPアドレスごとに1分間に10回まで
     const ip = getClientIp(request);
     const rateLimitResult = rateLimit(`openai-text:${ip}`, {

@@ -1,7 +1,9 @@
+﻿import "server-only";
+
 /**
  * Environment Variables Validation
  *
- * 環境変数の型安全性を保証し、実行時エラーを防ぐ
+ * 環境変数の型安全性を保証し、実行時エラーを防ぎます
  */
 
 import { z } from 'zod';
@@ -31,14 +33,27 @@ const envSchema = z.object({
 
   // Vercel Analytics
   NEXT_PUBLIC_VERCEL_ANALYTICS: z.string().optional().transform(val => val || undefined),
+
+  // Secured API routes
+  OPENAI_API_AUTH_TOKEN: z.string().optional().transform(val => val || undefined),
+
+  // Allowed origins for CSRF validation
+  ALLOWED_ORIGINS: z.string().optional().transform(val =>
+    val
+      ? val
+          .split(',')
+          .map(origin => origin.trim())
+          .filter(Boolean)
+      : undefined
+  ),
 });
 
-// 環境変数のパース（開発時のみ検証）
+// 環境変数のパース – 開発時のみ検証します
 function parseEnv() {
   const parsed = envSchema.safeParse(process.env);
 
   if (!parsed.success) {
-    console.error('❌ Invalid environment variables:');
+    console.error('❗ Invalid environment variables:');
     console.error(parsed.error.flatten().fieldErrors);
     throw new Error('Invalid environment variables');
   }
@@ -60,7 +75,7 @@ export function checkEnvVar(key: keyof Env): boolean {
 }
 
 /**
- * 必須の環境変数をチェック（本番環境用）
+ * 必須の環境変数をチェック – 本番環境向け
  */
 export function checkRequiredEnvVars(keys: (keyof Env)[]): void {
   const missing = keys.filter(key => !env[key]);
