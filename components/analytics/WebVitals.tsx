@@ -1,11 +1,8 @@
-﻿'use client';
+'use client';
 
 import { useEffect } from 'react';
 import { useReportWebVitals } from 'next/web-vitals';
-import { clientEnv } from '@/lib/env-client';
-
-const isDevelopment = clientEnv.NODE_ENV === 'development';
-const isProduction = clientEnv.NODE_ENV === 'production';
+import { env } from '@/lib/env';
 
 // Track AI referrers for LLMO analytics
 const AI_REFERRERS = [
@@ -27,42 +24,45 @@ function trackAIReferrer() {
   const referrer = document.referrer;
   const isAIReferrer = AI_REFERRERS.some(ai => referrer.includes(ai));
 
-  if (!isAIReferrer) {
-    return;
-  }
+  if (isAIReferrer) {
+    const aiSource = AI_REFERRERS.find(ai => referrer.includes(ai)) || 'unknown_ai';
 
-  const aiSource = AI_REFERRERS.find(ai => referrer.includes(ai)) || 'unknown_ai';
+    // Track to Google Analytics
+    if (window.gtag) {
+      window.gtag('event', 'ai_referral', {
+        event_category: 'LLMO',
+        event_label: aiSource,
+        ai_source: aiSource,
+        page_path: window.location.pathname,
+        non_interaction: false,
+      });
+    }
 
-  if (window.gtag) {
-    window.gtag('event', 'ai_referral', {
-      event_category: 'LLMO',
-      event_label: aiSource,
-      ai_source: aiSource,
-      page_path: window.location.pathname,
-      non_interaction: false,
+    // Store in sessionStorage for analytics
+    const aiVisits = JSON.parse(sessionStorage.getItem('ai-visits') || '[]');
+    aiVisits.push({
+      source: aiSource,
+      timestamp: new Date().toISOString(),
+      page: window.location.pathname,
     });
-  }
+    sessionStorage.setItem('ai-visits', JSON.stringify(aiVisits));
 
-  const aiVisits = JSON.parse(sessionStorage.getItem('ai-visits') || '[]');
-  aiVisits.push({
-    source: aiSource,
-    timestamp: new Date().toISOString(),
-    page: window.location.pathname,
-  });
-  sessionStorage.setItem('ai-visits', JSON.stringify(aiVisits));
-
-  if (isDevelopment) {
-    console.log('🤖 AI Referral detected:', aiSource);
+    // Log in development
+    if (env.NODE_ENV === 'development') {
+      console.log('🤖 AI Referral detected:', aiSource);
+    }
   }
 }
 
 export function WebVitals() {
+  // Track AI referrers on mount
   useEffect(() => {
     trackAIReferrer();
   }, []);
 
   useReportWebVitals((metric) => {
-    if (isDevelopment) {
+    // Log metrics to console in development only
+    if (env.NODE_ENV === 'development') {
       console.log({
         name: metric.name,
         value: metric.value,
@@ -72,7 +72,9 @@ export function WebVitals() {
       });
     }
 
+    // Store metrics for analysis
     if (typeof window !== 'undefined') {
+      // Store metrics in sessionStorage for debugging
       const metrics = JSON.parse(sessionStorage.getItem('web-vitals') || '[]');
       metrics.push({
         name: metric.name,
@@ -82,7 +84,8 @@ export function WebVitals() {
       });
       sessionStorage.setItem('web-vitals', JSON.stringify(metrics));
 
-      if (isDevelopment) {
+      // Development-only console warnings for poor metrics
+      if (env.NODE_ENV === 'development') {
         if (metric.rating === 'poor') {
           console.warn(`⚠️ Poor ${metric.name}: ${Math.round(metric.value)}`);
         } else if (metric.rating === 'needs-improvement') {
@@ -92,11 +95,17 @@ export function WebVitals() {
         }
       }
 
-      if (isProduction && metric.rating === 'poor') {
-        // TODO: 本番環境のパフォーマンス問題を監視サービスに送信
+      // Production: Send poor metrics to error reporting service
+      if (env.NODE_ENV === 'production' && metric.rating === 'poor') {
+        // TODO: 本番環境でのパフォーマンス問題を監視サービスに送信
+        // Example integrations:
+        // - Sentry.captureMessage(`Poor Web Vital: ${metric.name}`, { level: 'warning', extra: metric });
+        // - Datadog RUM: window.DD_RUM?.addError(new Error(`Poor ${metric.name}`), { metric });
+        // - LogRocket.captureMessage(`Poor ${metric.name}`, { extra: metric });
       }
     }
 
+    // Send to analytics service (Google Analytics example)
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', metric.name, {
         value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
@@ -107,32 +116,32 @@ export function WebVitals() {
     }
   });
 
+  // Display Web Vitals overlay in development
   useEffect(() => {
-    if (!isDevelopment) {
-      return;
+    if (env.NODE_ENV === 'development') {
+      const showVitalsOverlay = () => {
+        const metrics = JSON.parse(sessionStorage.getItem('web-vitals') || '[]');
+        if (metrics.length === 0) return;
+
+        interface MetricRecord {
+          name: string;
+          value: number;
+          rating: string;
+          timestamp: string;
+        }
+
+        const latest = metrics.reduce((acc: Record<string, MetricRecord>, curr: MetricRecord) => {
+          acc[curr.name] = curr;
+          return acc;
+        }, {});
+
+        console.table(latest);
+      };
+
+      // Show metrics every 10 seconds in development
+      const interval = setInterval(showVitalsOverlay, 10000);
+      return () => clearInterval(interval);
     }
-
-    const showVitalsOverlay = () => {
-      const metrics = JSON.parse(sessionStorage.getItem('web-vitals') || '[]');
-      if (metrics.length === 0) return;
-
-      interface MetricRecord {
-        name: string;
-        value: number;
-        rating: string;
-        timestamp: string;
-      }
-
-      const latest = metrics.reduce((acc: Record<string, MetricRecord>, curr: MetricRecord) => {
-        acc[curr.name] = curr;
-        return acc;
-      }, {});
-
-      console.table(latest);
-    };
-
-    const interval = setInterval(showVitalsOverlay, 10000);
-    return () => clearInterval(interval);
   }, []);
 
   return null;
