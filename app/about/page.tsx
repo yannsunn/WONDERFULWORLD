@@ -299,9 +299,9 @@ const AboutPage = () => {
                       🍶
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">お酒メーカー「ラッシュ」</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">お酒メーカー「RUSH」</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        川崎カイヤ様のOEM商品として、お酒メーカー「ラッシュ」の企画・製造を担当しています。
+                        川崎カイヤ様のOEM商品として、お酒メーカー「RUSH」の企画・製造を担当しています。
                       </p>
                     </div>
                   </div>
