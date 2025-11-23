@@ -35,31 +35,13 @@ export default function GymGallery() {
     <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-12 text-center">
             ジムの様子
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            3BGYMの雰囲気をご覧ください
-          </p>
-        </ScrollReveal>
-
-        {/* Logo */}
-        <ScrollReveal delay={0.2}>
-          <div className="max-w-md mx-auto mb-12">
-            <div className="relative w-full aspect-square bg-white rounded-2xl shadow-lg p-8">
-              <Image
-                src="/images/business/gym/logo.jpg"
-                alt="3BGYM ロゴ"
-                fill
-                className="object-contain p-4"
-                sizes="(max-width: 768px) 100vw, 448px"
-              />
-            </div>
-          </div>
         </ScrollReveal>
 
         {/* Image Slider */}
-        <ScrollReveal delay={0.3}>
+        <ScrollReveal delay={0.2}>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Main Image */}

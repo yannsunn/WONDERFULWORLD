@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface GymHeroProps {
   name: string;
@@ -25,7 +26,26 @@ export default function GymHero({ name, tagline, subtitle, description, external
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Logo/Brand */}
+          {/* Logo Image */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="mb-6 sm:mb-8"
+          >
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-4 sm:p-6">
+              <Image
+                src="/images/business/gym/logo.jpg"
+                alt="3BGYM ロゴ"
+                fill
+                className="object-contain p-2"
+                sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
+                priority
+              />
+            </div>
+          </motion.div>
+
+          {/* Logo/Brand Text */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
