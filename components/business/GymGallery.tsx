@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
@@ -14,21 +14,42 @@ const gymImages = [
 
 export default function GymGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // 自動スライド
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === gymImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // 5秒ごとに自動スライド
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
   const goToPrevious = () => {
+    setIsAutoPlaying(false); // 手動操作時は自動再生を停止
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? gymImages.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
+    setIsAutoPlaying(false); // 手動操作時は自動再生を停止
     setCurrentIndex((prevIndex) =>
       prevIndex === gymImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const goToSlide = (index: number) => {
+    setIsAutoPlaying(false); // 手動操作時は自動再生を停止
     setCurrentIndex(index);
+  };
+
+  const toggleAutoPlay = () => {
+    setIsAutoPlaying(!isAutoPlaying);
   };
 
   return (
