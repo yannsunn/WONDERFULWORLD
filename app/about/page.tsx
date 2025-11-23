@@ -228,7 +228,7 @@ const AboutPage = () => {
                   src="/images/about/representative-new.jpg"
                   alt="代表社員 藤山 嘉彦"
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_20%]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
