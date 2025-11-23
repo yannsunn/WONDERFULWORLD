@@ -68,7 +68,7 @@ export default function AIModelsBusinessPage() {
             src="/images/news/top3-group.jpg"
             alt="AIモデルインフルエンサー"
             fill
-            className="object-cover object-[center_30%]"
+            className="object-cover object-[center_20%]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-orange-600/90 via-orange-500/90 to-pink-500/90" />
