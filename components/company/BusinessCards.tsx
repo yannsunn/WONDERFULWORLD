@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Business {
   id: string;
@@ -56,15 +57,17 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
               className="group"
             >
               <div className="card-premium hover-lift overflow-hidden border border-gray-200">
-                {/* Icon Section */}
+                {/* Icon/Image Section */}
                 <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 p-10 sm:p-12 md:p-16 overflow-hidden">
-                  <div className="text-center">
-                    <div
-                      className="text-6xl sm:text-7xl md:text-8xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500"
-                      role="img"
-                      aria-label={index === 0 ? 'AIモデルインフルエンサー' : 'フィットネス'}
-                    >
-                      {index === 0 ? '🤖' : '💪'}
+                  <div className="flex items-center justify-center">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 group-hover:scale-110 transition-transform duration-500">
+                      <Image
+                        src={business.image}
+                        alt={`${business.name} ロゴ`}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
+                      />
                     </div>
                   </div>
 

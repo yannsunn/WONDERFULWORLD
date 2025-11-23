@@ -390,6 +390,39 @@ const AboutPage = () => {
             </div>
             </div>
           </ScrollReveal>
+
+          {/* Partner Companies */}
+          <ScrollReveal delay={0.5}>
+            <div className="card p-8 mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">協力会社</h3>
+              <div className="max-w-2xl mx-auto">
+                <div className="bg-white rounded-lg p-6 shadow-md hover-lift">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                      🚀
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">株式会社Awake</h4>
+                      <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                        ITコンサルティング、ホームページ制作、AIチャットボット開発などを手がける技術パートナー企業です。
+                      </p>
+                      <a
+                        href="https://www.awakeinc.co.jp/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                      >
+                        公式サイトを見る
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

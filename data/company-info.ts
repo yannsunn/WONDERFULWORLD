@@ -142,7 +142,7 @@ export const companyInfo: CompanyInfo = {
       id: 'gym',
       name: 'ジム事業（3BGYM）',
       description: '健康的な身体が美しさを作る。セミプライベートジムで、あなたの可能性を最大化します。',
-      image: '/images/about/company-logo.jpg', // ジムの画像があれば差し替え
+      image: '/images/business/gym/logo.jpg',
       url: '/business/gym',
       externalUrl: 'https://3bgym.net',
       features: [
