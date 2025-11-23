@@ -256,27 +256,8 @@ const AboutPage = () => {
             </div>
           </ScrollReveal>
 
-          {/* Sponsors/Partners */}
-          <ScrollReveal delay={0.3}>
-            <div className="card p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">パートナー企業</h3>
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-6">
-              <Image
-                src="/images/about/sponsors-screen.jpg"
-                alt="Best of Miss Tokyo 2025 パートナー企業"
-                fill
-                className="object-contain bg-gray-900"
-                sizes="100vw"
-              />
-            </div>
-            <p className="text-center text-sm text-gray-600">
-              Best of Miss Tokyo 2025 をサポートいただいた企業の皆様
-            </p>
-            </div>
-          </ScrollReveal>
-
           {/* OEM Business & SNS Collaboration */}
-          <ScrollReveal delay={0.35}>
+          <ScrollReveal delay={0.3}>
             <div className="card p-6 sm:p-8 mt-8 bg-gradient-to-br from-orange-50 to-pink-50 border border-orange-100">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">OEM事業・SNS運用協業</h3>
               <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
@@ -348,7 +329,7 @@ const AboutPage = () => {
           </ScrollReveal>
 
           {/* Company Info */}
-          <ScrollReveal delay={0.4}>
+          <ScrollReveal delay={0.35}>
             <div className="card p-8 mt-8">
             <div className="flex items-center justify-center mb-6">
               <div className="relative w-32 h-32">
@@ -392,7 +373,7 @@ const AboutPage = () => {
           </ScrollReveal>
 
           {/* Partner Companies */}
-          <ScrollReveal delay={0.5}>
+          <ScrollReveal delay={0.4}>
             <div className="card p-8 mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">協力会社</h3>
               <div className="max-w-2xl mx-auto">
