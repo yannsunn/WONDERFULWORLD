@@ -238,17 +238,30 @@ const AboutPage = () => {
                   <p className="text-lg text-gray-600">藤山 嘉彦</p>
                   <p className="text-sm text-gray-500">Yoshihiko Fujiyama</p>
                 </div>
-                <div className="space-y-4 text-gray-700">
-                  <p>
-                    「人に富を与える」——この言葉こそが、Wonderful World 合同会社の原点です。
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p className="font-semibold text-gray-900">
+                    「人に富を与える」——<br />
+                    この言葉こそが、Wonderful World 合同会社の原点です。
                   </p>
                   <p>
                     私たちは、AIの力と人のつながりをかけ合わせ、
                     挑戦するすべての人が&ldquo;心の豊かさ&rdquo;と&ldquo;経済的な豊かさ&rdquo;の両方を得られる未来を目指しています。
                   </p>
                   <p>
+                    現代社会は、情報もスピードも加速し続けています。
+                    そんな時代だからこそ、「ご縁」や「誠実さ」といった人としての温かさを大切にしたい。
+                    AIは人を置き換えるものではなく、人の可能性を拡張させるパートナーです。
+                  </p>
+                  <p>
+                    私自身、多くのご縁に支えられて成長してきました。
+                    今度は、そのご縁を次の誰かにつなぎ、挑戦の輪を広げていきたい。
+                    そして、挑戦するすべての人が&ldquo;幸せなお金持ち&rdquo;になれるよう、
+                    誠実に寄り添いながら共に歩んでまいります。
+                  </p>
+                  <p>
                     Best of Miss Tokyo 2025では、プラチナスポンサーとして参加させていただきました。
-                    これからも美と技術の融合で、新しい価値を創造してまいります。
+                    これからも美と技術の融合で、新しい価値を創造し、
+                    AIと人の共創によって、より美しく、より豊かな世界を創造していきます。
                   </p>
                 </div>
               </div>

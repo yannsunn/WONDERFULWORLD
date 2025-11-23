@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/company/HeroSection';
-import { companyInfo, ceoMessage } from '@/data/company-info';
+import { companyInfo } from '@/data/company-info';
 
 // 初期表示に不要なコンポーネントを動的インポート（Below-the-fold content）
 const PhilosophySection = dynamic(() => import('@/components/company/PhilosophySection'), {
@@ -12,7 +12,6 @@ const PhilosophySection = dynamic(() => import('@/components/company/PhilosophyS
 });
 
 const BusinessCards = dynamic(() => import('@/components/company/BusinessCards'));
-const CEOMessageSection = dynamic(() => import('@/components/company/CEOMessageSection'));
 
 export default function Home() {
   return (
@@ -41,15 +40,6 @@ export default function Home() {
       <div id="business">
         <BusinessCards businesses={companyInfo.businesses} />
       </div>
-
-      {/* 代表挨拶 */}
-      <CEOMessageSection
-        name={ceoMessage.name}
-        title={ceoMessage.title}
-        message={ceoMessage.excerpt}
-        photo={ceoMessage.photo}
-        fullMessageUrl="/about#ceo-message"
-      />
     </>
   );
 }
