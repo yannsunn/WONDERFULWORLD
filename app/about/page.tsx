@@ -225,8 +225,8 @@ const AboutPage = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/about/representative-presentation.jpg"
-                  alt="WONDERFUL WORLD 代表者プレゼンテーション"
+                  src="/images/about/representative-new.jpg"
+                  alt="代表社員 藤山 嘉彦"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
