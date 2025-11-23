@@ -181,7 +181,7 @@ const HeroSection = () => {
           </p>
 
           {/* Sub-message - Enhanced */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-12 max-w-3xl mx-auto drop-shadow-2xl animate-slide-in-left px-4 ja-text" style={{lineHeight: '1.9'}}>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-12 max-w-3xl mx-auto drop-shadow-2xl animate-slide-in-left px-4 ja-text" style={{lineHeight: '1.9', letterSpacing: '0.04em'}}>
             ミスコンテストの<wbr />ファイナリストから生まれた<br className="hidden sm:block" />
             <span className="text-orange-300 font-semibold">AIモデル<wbr />インフルエンサー</span>
           </p>

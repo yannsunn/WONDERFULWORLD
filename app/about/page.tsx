@@ -44,10 +44,10 @@ const AboutPage = () => {
         <section className="section mesh-gradient">
           <div className="container-premium text-center">
             <ScrollReveal>
-              <h1 className="text-5xl md:text-6xl font-playfair font-bold text-gray-900 mb-6" style={{lineHeight: '1.6'}}>
+              <h1 className="text-5xl md:text-6xl font-playfair font-bold text-gray-900 mb-6" style={{lineHeight: '1.6', letterSpacing: '0.04em'}}>
                 About Us
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto ja-text" style={{lineHeight: '1.9'}}>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto ja-text" style={{lineHeight: '1.9', letterSpacing: '0.04em'}}>
                 誰もが主役になれる<wbr />素晴らしい世界を
               </p>
             </ScrollReveal>
@@ -62,7 +62,7 @@ const AboutPage = () => {
               <h2 className="text-responsive-lg font-playfair font-bold text-gray-900 mb-6">
                 <span className="gradient-text-sunset">Our Mission</span>
               </h2>
-              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 ja-text" style={{lineHeight: '2'}}>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 ja-text" style={{lineHeight: '2', letterSpacing: '0.03em'}}>
                 <p>
                   本プロジェクトは、<wbr />AI技術と美の力で<wbr />女性たちの可能性を<wbr />広げることを<wbr />使命としています。
                 </p>
@@ -140,19 +140,19 @@ const AboutPage = () => {
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>高品質なビジュアル：</strong>実在のミスコンテストファイナリストの美しさを活かした自然なコンテンツを提供します。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>高品質なビジュアル：</strong>実在のミスコンテストファイナリストの美しさを活かした自然なコンテンツを提供します。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>多様な表現力：</strong>ファッション、ビューティー、ライフスタイルなど幅広い分野で柔軟なコンテンツ制作が可能です。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>多様な表現力：</strong>ファッション、ビューティー、ライフスタイルなど幅広い分野で柔軟なコンテンツ制作が可能です。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-accent-gold mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text" style={{lineHeight: '1.9'}}><strong>グローバル活動：</strong>時間や場所の制約を超えて、世界中で活動できます。</span>
+                  <span className="ja-text" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>グローバル活動：</strong>時間や場所の制約を超えて、世界中で活動できます。</span>
                 </li>
               </ul>
             </div>
