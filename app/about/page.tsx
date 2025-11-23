@@ -222,22 +222,27 @@ const AboutPage = () => {
           {/* Representative Photo */}
           <ScrollReveal delay={0.2}>
             <div className="card p-8 md:p-12 mb-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
-                <Image
-                  src="/images/about/representative-new.jpg"
-                  alt="代表社員 藤山 嘉彦"
-                  fill
-                  className="object-cover object-[center_20%]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div>
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">代表社員</h3>
-                  <p className="text-lg text-gray-600">藤山 嘉彦</p>
-                  <p className="text-sm text-gray-500">Yoshihiko Fujiyama</p>
+            <div className="grid md:grid-cols-5 gap-8 lg:gap-10 items-center">
+              <div className="md:col-span-2">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl max-w-sm mx-auto md:max-w-none">
+                  <Image
+                    src="/images/about/representative-new.jpg"
+                    alt="代表社員 藤山 嘉彦"
+                    fill
+                    className="object-cover object-[center_20%]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+                  {/* Name Badge */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                    <p className="text-xs sm:text-sm font-medium opacity-90 mb-1">代表社員</p>
+                    <h3 className="text-xl sm:text-2xl font-bold font-playfair">藤山 嘉彦</h3>
+                    <p className="text-xs sm:text-sm opacity-90 mt-1">Yoshihiko Fujiyama</p>
+                  </div>
                 </div>
+              </div>
+              <div className="md:col-span-3">
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p className="font-semibold text-gray-900">
                     「人に富を与える」——<br />
