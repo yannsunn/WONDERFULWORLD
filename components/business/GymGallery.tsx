@@ -24,7 +24,7 @@ export default function GymGallery() {
       setCurrentIndex((prevIndex) =>
         prevIndex === gymImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // 5秒ごとに自動スライド
+    }, 2500); // 2.5秒ごとに自動スライド
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
