@@ -72,7 +72,7 @@ export default function HeroSection({ title, subtitle, message, ctaButtons }: He
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4"
-            style={{ lineHeight: '1.6', wordBreak: 'normal', overflowWrap: 'break-word' }}
+            style={{ lineHeight: '1.6', letterSpacing: '0.05em', wordBreak: 'normal', overflowWrap: 'break-word' }}
           >
             {message}
           </motion.h2>
@@ -82,7 +82,7 @@ export default function HeroSection({ title, subtitle, message, ctaButtons }: He
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-2xl mx-auto px-2 sm:px-4"
-            style={{ lineHeight: '1.8', wordBreak: 'normal', overflowWrap: 'break-word' }}
+            style={{ lineHeight: '1.8', letterSpacing: '0.04em', wordBreak: 'normal', overflowWrap: 'break-word' }}
           >
             {title}
           </motion.p>
