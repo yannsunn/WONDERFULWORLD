@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import Image from 'next/image';
 import GymHero from '@/components/business/GymHero';
 import GymFeatures from '@/components/business/GymFeatures';
 import GymPricing from '@/components/business/GymPricing';
 import GymAccess from '@/components/business/GymAccess';
+import GymGallery from '@/components/business/GymGallery';
 import { gymInfo } from '@/data/gym-info';
 import PageTransition from '@/components/animations/PageTransition';
 import ScrollReveal from '@/components/animations/ScrollReveal';
@@ -101,57 +101,7 @@ export default function GymPage() {
       />
 
       {/* Gallery Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair text-gray-900 mb-4 text-center">
-              ジムの様子
-            </h2>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              3BGYMの雰囲気をご覧ください
-            </p>
-          </ScrollReveal>
-
-          {/* Logo */}
-          <ScrollReveal delay={0.2}>
-            <div className="max-w-md mx-auto mb-12">
-              <div className="relative w-full aspect-square bg-white rounded-2xl shadow-lg p-8">
-                <Image
-                  src="/images/business/gym/logo.jpg"
-                  alt="3BGYM ロゴ"
-                  fill
-                  className="object-contain p-4"
-                  sizes="(max-width: 768px) 100vw, 448px"
-                />
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Office Images Gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              { src: '/images/business/gym/office-1.jpg', alt: '3BGYM ジム内観 1' },
-              { src: '/images/business/gym/office-2.jpg', alt: '3BGYM ジム内観 2' },
-              { src: '/images/business/gym/office-3.jpg', alt: '3BGYM ジム内観 3' },
-              { src: '/images/business/gym/office-4.jpg', alt: '3BGYM ジム内観 4' },
-              { src: '/images/business/gym/office-5.jpg', alt: '3BGYM ジム内観 5' },
-              { src: '/images/business/gym/office-6.jpg', alt: '3BGYM ジム内観 6' },
-            ].map((image, index) => (
-              <ScrollReveal key={index} delay={0.1 * (index % 3)}>
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GymGallery />
 
       {/* Access Section */}
       <GymAccess
