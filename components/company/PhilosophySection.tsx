@@ -64,7 +64,7 @@ export default function PhilosophySection({ philosophy, vision, mission }: Philo
                 </div>
 
                 {/* Subtitle */}
-                <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4 leading-tight">
+                <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4 leading-normal">
                   {item.subtitle}
                 </h3>
 

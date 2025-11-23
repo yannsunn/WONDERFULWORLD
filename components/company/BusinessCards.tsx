@@ -79,7 +79,7 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
 
                 {/* Content */}
                 <div className="p-6 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 leading-normal">
                     {business.name}
                   </h3>
 
