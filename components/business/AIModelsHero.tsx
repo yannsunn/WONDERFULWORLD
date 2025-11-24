@@ -7,9 +7,9 @@ import Link from 'next/link';
 
 const heroImages = [
   { src: '/images/news/top3-group.jpg', alt: 'AIモデル トップ3', position: 'object-[center_20%]' },
-  { src: '/images/news/best-of-miss-all-guests.jpg', alt: 'ベスト・オブ・ミス 受賞者', position: 'object-[center_10%]' },
-  { src: '/images/news/award-ceremony-1.jpg', alt: '授賞式 1', position: 'object-[center_30%] scale-90' },
-  { src: '/images/news/award-ceremony-2.jpg', alt: '授賞式 2', position: 'object-[center_30%] scale-90' },
+  { src: '/images/news/best-of-miss-all-guests.jpg', alt: 'ベスト・オブ・ミス 受賞者', position: 'object-[center_10%] scale-90' },
+  { src: '/images/news/award-ceremony-1.jpg', alt: '授賞式 1', position: 'object-[center_30%] scale-75' },
+  { src: '/images/news/award-ceremony-2.jpg', alt: '授賞式 2', position: 'object-[center_30%] scale-75' },
 ];
 
 export default function AIModelsHero() {
