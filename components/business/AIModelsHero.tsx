@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 const heroImages = [
   { src: '/images/news/top3-group.jpg', alt: 'AIモデル トップ3' },
-  { src: '/images/news/best-of-miss-top3-with-ceo.jpg', alt: 'ベスト・オブ・ミス トップ3' },
   { src: '/images/news/best-of-miss-all-guests.jpg', alt: 'ベスト・オブ・ミス 受賞者' },
+  { src: '/images/news/event-staff-photo.jpg', alt: 'イベントスタッフ' },
   { src: '/images/news/award-ceremony-1.jpg', alt: '授賞式 1' },
   { src: '/images/news/award-ceremony-2.jpg', alt: '授賞式 2' },
 ];
