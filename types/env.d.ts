@@ -2,8 +2,6 @@ declare global {
   namespace NodeJS {
     interface ProcessEnv {
       NODE_ENV: 'development' | 'production' | 'test';
-      OPENAI_API_KEY?: string;
-      GEMINI_API_KEY?: string;
       FIGMA_ACCESS_TOKEN?: string;
       FIGMA_FILE_KEY?: string;
       NEXT_PUBLIC_GA_ID?: string;

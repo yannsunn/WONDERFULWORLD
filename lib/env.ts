@@ -10,15 +10,6 @@ const envSchema = z.object({
   // Node environment
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 
-  // OpenAI API
-  OPENAI_API_KEY: z.string().optional().transform(val => val || undefined),
-
-  // OpenAI API Auth Token (for protecting API routes)
-  OPENAI_API_AUTH_TOKEN: z.string().optional().transform(val => val || undefined),
-
-  // Google Gemini API
-  GEMINI_API_KEY: z.string().optional().transform(val => val || undefined),
-
   // Figma API
   FIGMA_ACCESS_TOKEN: z.string().optional().transform(val => val || undefined),
   FIGMA_FILE_KEY: z.string().optional().transform(val => val || undefined),
@@ -60,11 +51,6 @@ if (env.NODE_ENV === 'production' && process.env.VERCEL === '1') {
   if (missing.length > 0) {
     console.error(`❌ Missing required environment variables in production: ${missing.join(', ')}`);
     throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
-  }
-
-  // OpenAI API routes protection warning
-  if (!env.OPENAI_API_AUTH_TOKEN) {
-    console.warn('⚠️  OPENAI_API_AUTH_TOKEN not configured. OpenAI API routes are unprotected!');
   }
 }
 

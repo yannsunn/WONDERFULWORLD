@@ -86,7 +86,9 @@
       "Bash(git checkout:*)",
       "Bash(copy \"C:\\Users\\march\\Downloads\\LINE_ALBUM_3B_251123_1.jpg\" \"public\\images\\business\\awake\\logo.jpg\")",
       "Bash(copy \"C:\\Users\\march\\Downloads\\LINE_ALBUM_3B_251123_2.jpg\" \"public\\images\\business\\awake\\office-1.jpg\")",
-      "Bash(copy:*)"
+      "Bash(copy:*)",
+      "Bash(gh pr list:*)",
+      "Bash(npm update:*)"
     ],
     "deny": [],
     "ask": []
