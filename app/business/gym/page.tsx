@@ -4,7 +4,7 @@ import GymHero from '@/components/business/GymHero';
 import GymFeatures from '@/components/business/GymFeatures';
 import GymPricing from '@/components/business/GymPricing';
 import GymAccess from '@/components/business/GymAccess';
-import GymGallery from '@/components/business/GymGallery';
+
 import { gymInfo } from '@/data/gym-info';
 import PageTransition from '@/components/animations/PageTransition';
 import ScrollReveal from '@/components/animations/ScrollReveal';
@@ -101,7 +101,6 @@ export default function GymPage() {
       />
 
       {/* Gallery Section */}
-      <GymGallery />
 
       {/* Access Section */}
       <GymAccess

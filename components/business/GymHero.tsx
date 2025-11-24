@@ -1,7 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+
+const gymImages = [
+  { src: '/images/business/gym/office-1.jpg', alt: '3BGYM ジム内観 1' },
+  { src: '/images/business/gym/office-2.jpg', alt: '3BGYM ジム内観 2' },
+  { src: '/images/business/gym/office-3.jpg', alt: '3BGYM ジム内観 3' },
+  { src: '/images/business/gym/office-4.jpg', alt: '3BGYM ジム内観 4' },
+  { src: '/images/business/gym/office-5.jpg', alt: '3BGYM ジム内観 5' },
+];
 
 interface GymHeroProps {
   name: string;
@@ -12,12 +21,64 @@ interface GymHeroProps {
 }
 
 export default function GymHero({ name, tagline, subtitle, description, externalUrl }: GymHeroProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 自動スライド
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === gymImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // 4秒ごとに自動スライド
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   return (
-    <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-pink-500">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-white rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-white rounded-full filter blur-3xl" />
+    <section className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image Slider */}
+      <div className="absolute inset-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={gymImages[currentIndex].src}
+              alt={gymImages[currentIndex].alt}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority={currentIndex === 0}
+            />
+          </motion.div>
+        </AnimatePresence>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+      </div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {gymImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={"w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 " + (
+              index === currentIndex
+                ? 'bg-white scale-125'
+                : 'bg-white/50 hover:bg-white/75'
+            )}
+            aria-label={"画像 " + (index + 1) + " を表示"}
+          />
+        ))}
       </div>
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 py-16 sm:py-20 md:py-24 lg:py-28 text-center text-white">
@@ -52,13 +113,13 @@ export default function GymHero({ name, tagline, subtitle, description, external
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mb-6 sm:mb-8"
           >
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-playfair mb-3 sm:mb-4 px-2">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-playfair mb-3 sm:mb-4 px-2 drop-shadow-lg">
               {name}
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 px-2">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 px-2 drop-shadow-md">
               {tagline}
             </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 px-2">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 px-2 drop-shadow-md">
               {subtitle}
             </p>
           </motion.div>
@@ -68,7 +129,7 @@ export default function GymHero({ name, tagline, subtitle, description, external
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2"
+            className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2 drop-shadow-md"
           >
             {description}
           </motion.p>
