@@ -6,10 +6,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const heroImages = [
-  { src: '/images/news/top3-group.jpg', alt: 'AIモデル トップ3' },
-  { src: '/images/news/best-of-miss-all-guests.jpg', alt: 'ベスト・オブ・ミス 受賞者' },
-  { src: '/images/news/award-ceremony-1.jpg', alt: '授賞式 1' },
-  { src: '/images/news/award-ceremony-2.jpg', alt: '授賞式 2' },
+  { src: '/images/news/top3-group.jpg', alt: 'AIモデル トップ3', position: 'object-[center_20%]' },
+  { src: '/images/news/best-of-miss-all-guests.jpg', alt: 'ベスト・オブ・ミス 受賞者', position: 'object-[center_10%]' },
+  { src: '/images/news/award-ceremony-1.jpg', alt: '授賞式 1', position: 'object-[center_30%] scale-90' },
+  { src: '/images/news/award-ceremony-2.jpg', alt: '授賞式 2', position: 'object-[center_30%] scale-90' },
 ];
 
 export default function AIModelsHero() {
@@ -47,7 +47,7 @@ export default function AIModelsHero() {
               src={heroImages[currentIndex].src}
               alt={heroImages[currentIndex].alt}
               fill
-              className="object-cover object-[center_20%]"
+              className={`object-cover ${heroImages[currentIndex].position}`}
               sizes="100vw"
               priority={currentIndex === 0}
             />
