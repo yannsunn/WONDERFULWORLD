@@ -13,6 +13,9 @@ const envSchema = z.object({
   // OpenAI API
   OPENAI_API_KEY: z.string().optional().transform(val => val || undefined),
 
+  // OpenAI API Auth Token (for protecting API routes)
+  OPENAI_API_AUTH_TOKEN: z.string().optional().transform(val => val || undefined),
+
   // Google Gemini API
   GEMINI_API_KEY: z.string().optional().transform(val => val || undefined),
 
@@ -23,7 +26,7 @@ const envSchema = z.object({
   // Google Analytics
   NEXT_PUBLIC_GA_ID: z.string().optional().transform(val => val || undefined),
 
-  // Site URL
+  // Site URL (Required in production)
   NEXT_PUBLIC_SITE_URL: z.string().optional().transform(val => val || undefined),
 
   // Contact Email
@@ -33,7 +36,7 @@ const envSchema = z.object({
   NEXT_PUBLIC_VERCEL_ANALYTICS: z.string().optional().transform(val => val || undefined),
 });
 
-// 環境変数のパース（開発時のみ検証）
+// 環境変数のパース
 function parseEnv() {
   const parsed = envSchema.safeParse(process.env);
 
@@ -48,6 +51,22 @@ function parseEnv() {
 
 // 環境変数のエクスポート
 export const env = parseEnv();
+
+// 本番環境で必須の環境変数をチェック（Vercelにデプロイされている場合のみ）
+if (env.NODE_ENV === 'production' && process.env.VERCEL === '1') {
+  const requiredVars: (keyof typeof env)[] = ['NEXT_PUBLIC_SITE_URL'];
+  const missing = requiredVars.filter(key => !env[key]);
+
+  if (missing.length > 0) {
+    console.error(`❌ Missing required environment variables in production: ${missing.join(', ')}`);
+    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+  }
+
+  // OpenAI API routes protection warning
+  if (!env.OPENAI_API_AUTH_TOKEN) {
+    console.warn('⚠️  OPENAI_API_AUTH_TOKEN not configured. OpenAI API routes are unprotected!');
+  }
+}
 
 // 型定義のエクスポート
 export type Env = z.infer<typeof envSchema>;
