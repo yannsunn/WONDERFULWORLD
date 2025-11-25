@@ -30,10 +30,10 @@ export default function GymPricing({ membership, entry, visitor }: GymPricingPro
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-playfair text-gray-900 mb-2 sm:mb-3 md:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-playfair text-gray-900 mb-2 sm:mb-3 md:mb-4" style={{ lineHeight: '1.4', letterSpacing: '0.04em' }}>
             料金プラン
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 px-2">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 px-2" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>
             明確でシンプルな料金体系
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ export default function GymPricing({ membership, entry, visitor }: GymPricingPro
                 )}
 
                 <div className="text-center mb-4 sm:mb-6">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-4" style={{ letterSpacing: '0.04em' }}>
                     {plan.name}
                   </h3>
                   <div className="flex items-baseline justify-center gap-1">

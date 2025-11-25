@@ -80,18 +80,18 @@ export default function AIModelsHero() {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-4 sm:mb-6 md:mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-playfair mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-playfair mb-2 sm:mb-3 md:mb-4 drop-shadow-lg" style={{ lineHeight: '1.3', letterSpacing: '0.04em' }}>
               AIモデルインフルエンサー
             </h1>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-1 sm:mb-2 px-2 sm:px-4 drop-shadow-md">
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-1 sm:mb-2 px-2 sm:px-4 drop-shadow-md" style={{ lineHeight: '1.5', letterSpacing: '0.05em' }}>
               AI Model Influencer Business
             </p>
-            <p className="text-xs sm:text-base md:text-lg lg:text-xl opacity-90 px-2 sm:px-4 drop-shadow-md">
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl opacity-90 px-2 sm:px-4 drop-shadow-md" style={{ lineHeight: '1.6', letterSpacing: '0.03em' }}>
               次世代のインフルエンサーマーケティング
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4 drop-shadow-md">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto px-2 sm:px-4 drop-shadow-md" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>
             ミスコンテストファイナリストをベースにした、美しく魅力的なAIモデルインフルエンサー。
             最先端のAI技術で、新しい形のマーケティングを実現します。
           </p>

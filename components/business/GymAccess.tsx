@@ -23,10 +23,10 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-playfair text-gray-900 mb-2 sm:mb-3 md:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-playfair text-gray-900 mb-2 sm:mb-3 md:mb-4" style={{ lineHeight: '1.4', letterSpacing: '0.04em' }}>
             アクセス
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 px-2">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 px-2" style={{ letterSpacing: '0.03em' }}>
             {location.name}
           </p>
         </motion.div>
@@ -46,9 +46,9 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
                   📍
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">住所</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mb-1">〒{location.postalCode}</p>
-                  <p className="text-sm sm:text-base text-gray-800 leading-relaxed">{location.address}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3" style={{ letterSpacing: '0.04em' }}>住所</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-1" style={{ letterSpacing: '0.02em' }}>〒{location.postalCode}</p>
+                  <p className="text-sm sm:text-base text-gray-800" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>{location.address}</p>
                 </div>
               </div>
 
@@ -72,7 +72,7 @@ export default function GymAccess({ location, hours }: GymAccessProps) {
                   🕐
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">営業時間</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3" style={{ letterSpacing: '0.04em' }}>営業時間</h3>
                   <div className="space-y-1 sm:space-y-2">
                     <p className="text-sm sm:text-base text-gray-800 font-semibold">
                       {hours.open} - {hours.close}

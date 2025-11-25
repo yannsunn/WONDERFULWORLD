@@ -40,7 +40,7 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-playfair mb-2 sm:mb-3 md:mb-4 px-2">
             <span className="gradient-text-sunset">事業案内</span>
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-4" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>
             私たちの2つの事業で、人々の可能性を最大限に引き出します
           </p>
         </motion.div>
@@ -58,15 +58,15 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
             >
               <div className="card-premium hover-lift overflow-hidden border border-gray-200">
                 {/* Icon/Image Section */}
-                <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 p-10 sm:p-12 md:p-16 overflow-hidden">
+                <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-10 md:p-12 overflow-hidden">
                   <div className="flex items-center justify-center">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 group-hover:scale-110 transition-transform duration-500">
+                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 group-hover:scale-105 transition-transform duration-500">
                       <Image
                         src={business.image}
                         alt={`${business.name} ロゴ`}
                         fill
                         className="object-contain"
-                        sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
+                        sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
                       />
                     </div>
                   </div>
@@ -79,11 +79,11 @@ export default function BusinessCards({ businesses }: BusinessCardsProps) {
 
                 {/* Content */}
                 <div className="p-6 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 leading-normal">
+                  <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3" style={{ lineHeight: '1.6', letterSpacing: '0.04em' }}>
                     {business.name}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>
                     {business.description}
                   </p>
 

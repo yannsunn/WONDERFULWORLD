@@ -113,13 +113,13 @@ export default function GymHero({ name, tagline, subtitle, description, external
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mb-6 sm:mb-8"
           >
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-playfair mb-3 sm:mb-4 px-2 drop-shadow-lg">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-playfair mb-3 sm:mb-4 px-2 drop-shadow-lg" style={{ lineHeight: '1.3', letterSpacing: '0.04em' }}>
               {name}
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 px-2 drop-shadow-md">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 px-2 drop-shadow-md" style={{ lineHeight: '1.5', letterSpacing: '0.03em' }}>
               {tagline}
             </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 px-2 drop-shadow-md">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 px-2 drop-shadow-md" style={{ lineHeight: '1.6', letterSpacing: '0.03em' }}>
               {subtitle}
             </p>
           </motion.div>
@@ -129,7 +129,8 @@ export default function GymHero({ name, tagline, subtitle, description, external
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2 drop-shadow-md"
+            className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-2 drop-shadow-md"
+            style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}
           >
             {description}
           </motion.p>

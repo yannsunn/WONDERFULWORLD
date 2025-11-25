@@ -64,12 +64,12 @@ export default function PhilosophySection({ philosophy, vision, mission }: Philo
                 </div>
 
                 {/* Subtitle */}
-                <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4 leading-normal">
+                <h3 className="text-xl sm:text-2xl font-bold font-playfair text-gray-900 mb-3 sm:mb-4" style={{ lineHeight: '1.6', letterSpacing: '0.04em' }}>
                   {item.subtitle}
                 </h3>
 
                 {/* Content */}
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed whitespace-pre-line">
+                <p className="text-sm sm:text-base text-gray-600 whitespace-pre-line" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>
                   {item.content}
                 </p>
 

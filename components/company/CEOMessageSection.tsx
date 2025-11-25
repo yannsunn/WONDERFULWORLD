@@ -25,10 +25,10 @@ export default function CEOMessageSection({ name, title, message, photo, fullMes
         >
           {/* Section Header */}
           <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4" style={{ lineHeight: '1.4', letterSpacing: '0.04em' }}>
               <span className="gradient-text-luxury">代表挨拶</span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-gray-600" style={{ letterSpacing: '0.05em' }}>
               Message from CEO
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function CEOMessageSection({ name, title, message, photo, fullMes
                   <div className="absolute -top-2 -left-2 text-4xl sm:text-6xl text-orange-500/20 font-serif">&ldquo;</div>
 
                   <div className="relative z-10">
-                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base lg:text-lg whitespace-pre-line mb-6">
+                    <p className="text-gray-700 text-sm sm:text-base lg:text-lg whitespace-pre-line mb-6" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>
                       {message}
                     </p>
 

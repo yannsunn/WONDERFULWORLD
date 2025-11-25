@@ -39,7 +39,7 @@ const Footer = () => {
                 WONDERFUL WORLD
               </h3>
             </Link>
-            <p className="text-base text-gray-700 leading-relaxed">
+            <p className="text-base text-gray-700" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>
               AI×Beautyで女性が輝く、新しい世界へ。<br />
               ミスコンテストのファイナリストから生まれた<br />
               AIモデルインフルエンサープロジェクト。
@@ -52,7 +52,7 @@ const Footer = () => {
 
           {/* Links */}
           <div className="space-y-6">
-            <h4 className="text-xl font-bold text-gray-900">サイトマップ</h4>
+            <h4 className="text-xl font-bold text-gray-900" style={{ letterSpacing: '0.04em' }}>サイトマップ</h4>
             <ul className="space-y-3">
               {footerLinks.main.map((link) => (
                 <li key={link.name}>
@@ -69,7 +69,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div className="space-y-6">
-            <h4 className="text-xl font-bold text-gray-900">法的情報</h4>
+            <h4 className="text-xl font-bold text-gray-900" style={{ letterSpacing: '0.04em' }}>法的情報</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>

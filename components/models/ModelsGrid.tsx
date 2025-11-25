@@ -69,10 +69,10 @@ const ModelsGrid = ({ models }: ModelsGridProps) => {
 
               {/* Model Info */}
               <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-accent-gold transition-colors">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-accent-gold transition-colors" style={{ letterSpacing: '0.04em' }}>
                   {model.name}
                 </h2>
-                <p className="text-gray-600 mb-4">{model.handle}</p>
+                <p className="text-gray-600 mb-4" style={{ letterSpacing: '0.03em' }}>{model.handle}</p>
 
                 {/* Stats */}
                 <div className="flex items-center text-sm text-gray-500 mb-4">

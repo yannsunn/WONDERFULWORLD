@@ -33,10 +33,10 @@ export default function CompanyInfoSection({ name, established, representative, 
         >
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-playfair mb-3 sm:mb-4" style={{ lineHeight: '1.4', letterSpacing: '0.04em' }}>
               <span className="gradient-text-sunset">会社情報</span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-gray-600" style={{ letterSpacing: '0.05em' }}>
               Company Information
             </p>
           </div>
@@ -83,9 +83,9 @@ export default function CompanyInfoSection({ name, established, representative, 
                   🏢
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{offices.headquarters.name}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm mb-1">〒{offices.headquarters.postalCode}</p>
-                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{offices.headquarters.address}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3" style={{ letterSpacing: '0.04em' }}>{offices.headquarters.name}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-1" style={{ letterSpacing: '0.02em' }}>〒{offices.headquarters.postalCode}</p>
+                  <p className="text-gray-800 text-sm sm:text-base" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>{offices.headquarters.address}</p>
                 </div>
               </div>
             </div>
@@ -97,9 +97,9 @@ export default function CompanyInfoSection({ name, established, representative, 
                   🗼
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{offices.tokyo.name}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm mb-1">〒{offices.tokyo.postalCode}</p>
-                  <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{offices.tokyo.address}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3" style={{ letterSpacing: '0.04em' }}>{offices.tokyo.name}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-1" style={{ letterSpacing: '0.02em' }}>〒{offices.tokyo.postalCode}</p>
+                  <p className="text-gray-800 text-sm sm:text-base" style={{ lineHeight: '1.8', letterSpacing: '0.03em' }}>{offices.tokyo.address}</p>
                 </div>
               </div>
             </div>
