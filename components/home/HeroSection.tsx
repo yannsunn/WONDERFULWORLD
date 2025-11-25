@@ -214,9 +214,9 @@ const HeroSection = () => {
         </div>
 
         {/* Scroll indicator - Enhanced */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 animate-float">
-            <span className="text-xs text-white/70 font-medium tracking-wider uppercase">Scroll</span>
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2">
+          <div className="flex flex-col items-center gap-1 animate-float">
+            <span className="text-[10px] sm:text-xs text-white/70 font-medium tracking-wider uppercase">Scroll</span>
             <svg
               className="w-6 h-6 text-orange-400 animate-bounce"
               fill="none"

@@ -31,7 +31,7 @@ export default function AIModelsHero() {
   };
 
   return (
-    <section className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden pt-24">
       {/* Background Image Slider */}
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
