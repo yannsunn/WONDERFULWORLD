@@ -88,7 +88,8 @@
       "Bash(copy \"C:\\Users\\march\\Downloads\\LINE_ALBUM_3B_251123_2.jpg\" \"public\\images\\business\\awake\\office-1.jpg\")",
       "Bash(copy:*)",
       "Bash(gh pr list:*)",
-      "Bash(npm update:*)"
+      "Bash(npm update:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
