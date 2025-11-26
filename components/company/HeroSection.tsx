@@ -16,7 +16,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ title, subtitle, message, ctaButtons }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-gradient">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-gradient pt-24">
       {/* Premium Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl animate-pulse-slow" />
@@ -109,24 +109,6 @@ export default function HeroSection({ title, subtitle, message, ctaButtons }: He
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="flex flex-col items-center text-gray-400"
-          >
-            <span className="text-sm mb-2">Scroll</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
