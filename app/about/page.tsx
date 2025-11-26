@@ -285,9 +285,9 @@ const AboutPage = () => {
                       🌟
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">OEM事業・商品開発</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">お酒メーカー「RUSH」</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        タレント・ブランドと協業し、コンセプト設計から製造まで伴走するOEM事業を展開しています。
+                        タレント・実業家の川崎カイヤ様のOEM商品として、お酒メーカー「RUSH」の企画・製造を担当しています。
                       </p>
                     </div>
                   </div>
@@ -298,7 +298,7 @@ const AboutPage = () => {
                       🍶
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">川崎カイヤ様　会社顧問就任</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">会社顧問就任</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         タレント・実業家の川崎カイヤ様が弊社の会社顧問に就任。ブランド戦略やPRの知見を共有いただきながら、事業成長を共に推進しています。
                       </p>
