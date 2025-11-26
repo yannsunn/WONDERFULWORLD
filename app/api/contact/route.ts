@@ -9,7 +9,7 @@ interface ContactFormData {
   agree: boolean;
 }
 
-// CSRF保護: 許可されたオリジンのリスト
+// CSRF保護: 許可されたオリジンのみ受け付け
 const ALLOWED_ORIGINS = [
   'https://wonderfulworld.jp',
   'https://www.wonderfulworld.jp',
@@ -71,11 +71,23 @@ export async function POST(request: NextRequest) {
     }
 
     const body: ContactFormData = await request.json();
+    const sanitize = (value: string) => value?.replace(/<[^>]*>/g, '').trim();
+    const name = sanitize(body.name);
+    const email = body.email?.trim();
+    const subject = sanitize(body.subject);
+    const message = sanitize(body.message);
 
     // Validation
-    if (!body.name || !body.email || !body.message) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { error: '必須項目を入力してください' },
+        { error: '必要な項目を入力してください' },
+        { status: 400 }
+      );
+    }
+
+    if ([name, subject].some(value => value.length > 150) || message.length > 4000) {
+      return NextResponse.json(
+        { error: '入力が長すぎます。内容を簡潔にしてください' },
         { status: 400 }
       );
     }
@@ -89,14 +101,14 @@ export async function POST(request: NextRequest) {
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.email)) {
+    if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: '有効なメールアドレスを入力してください' },
         { status: 400 }
       );
     }
 
-    // TODO: メール送信処理の実装
+    // TODO: メール送信処理を実装
     // 以下のサービスのいずれかを使用:
     // 1. Resend (https://resend.com) - 推奨
     // 2. SendGrid (https://sendgrid.com)
@@ -110,32 +122,32 @@ export async function POST(request: NextRequest) {
     // await resend.emails.send({
     //   from: 'WONDERFUL WORLD <noreply@wonderfulworld.jp>',
     //   to: 'info@wonderfulworld.jp',
-    //   replyTo: body.email,
-    //   subject: `【お問い合わせ】${body.subject}`,
+    //   replyTo: email,
+    //   subject: `【お問い合わせ】${subject}`,
     //   html: `
-    //     <h2>新しいお問い合わせがあります</h2>
-    //     <p><strong>お名前:</strong> ${body.name}</p>
-    //     <p><strong>メールアドレス:</strong> ${body.email}</p>
-    //     <p><strong>件名:</strong> ${body.subject}</p>
+    //     <h2>新しいお問い合わせがありました</h2>
+    //     <p><strong>お名前:</strong> ${name}</p>
+    //     <p><strong>メールアドレス:</strong> ${email}</p>
+    //     <p><strong>件名:</strong> ${subject}</p>
     //     <p><strong>メッセージ:</strong></p>
-    //     <p>${body.message.replace(/\n/g, '<br>')}</p>
+    //     <p>${message.replace(/\n/g, '<br>')}</p>
     //   `,
     // });
 
     // 開発環境ではコンソールにログ出力
     if (process.env.NODE_ENV === 'development') {
       console.log('Contact form submission:', {
-        name: body.name,
-        email: body.email,
-        subject: body.subject,
-        message: body.message,
+        name,
+        email,
+        subject,
+        message,
         timestamp: new Date().toISOString(),
       });
     }
 
     // 本番環境でも最低限ログを保存（後で確認できるように）
     // TODO: データベースやログ管理サービスに保存
-    // await saveContactSubmission(body);
+    // await saveContactSubmission({ name, email, subject, message });
 
     return NextResponse.json({
       success: true,
