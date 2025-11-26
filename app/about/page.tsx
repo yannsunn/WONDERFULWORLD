@@ -298,9 +298,9 @@ const AboutPage = () => {
                       🍶
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">川崎カイヤ様　会社顧問就任</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">株式会社RUSH 顧問就任</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        タレント・実業家の川崎カイヤ様が弊社の会社顧問に就任。ブランド戦略やPRの知見を共有いただきながら、事業成長を共に推進しています。
+                        お酒メーカー株式会社RUSHの顧問に就任。酒類業界の知見を活かし、事業成長を共に推進しています。
                       </p>
                     </div>
                   </div>
