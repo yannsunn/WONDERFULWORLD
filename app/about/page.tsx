@@ -1,39 +1,39 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import PageTransition from '@/components/animations/PageTransition';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: '繝励Ο繧ｸ繧ｧ繧ｯ繝医↓縺､縺・※ | WONDERFUL WORLD',
-  description: 'WONDERFUL WORLD縺ｮ繝溘ャ繧ｷ繝ｧ繝ｳ縲∽ｻ慕ｵ・∩縲、I謚陦薙√メ繝ｼ繝諠・ｱ縲ょ･ｳ諤ｧ謾ｯ謠ｴﾃ輸I謚陦薙〒蜑ｵ繧区眠縺励＞荳也阜縺ｫ縺､縺・※縲・,
+  title: 'プロジェクトについて | WONDERFUL WORLD',
+  description: 'WONDERFUL WORLDのミッション、仕組み、AI技術、チーム情報。女性支援×AI技術で創る新しい世界について。',
 };
 
 const AboutPage = () => {
   const faqs = [
     {
-      question: 'AI繝｢繝・Ν繧､繝ｳ繝輔Ν繧ｨ繝ｳ繧ｵ繝ｼ縺ｨ縺ｯ菴輔〒縺吶°・・,
-      answer: '繝溘せ繧ｳ繝ｳ繝・せ繝医ヵ繧｡繧､繝翫Μ繧ｹ繝医→AI謚陦薙ｒ陞榊粋縺励◆譁ｰ縺励＞繧､繝ｳ繝輔Ν繧ｨ繝ｳ繧ｵ繝ｼ縺ｧ縺吶ゅげ繝ｭ繝ｼ繝舌Ν縺ｫ豢ｻ蜍輔〒縺阪ｋ謖∫ｶ壼庄閭ｽ縺ｪ繧ｭ繝｣繝ｪ繧｢繝｢繝・Ν繧貞ｮ溽樟縺励∪縺吶・,
+      question: 'AIモデルインフルエンサーとは何ですか？',
+      answer: 'ミスコンテストファイナリストとAI技術を融合した新しいインフルエンサーです。グローバルに活動できる持続可能なキャリアモデルを実現します。',
     },
     {
-      question: '縺ｩ縺ｮ繧医≧縺ｪ繧ｵ繝ｼ繝薙せ繧呈署萓帙＠縺ｦ縺・∪縺吶°・・,
-      answer: 'SNS繝槭・繧ｱ繝・ぅ繝ｳ繧ｰ縲∝ｺ・相繝ｻPR豢ｻ蜍輔√さ繝ｳ繝・Φ繝・宛菴懊↑縺ｩ縲∝､壽ｧ倥↑繧ｵ繝ｼ繝薙せ繧呈署萓帙＠縺ｦ縺・∪縺吶・,
+      question: 'どのようなサービスを提供していますか？',
+      answer: 'SNSマーケティング、広告・PR活動、コンテンツ制作など、多様なサービスを提供しています。',
     },
     {
-      question: '繝溘せ繧ｳ繝ｳ繝・せ繝亥・蝣ｴ閠・・謾ｯ謠ｴ縺ｫ縺､縺・※謨吶∴縺ｦ縺上□縺輔＞',
-      answer: 'AI繝｢繝・Ν繧､繝ｳ繝輔Ν繧ｨ繝ｳ繧ｵ繝ｼ縺ｨ縺励※縲∫ｶ咏ｶ夂噪縺ｪ蜿主・縺ｨ繧ｭ繝｣繝ｪ繧｢蠖｢謌舌・讖滉ｼ壹ｒ謠蝉ｾ帙＠縲∫ｵ梧ｸ育噪閾ｪ遶九ｒ蠕梧款縺励＠縺ｾ縺吶・,
+      question: 'ミスコンテスト出場者の支援について教えてください',
+      answer: 'AIモデルインフルエンサーとして、継続的な収入とキャリア形成の機会を提供し、経済的自立を後押しします。',
     },
     {
-      question: '譛ｬ莠ｺ縺ｨAI繝｢繝・Ν縺ｮ髢｢菫よｧ縺ｯ縺ｩ縺・↑縺｣縺ｦ縺・∪縺吶°・・,
-      answer: '譛ｬ莠ｺ縺ｨ縺ｯ螳壽悄逧・↓繧ｳ繝溘Η繝九こ繝ｼ繧ｷ繝ｧ繝ｳ繧貞叙繧翫↑縺後ｉ縲∝区ｧ繧・ｭ・鴨繧呈ｴｻ縺九＠縺ｦ繝励Ο繧ｸ繧ｧ繧ｯ繝医ｒ騾ｲ繧√※縺・∪縺吶・,
+      question: '本人とAIモデルの関係性はどうなっていますか？',
+      answer: '本人とは定期的にコミュニケーションを取りながら、個性や魅力を活かしてプロジェクトを進めています。',
     },
     {
-      question: '莨∵･ｭ縺ｨ縺ｮ繧ｳ繝ｩ繝懊Ξ繝ｼ繧ｷ繝ｧ繝ｳ縺ｯ蜿ｯ閭ｽ縺ｧ縺吶°・・,
-      answer: '縺ｯ縺・∝､ｧ豁楢ｿ弱〒縺呻ｼ∬ｩｳ縺励￥縺ｯ縲後ヱ繝ｼ繝医リ繝ｼ縲阪・繝ｼ繧ｸ縺ｾ縺溘・縲後♀蝠上＞蜷医ｏ縺帙阪°繧峨＃逶ｸ隲・￥縺縺輔＞縲・,
+      question: '企業とのコラボレーションは可能ですか？',
+      answer: 'はい、大歓迎です！詳しくは「パートナー」ページまたは「お問い合わせ」からご相談ください。',
     },
     {
-      question: '繝励Ο繧ｸ繧ｧ繧ｯ繝医・遉ｾ莨夂噪諢冗ｾｩ縺ｯ菴輔〒縺吶°・・,
-      answer: '繝溘せ繧ｳ繝ｳ繝・せ繝亥・蝣ｴ閠・・螟ｧ莨壼ｾ後・繧ｭ繝｣繝ｪ繧｢讒狗ｯ峨→縺・≧遉ｾ莨夊ｪｲ鬘後↓蟇ｾ縺励、I謚陦薙〒譁ｰ縺励＞繧ｽ繝ｪ繝･繝ｼ繧ｷ繝ｧ繝ｳ繧呈署萓帙＠縺ｦ縺・∪縺吶・,
+      question: 'プロジェクトの社会的意義は何ですか？',
+      answer: 'ミスコンテスト出場者の大会後のキャリア構築という社会課題に対し、AI技術で新しいソリューションを提供しています。',
     },
   ];
 
@@ -48,7 +48,8 @@ const AboutPage = () => {
                 About Us
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto ja-text px-2" style={{lineHeight: '1.9', letterSpacing: '0.04em'}}>
-                隱ｰ繧ゅ′荳ｻ蠖ｹ縺ｫ縺ｪ繧後ｋ<wbr />邏譎ｴ繧峨＠縺・ｸ也阜繧・              </p>
+                誰もが主役になれる<wbr />素晴らしい世界を
+              </p>
             </ScrollReveal>
           </div>
         </section>
@@ -63,13 +64,17 @@ const AboutPage = () => {
               </h2>
               <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-gray-700 space-y-3 sm:space-y-4 ja-text" style={{lineHeight: '2', letterSpacing: '0.03em'}}>
                 <p className="text-sm sm:text-base">
-                  譛ｬ繝励Ο繧ｸ繧ｧ繧ｯ繝医・縲・wbr />AI謚陦薙→鄒弱・蜉帙〒<wbr />螂ｳ諤ｧ縺溘■縺ｮ蜿ｯ閭ｽ諤ｧ繧・wbr />蠎・￡繧九％縺ｨ繧・wbr />菴ｿ蜻ｽ縺ｨ縺励※縺・∪縺吶・                </p>
+                  本プロジェクトは、<wbr />AI技術と美の力で<wbr />女性たちの可能性を<wbr />広げることを<wbr />使命としています。
+                </p>
                 <p className="text-sm sm:text-base">
-                  繝溘せ繧ｳ繝ｳ繝・せ繝亥・蝣ｴ閠・・縲・wbr />螟ｧ莨壼ｾ後・<wbr />繧ｭ繝｣繝ｪ繧｢讒狗ｯ峨′<wbr />隱ｲ鬘後→縺ｪ繧九％縺ｨ縺・wbr />蟆代↑縺上≠繧翫∪縺帙ｓ縲・                  遘√◆縺｡縺ｯ縲・wbr />縺昴≧縺励◆螂ｳ諤ｧ縺溘■縺ｫ<wbr />AI繧堤畑縺・◆<wbr />譁ｰ縺溘↑豢ｻ霄阪・蝣ｴ繧呈署萓帙＠縲・wbr />
-                  邯咏ｶ夂噪縺ｪ蜿主・縺ｨ<wbr />繧ｭ繝｣繝ｪ繧｢蠖｢謌舌・<wbr />讖滉ｼ壹ｒ蜑ｵ蜃ｺ縺励∪縺吶・                </p>
+                  ミスコンテスト出場者は、<wbr />大会後の<wbr />キャリア構築が<wbr />課題となることが<wbr />少なくありません。
+                  私たちは、<wbr />そうした女性たちに<wbr />AIを用いた<wbr />新たな活躍の場を提供し、<wbr />
+                  継続的な収入と<wbr />キャリア形成の<wbr />機会を創出します。
+                </p>
                 <p className="text-sm sm:text-base">
-                  縺薙ｌ縺ｯ蜊倥↑繧・wbr />繧ｨ繝ｳ繧ｿ繝｡繝薙ず繝阪せ縺ｧ縺ｯ縺ｪ縺上・wbr />螂ｳ諤ｧ縺ｮ<wbr />繧ｨ繝ｳ繝代Ρ繝ｼ繝｡繝ｳ繝医→<wbr />遉ｾ莨夂噪謾ｯ謠ｴ繧・wbr />螳溽樟縺吶ｋ
-                  繧､繝弱・繝ｼ繧ｷ繝ｧ繝ｳ<wbr />繝励Ο繧ｸ繧ｧ繧ｯ繝医〒縺吶・                </p>
+                  これは単なる<wbr />エンタメビジネスではなく、<wbr />女性の<wbr />エンパワーメントと<wbr />社会的支援を<wbr />実現する
+                  イノベーション<wbr />プロジェクトです。
+                </p>
               </div>
             </div>
           </ScrollReveal>
@@ -81,18 +86,18 @@ const AboutPage = () => {
         <div className="container-premium max-w-6xl px-4 sm:px-6">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-8 sm:mb-12 text-center">
-              繝励Ο繧ｸ繧ｧ繧ｯ繝医・莉慕ｵ・∩
+              プロジェクトの仕組み
             </h2>
           </ScrollReveal>
 
           {/* Flow Diagram */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 mb-8 sm:mb-12">
             {[
-              { step: '1', title: '繝｢繝・Ν驕ｸ蜃ｺ', desc: '繝溘せ繧ｳ繝ｳ繝・せ繝医ヵ繧｡繧､繝翫Μ繧ｹ繝医→謠先声' },
-              { step: '2', title: 'AI繝｢繝・Ν蛻ｶ菴・, desc: '譛蜈育ｫｯ謚陦薙↓繧医ｋ蛻ｶ菴・ },
-              { step: '3', title: '繧ｳ繝ｳ繝・Φ繝・匱菫｡', desc: 'SNS縺ｧ縺ｮ諠・ｱ逋ｺ菫｡' },
-              { step: '4', title: '繝悶Λ繝ｳ繝牙鵠讌ｭ', desc: '莨∵･ｭ讒倥→縺ｮ繝代・繝医リ繝ｼ繧ｷ繝・・' },
-              { step: '5', title: '邯咏ｶ夂噪謌宣聞', desc: '繝励Ο繧ｸ繧ｧ繧ｯ繝医・諡｡螟ｧ' },
+              { step: '1', title: 'モデル選出', desc: 'ミスコンテストファイナリストと提携' },
+              { step: '2', title: 'AIモデル制作', desc: '最先端技術による制作' },
+              { step: '3', title: 'コンテンツ発信', desc: 'SNSでの情報発信' },
+              { step: '4', title: 'ブランド協業', desc: '企業様とのパートナーシップ' },
+              { step: '5', title: '継続的成長', desc: 'プロジェクトの拡大' },
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.1} className="relative">
                 <div className="card-premium hover-lift p-4 sm:p-6 text-center h-full">
@@ -120,33 +125,34 @@ const AboutPage = () => {
         <div className="container max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-              AI謚陦薙↓縺､縺・※
+              AI技術について
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="card p-5 sm:p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
               <p className="text-sm sm:text-base">
-                譛蜈育ｫｯ縺ｮAI謚陦薙〒繝溘せ繧ｳ繝ｳ繝・せ繝医ヵ繧｡繧､繝翫Μ繧ｹ繝医ｒ繝吶・繧ｹ縺ｫ縺励◆鬲・鴨逧・↑AI繝｢繝・Ν繧貞宛菴懊＠縺ｦ縺・∪縺吶・              </p>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mt-4 sm:mt-6 mb-3 sm:mb-4">AI繝｢繝・Ν縺ｮ迚ｹ蠕ｴ</h3>
+                最先端のAI技術でミスコンテストファイナリストをベースにした魅力的なAIモデルを制作しています。
+              </p>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mt-4 sm:mt-6 mb-3 sm:mb-4">AIモデルの特徴</h3>
               <ul className="space-y-2 sm:space-y-3">
                 <li className="flex items-start">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-gold mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text text-sm sm:text-base" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>鬮伜刀雉ｪ縺ｪ繝薙ず繝･繧｢繝ｫ・・/strong>螳溷惠縺ｮ繝溘せ繧ｳ繝ｳ繝・せ繝医ヵ繧｡繧､繝翫Μ繧ｹ繝医・鄒弱＠縺輔ｒ豢ｻ縺九＠縺溯・辟ｶ縺ｪ繧ｳ繝ｳ繝・Φ繝・ｒ謠蝉ｾ帙＠縺ｾ縺吶・/span>
+                  <span className="ja-text text-sm sm:text-base" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>高品質なビジュアル：</strong>実在のミスコンテストファイナリストの美しさを活かした自然なコンテンツを提供します。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-gold mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text text-sm sm:text-base" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>螟壽ｧ倥↑陦ｨ迴ｾ蜉幢ｼ・/strong>繝輔ぃ繝・す繝ｧ繝ｳ縲√ン繝･繝ｼ繝・ぅ繝ｼ縲√Λ繧､繝輔せ繧ｿ繧､繝ｫ縺ｪ縺ｩ蟷・ｺ・＞蛻・㍽縺ｧ譟碑ｻ溘↑繧ｳ繝ｳ繝・Φ繝・宛菴懊′蜿ｯ閭ｽ縺ｧ縺吶・/span>
+                  <span className="ja-text text-sm sm:text-base" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>多様な表現力：</strong>ファッション、ビューティー、ライフスタイルなど幅広い分野で柔軟なコンテンツ制作が可能です。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-gold mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="ja-text text-sm sm:text-base" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>繧ｰ繝ｭ繝ｼ繝舌Ν豢ｻ蜍包ｼ・/strong>譎る俣繧・ｴ謇縺ｮ蛻ｶ邏・ｒ雜・∴縺ｦ縲∽ｸ也阜荳ｭ縺ｧ豢ｻ蜍輔〒縺阪∪縺吶・/span>
+                  <span className="ja-text text-sm sm:text-base" style={{lineHeight: '1.9', letterSpacing: '0.03em'}}><strong>グローバル活動：</strong>時間や場所の制約を超えて、世界中で活動できます。</span>
                 </li>
               </ul>
             </div>
@@ -160,41 +166,43 @@ const AboutPage = () => {
         <div className="container max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-6 sm:mb-8 text-center">
-              螂ｳ諤ｧ縺ｮ繧ｭ繝｣繝ｪ繧｢謾ｯ謠ｴ
+              女性のキャリア支援
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="card p-5 sm:p-8 md:p-12">
             <div className="prose max-w-none text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
               <p className="text-sm sm:text-base">
-                繝溘せ繧ｳ繝ｳ繝・せ繝亥・蝣ｴ閠・・螟ｧ莨壼ｾ後・繧ｭ繝｣繝ｪ繧｢讒狗ｯ峨ｒAI謚陦薙〒謾ｯ謠ｴ縺励∫ｶ咏ｶ夂噪縺ｪ蜿主・縺ｨ繧ｭ繝｣繝ｪ繧｢蠖｢謌舌・讖滉ｼ壹ｒ蜑ｵ蜃ｺ縺励∪縺吶・              </p>
+                ミスコンテスト出場者の大会後のキャリア構築をAI技術で支援し、継続的な収入とキャリア形成の機会を創出します。
+              </p>
 
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mt-4 sm:mt-6 mb-3 sm:mb-4">謾ｯ謠ｴ縺ｮ蜀・ｮｹ</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mt-4 sm:mt-6 mb-3 sm:mb-4">支援の内容</h3>
               <ul className="space-y-2 sm:space-y-3">
                 <li className="flex items-start">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-gold mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-sm sm:text-base"><strong>譁ｰ縺励＞繧ｭ繝｣繝ｪ繧｢繝代せ・・/strong>AI繝｢繝・Ν繧､繝ｳ繝輔Ν繧ｨ繝ｳ繧ｵ繝ｼ縺ｨ縺・≧譁ｰ縺励＞豢ｻ霄阪・蝣ｴ繧呈署萓帙＠縺ｾ縺吶・/span>
+                  <span className="text-sm sm:text-base"><strong>新しいキャリアパス：</strong>AIモデルインフルエンサーという新しい活躍の場を提供します。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-gold mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-sm sm:text-base"><strong>邨梧ｸ育噪謾ｯ謠ｴ・・/strong>邯咏ｶ夂噪縺ｪ蜿主・縺ｧ邨梧ｸ育噪閾ｪ遶九ｒ蠕梧款縺励＠縺ｾ縺吶・/span>
+                  <span className="text-sm sm:text-base"><strong>経済的支援：</strong>継続的な収入で経済的自立を後押しします。</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-gold mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-sm sm:text-base"><strong>繝代・繝医リ繝ｼ繧ｷ繝・・・・/strong>譛ｬ莠ｺ縺ｨ螳壽悄逧・↓繧ｳ繝溘Η繝九こ繝ｼ繧ｷ繝ｧ繝ｳ繧貞叙繧翫∝・縺ｫ謌宣聞縺吶ｋ縺薙→繧堤岼謖・＠縺ｦ縺・∪縺吶・/span>
+                  <span className="text-sm sm:text-base"><strong>パートナーシップ：</strong>本人と定期的にコミュニケーションを取り、共に成長することを目指しています。</span>
                 </li>
               </ul>
 
               <div className="bg-primary-50 border-l-4 border-accent-gold p-4 sm:p-6 my-4 sm:my-6">
-                <p className="font-bold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">繝励Ο繧ｸ繧ｧ繧ｯ繝医ン繧ｸ繝ｧ繝ｳ</p>
+                <p className="font-bold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">プロジェクトビジョン</p>
                 <p className="text-gray-700 text-sm sm:text-base">
-                  AI謚陦薙→鄒弱・蜉帙〒螂ｳ諤ｧ縺溘■縺ｮ蜿ｯ閭ｽ諤ｧ繧貞ｺ・￡縲√瑚ｪｰ繧ゅ′荳ｻ蠖ｹ縺ｫ縺ｪ繧後ｋ邏譎ｴ繧峨＠縺・ｸ也阜縲阪ｒ蜑ｵ騾縺励∪縺吶・                </p>
+                  AI技術と美の力で女性たちの可能性を広げ、「誰もが主役になれる素晴らしい世界」を創造します。
+                </p>
               </div>
             </div>
             </div>
@@ -207,7 +215,7 @@ const AboutPage = () => {
         <div className="container max-w-6xl px-4 sm:px-6">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-8 sm:mb-12 text-center">
-              驕句霧繝√・繝
+              運営チーム
             </h2>
           </ScrollReveal>
 
@@ -219,7 +227,7 @@ const AboutPage = () => {
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl max-w-sm mx-auto md:max-w-none">
                   <Image
                     src="/images/about/representative-new.jpg"
-                    alt="莉｣陦ｨ遉ｾ蜩｡ 阯､螻ｱ 蝌牙ｽｦ"
+                    alt="代表社員 藤山 嘉彦"
                     fill
                     className="object-cover object-[center_20%]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
@@ -228,8 +236,8 @@ const AboutPage = () => {
 
                   {/* Name Badge */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                    <p className="text-xs sm:text-sm font-medium opacity-90 mb-1">莉｣陦ｨ遉ｾ蜩｡</p>
-                    <h3 className="text-xl sm:text-2xl font-bold font-playfair">阯､螻ｱ 蝌牙ｽｦ</h3>
+                    <p className="text-xs sm:text-sm font-medium opacity-90 mb-1">代表社員</p>
+                    <h3 className="text-xl sm:text-2xl font-bold font-playfair">藤山 嘉彦</h3>
                     <p className="text-xs sm:text-sm opacity-90 mt-1">Yoshihiko Fujiyama</p>
                   </div>
                 </div>
@@ -237,16 +245,29 @@ const AboutPage = () => {
               <div className="md:col-span-3">
                 <div className="space-y-3 sm:space-y-4 text-gray-700 leading-relaxed">
                   <p className="font-semibold text-gray-900 text-sm sm:text-base">
-                    縲御ｺｺ縺ｫ蟇後ｒ荳弱∴繧九坂披・br />
-                    縺薙・險闡峨％縺昴′縲仝onderful World 蜷亥酔莨夂､ｾ縺ｮ蜴溽せ縺ｧ縺吶・                  </p>
+                    「人に富を与える」——<br />
+                    この言葉こそが、Wonderful World 合同会社の原点です。
+                  </p>
                   <p className="text-sm sm:text-base">
-                    遘√◆縺｡縺ｯ縲、I縺ｮ蜉帙→莠ｺ縺ｮ縺､縺ｪ縺後ｊ繧偵°縺大粋繧上○縲・                    謖第姶縺吶ｋ縺吶∋縺ｦ縺ｮ莠ｺ縺・ldquo;蠢・・雎翫°縺・rdquo;縺ｨ&ldquo;邨梧ｸ育噪縺ｪ雎翫°縺・rdquo;縺ｮ荳｡譁ｹ繧貞ｾ励ｉ繧後ｋ譛ｪ譚･繧堤岼謖・＠縺ｦ縺・∪縺吶・                  </p>
+                    私たちは、AIの力と人のつながりをかけ合わせ、
+                    挑戦するすべての人が&ldquo;心の豊かさ&rdquo;と&ldquo;経済的な豊かさ&rdquo;の両方を得られる未来を目指しています。
+                  </p>
                   <p className="text-sm sm:text-base">
-                    迴ｾ莉｣遉ｾ莨壹・縲∵ュ蝣ｱ繧ゅせ繝斐・繝峨ｂ蜉騾溘＠邯壹￠縺ｦ縺・∪縺吶・                    縺昴ｓ縺ｪ譎ゆｻ｣縺縺九ｉ縺薙◎縲√後＃邵√阪ｄ縲瑚ｪ螳溘＆縲阪→縺・▲縺滉ｺｺ縺ｨ縺励※縺ｮ貂ｩ縺九＆繧貞､ｧ蛻・↓縺励◆縺・・                    AI縺ｯ莠ｺ繧堤ｽｮ縺肴鋤縺医ｋ繧ゅ・縺ｧ縺ｯ縺ｪ縺上∽ｺｺ縺ｮ蜿ｯ閭ｽ諤ｧ繧呈僑蠑ｵ縺輔○繧九ヱ繝ｼ繝医リ繝ｼ縺ｧ縺吶・                  </p>
+                    現代社会は、情報もスピードも加速し続けています。
+                    そんな時代だからこそ、「ご縁」や「誠実さ」といった人としての温かさを大切にしたい。
+                    AIは人を置き換えるものではなく、人の可能性を拡張させるパートナーです。
+                  </p>
                   <p className="text-sm sm:text-base">
-                    遘∬・霄ｫ縲∝､壹￥縺ｮ縺皮ｸ√↓謾ｯ縺医ｉ繧後※謌宣聞縺励※縺阪∪縺励◆縲・                    莉雁ｺｦ縺ｯ縲√◎縺ｮ縺皮ｸ√ｒ谺｡縺ｮ隱ｰ縺九↓縺､縺ｪ縺弱∵倦謌ｦ縺ｮ霈ｪ繧貞ｺ・￡縺ｦ縺・″縺溘＞縲・                    縺昴＠縺ｦ縲∵倦謌ｦ縺吶ｋ縺吶∋縺ｦ縺ｮ莠ｺ縺・ldquo;蟷ｸ縺帙↑縺企≡謖√■&rdquo;縺ｫ縺ｪ繧後ｋ繧医≧縲・                    隱螳溘↓蟇・ｊ豺ｻ縺・↑縺後ｉ蜈ｱ縺ｫ豁ｩ繧薙〒縺ｾ縺・ｊ縺ｾ縺吶・                  </p>
+                    私自身、多くのご縁に支えられて成長してきました。
+                    今度は、そのご縁を次の誰かにつなぎ、挑戦の輪を広げていきたい。
+                    そして、挑戦するすべての人が&ldquo;幸せなお金持ち&rdquo;になれるよう、
+                    誠実に寄り添いながら共に歩んでまいります。
+                  </p>
                   <p className="text-sm sm:text-base">
-                    Best of Miss Tokyo 2025縺ｧ縺ｯ縲√・繝ｩ繝√リ繧ｹ繝昴Φ繧ｵ繝ｼ縺ｨ縺励※蜿ょ刈縺輔○縺ｦ縺・◆縺縺阪∪縺励◆縲・                    縺薙ｌ縺九ｉ繧らｾ弱→謚陦薙・陞榊粋縺ｧ縲∵眠縺励＞萓｡蛟､繧貞卸騾縺励・                    AI縺ｨ莠ｺ縺ｮ蜈ｱ蜑ｵ縺ｫ繧医▲縺ｦ縲√ｈ繧顔ｾ弱＠縺上√ｈ繧願ｱ翫°縺ｪ荳也阜繧貞卸騾縺励※縺・″縺ｾ縺吶・                  </p>
+                    Best of Miss Tokyo 2025では、プラチナスポンサーとして参加させていただきました。
+                    これからも美と技術の融合で、新しい価値を創造し、
+                    AIと人の共創によって、より美しく、より豊かな世界を創造していきます。
+                  </p>
                 </div>
               </div>
             </div>
@@ -256,17 +277,17 @@ const AboutPage = () => {
           {/* OEM Business & SNS Collaboration */}
           <ScrollReveal delay={0.3}>
             <div className="card p-6 sm:p-8 mt-8 bg-gradient-to-br from-orange-50 to-pink-50 border border-orange-100">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">OEM莠区･ｭ繝ｻSNS驕狗畑蜊疲･ｭ</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">OEM事業・SNS運用協業</h3>
               <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
                 <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md hover-lift">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
-                      ??
+                      🌟
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">???????RUSH?</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">川崎カイヤ様 OEM商品制作</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        ????????????????OEM?????????????RUSH????????????????
+                        タレント・実業家の川崎カイヤ様のOEM商品開発・製造を手がけています。
                       </p>
                     </div>
                   </div>
@@ -274,12 +295,12 @@ const AboutPage = () => {
                 <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md hover-lift">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
-                      ??
+                      🍶
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">??????</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">川崎カイヤ様　会社顧問就任</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        ??????????????????????????????????PR?????????????????????????????
+                        タレント・実業家の川崎カイヤ様が弊社の会社顧問に就任。ブランド戦略やPRの知見を共有いただきながら、事業成長を共に推進しています。
                       </p>
                     </div>
                   </div>
@@ -287,34 +308,39 @@ const AboutPage = () => {
                 <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md hover-lift border-2 border-orange-200">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
-                      導
+                      📱
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">SNS驕狗畑繝ｻ繝槭・繧ｱ繝・ぅ繝ｳ繧ｰ蜊疲･ｭ</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">SNS運用・マーケティング協業</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3">
-                        莨∵･ｭ讒倥・SNS繧｢繧ｫ繧ｦ繝ｳ繝磯°逕ｨ縲√う繝ｳ繝輔Ν繧ｨ繝ｳ繧ｵ繝ｼ繝槭・繧ｱ繝・ぅ繝ｳ繧ｰ縲・                        繧ｳ繝ｳ繝・Φ繝・宛菴懊↑縺ｩ縲√ョ繧ｸ繧ｿ繝ｫ繝槭・繧ｱ繝・ぅ繝ｳ繧ｰ蜈ｨ闊ｬ繧偵し繝昴・繝医＠縺ｦ縺・∪縺吶・                      </p>
+                        企業様のSNSアカウント運用、インフルエンサーマーケティング、
+                        コンテンツ制作など、デジタルマーケティング全般をサポートしています。
+                      </p>
                       <div className="flex flex-wrap gap-2 mt-3">
-                        <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full font-medium">Instagram驕狗畑</span>
-                        <span className="px-2 py-1 bg-pink-100 text-pink-700 text-xs rounded-full font-medium">TikTok驕狗畑</span>
-                        <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full font-medium">X(Twitter)驕狗畑</span>
-                        <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">繧ｳ繝ｳ繝・Φ繝・宛菴・/span>
+                        <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full font-medium">Instagram運用</span>
+                        <span className="px-2 py-1 bg-pink-100 text-pink-700 text-xs rounded-full font-medium">TikTok運用</span>
+                        <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full font-medium">X(Twitter)運用</span>
+                        <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">コンテンツ制作</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg p-4 sm:p-6 text-white text-center">
-                  <p className="text-sm sm:text-base font-semibold mb-2">繝代・繝医リ繝ｼ繧ｷ繝・・縺ｫ縺碑・蜻ｳ縺ｮ縺ゅｋ莨∵･ｭ讒倥∈</p>
+                  <p className="text-sm sm:text-base font-semibold mb-2">パートナーシップにご興味のある企業様へ</p>
                   <p className="text-xs sm:text-sm mb-4 opacity-90">
-                    OEM莠区･ｭ縲ヾNS驕狗畑縲、I繝｢繝・Ν豢ｻ逕ｨ縺ｪ縺ｩ縲∵ｧ倥・↑蠖｢縺ｧ縺ｮ繧ｳ繝ｩ繝懊Ξ繝ｼ繧ｷ繝ｧ繝ｳ縺悟庄閭ｽ縺ｧ縺・                  </p>
+                    OEM事業、SNS運用、AIモデル活用など、様々な形でのコラボレーションが可能です
+                  </p>
                   <Link
                     href="/contact"
                     className="inline-block px-6 py-2 bg-white text-orange-600 rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-300"
                   >
-                    縺雁撫縺・粋繧上○縺ｯ縺薙■繧・                  </Link>
+                    お問い合わせはこちら
+                  </Link>
                 </div>
                 <div className="text-center mt-4">
                   <p className="text-xs sm:text-sm text-gray-500 italic">
-                    窶ｻ蜊疲･ｭ莠倶ｾ九・髫乗凾譖ｴ譁ｰ縺励※縺ｾ縺・ｊ縺ｾ縺・                  </p>
+                    ※協業事例は随時更新してまいります
+                  </p>
                 </div>
               </div>
             </div>
@@ -323,24 +349,25 @@ const AboutPage = () => {
           {/* Partner Companies */}
           <ScrollReveal delay={0.35}>
             <div className="card p-5 sm:p-8 mt-6 sm:mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">蜊泌鴨莨夂､ｾ</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">協力会社</h3>
               <div className="max-w-2xl mx-auto">
                 <div className="bg-white rounded-lg p-4 sm:p-6 shadow-md hover-lift">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
-                      噫
+                      🚀
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">譬ｪ蠑丈ｼ夂､ｾAwake</h4>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">株式会社Awake</h4>
                       <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3">
-                        IT繧ｳ繝ｳ繧ｵ繝ｫ繝・ぅ繝ｳ繧ｰ縲√・繝ｼ繝繝壹・繧ｸ蛻ｶ菴懊、I繝√Ε繝・ヨ繝懊ャ繝磯幕逋ｺ縺ｪ縺ｩ繧呈焔縺後￠繧区橿陦薙ヱ繝ｼ繝医リ繝ｼ莨∵･ｭ縺ｧ縺吶・                      </p>
+                        ITコンサルティング、ホームページ制作、AIチャットボット開発などを手がける技術パートナー企業です。
+                      </p>
                       <a
                         href="https://www.awakeinc.co.jp/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors"
                       >
-                        蜈ｬ蠑上し繧､繝医ｒ隕九ｋ
+                        公式サイトを見る
                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
@@ -359,7 +386,7 @@ const AboutPage = () => {
               <div className="relative w-24 h-24 sm:w-32 sm:h-32">
                 <Image
                   src="/images/about/company-logo.jpg"
-                  alt="WONDERFUL WORLD 繝ｭ繧ｴ"
+                  alt="WONDERFUL WORLD ロゴ"
                   fill
                   className="object-contain"
                   sizes="(max-width: 640px) 96px, 128px"
@@ -367,29 +394,29 @@ const AboutPage = () => {
               </div>
             </div>
             <div className="text-center space-y-2">
-              <h3 className="font-bold text-gray-900 text-lg sm:text-xl mb-3 sm:mb-4">莨夂､ｾ諠・ｱ</h3>
+              <h3 className="font-bold text-gray-900 text-lg sm:text-xl mb-3 sm:mb-4">会社情報</h3>
               <div className="text-xs sm:text-sm text-gray-600 space-y-2 sm:space-y-3 max-w-xl mx-auto">
                 <div>
-                  <p className="font-semibold text-gray-900">莨夂､ｾ蜷・/p>
-                  <p>Wonderful World 蜷亥酔莨夂､ｾ・・onderful World LLC・・/p>
+                  <p className="font-semibold text-gray-900">会社名</p>
+                  <p>Wonderful World 合同会社（Wonderful World LLC）</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">險ｭ遶・/p>
-                  <p>2024蟷ｴ8譛・/p>
+                  <p className="font-semibold text-gray-900">設立</p>
+                  <p>2024年8月</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">莉｣陦ｨ遉ｾ蜩｡</p>
-                  <p>阯､螻ｱ 蝌牙ｽｦ</p>
+                  <p className="font-semibold text-gray-900">代表社員</p>
+                  <p>藤山 嘉彦</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">譛ｬ遉ｾ</p>
-                  <p>縲・80-0803</p>
-                  <p>蛹玲ｵｷ驕灘ｸｯ蠎・ｸよ擲3譚｡蜊・0荳∫岼15-1</p>
+                  <p className="font-semibold text-gray-900">本社</p>
+                  <p>〒080-0803</p>
+                  <p>北海道帯広市東3条南10丁目15-1</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">譚ｱ莠ｬ繧ｪ繝輔ぅ繧ｹ</p>
-                  <p>縲・60-0014</p>
-                  <p>譚ｱ莠ｬ驛ｽ譁ｰ螳ｿ蛹ｺ蜀・陸逕ｺ1-127 繝ｬ繝・け繧ｹ逾槫ｮｮ螟冶拒 902</p>
+                  <p className="font-semibold text-gray-900">東京オフィス</p>
+                  <p>〒160-0014</p>
+                  <p>東京都新宿区内藤町1-127 レックス神宮外苑 902</p>
                 </div>
               </div>
             </div>
@@ -403,7 +430,8 @@ const AboutPage = () => {
         <div className="container max-w-4xl px-4 sm:px-6">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-8 sm:mb-10 text-center">
-              繧医￥縺ゅｋ縺碑ｳｪ蝠・            </h2>
+              よくあるご質問
+            </h2>
             <p className="text-sm sm:text-base text-gray-600 text-center mb-8">FAQ</p>
           </ScrollReveal>
           <div className="space-y-3 sm:space-y-4">
@@ -429,13 +457,14 @@ const AboutPage = () => {
         <div className="container text-center px-4 sm:px-6">
           <ScrollReveal>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-4 sm:mb-6 px-2">
-              遘√◆縺｡縺ｨ荳邱偵↓縲∵眠縺励＞荳也阜繧貞卸繧翫∪縺帙ｓ縺具ｼ・            </h2>
+              私たちと一緒に、新しい世界を創りませんか？
+            </h2>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link href="/partners" className="btn-primary text-sm sm:text-base md:text-lg">
-                繝代・繝医リ繝ｼ繧ｷ繝・・縺ｮ縺疲｡亥・
+                パートナーシップのご案内
               </Link>
               <Link href="/contact" className="btn-secondary text-sm sm:text-base md:text-lg">
-                縺雁撫縺・粋繧上○
+                お問い合わせ
               </Link>
             </div>
           </ScrollReveal>
@@ -447,4 +476,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
