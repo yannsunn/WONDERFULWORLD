@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import StructuredData from "@/components/seo/StructuredData";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
+import ChatBot from "@/components/ui/ChatBot";
 import { WebVitals } from "@/components/analytics/WebVitals";
 import dynamic from "next/dynamic";
 
@@ -142,6 +143,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <BackToTop />
+        <ChatBot />
         <Analytics />
       </body>
     </html>
