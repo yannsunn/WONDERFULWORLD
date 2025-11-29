@@ -2,21 +2,82 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useChat } from '@ai-sdk/react';
+
+interface Message {
+    id: string;
+    role: 'user' | 'assistant';
+    content: string;
+}
+
+// ルールベースのレスポンスロジック
+const getResponse = (input: string): string => {
+    const lowerInput = input.toLowerCase().trim();
+
+    // キーワードマッチング
+    const responses: { [key: string]: string } = {
+        // 挨拶
+        'こんにちは': 'こんにちは！WONDERFUL WORLDへようこそ。何かお手伝いできることはありますか？',
+        'はじめまして': 'はじめまして！WONDERFUL WORLDについてお気軽にお尋ねください。',
+        'ありがとう': 'どういたしまして！他にもご質問があればお気軽にどうぞ。',
+
+        // WONDERFUL WORLDについて
+        'wonderful world': 'WONDERFUL WORLDは、ミスコンテストのファイナリストから生まれたAIモデルインフルエンサープロジェクトです。AI技術と美の力で、女性たちに新たなチャンスを提供しています。',
+        'とは': 'WONDERFUL WORLDは、AI×Beautyで女性が輝く新しい世界を創造するプロジェクトです。独自開発のAI技術で、女性たちに世界へ羽ばたく機会を提供しています。',
+        'プロジェクト': 'WONDERFUL WORLDは、ミスコンテストのファイナリストから生まれたAIモデルインフルエンサープロジェクトです。女性の可能性を広げ、世界で活躍できる機会を創出しています。',
+
+        // AIモデルについて
+        'ai': 'AIモデルインフルエンサーは、実在の女性をベースに作成されたバーチャルインフルエンサーです。SNSでの活動やブランドとのコラボレーションなど、様々な可能性があります。',
+        'モデル': '私たちは、ミスコンテストファイナリストをベースとしたAIモデルを開発・運営しています。詳細は「AIモデル」ページをご覧ください。',
+        'インフルエンサー': 'AIインフルエンサーは、24時間365日活動可能で、ブランディングやマーケティングに新しい価値を提供します。',
+
+        // サービスについて
+        'サービス': '主なサービスは以下の3つです：\n1. AIモデルインフルエンサー事業\n2. AIモデル制作・運用\n3. ミスコンテスト運営支援',
+        '事業': 'AIモデルインフルエンサー事業、AIモデル制作・運用、ミスコンテスト運営支援を行っています。詳しくはサービスページをご覧ください。',
+        '料金': '料金についての詳細は、お問い合わせフォームよりご連絡ください。プロジェクトの規模や内容に応じてカスタマイズいたします。',
+        '価格': '価格については個別にお見積りいたします。お問い合わせフォームからご相談ください。',
+
+        // ミスコンテスト
+        'ミスコン': 'WONDERFUL WORLDの創業者はミスコンテスト出身で、ファイナリストたちに新しいチャンスを提供することをミッションとしています。',
+        'コンテスト': 'ミスコンテストのファイナリストをサポートし、AIモデルインフルエンサーとして新しいキャリアの可能性を広げています。',
+
+        // 問い合わせ
+        'お問い合わせ': 'お問い合わせは、サイト内のお問い合わせフォームからご連絡ください。',
+        '連絡': 'お問い合わせフォームからご連絡いただけます。通常1〜2営業日以内に返信いたします。',
+        'メール': 'お問い合わせフォームからメッセージをお送りください。担当者より折り返しご連絡いたします。',
+
+        // 会社情報
+        '会社': 'Wonderful World 合同会社は、AI技術と美の力で女性たちの可能性を広げる事業を展開しています。',
+        '設立': '2015年10月1日に設立されました。',
+
+        // その他
+        '料金': '詳しい料金については、お問い合わせフォームからご相談ください。',
+        '申し込み': 'サービスのお申し込みは、お問い合わせフォームからご連絡ください。',
+        '始め方': 'まずはお問い合わせフォームからご連絡ください。詳しいサービス内容をご案内いたします。',
+    };
+
+    // キーワードマッチング（部分一致）
+    for (const [keyword, response] of Object.entries(responses)) {
+        if (lowerInput.includes(keyword)) {
+            return response;
+        }
+    }
+
+    // デフォルトレスポンス
+    return 'ご質問ありがとうございます。より詳しい情報は、お問い合わせフォームからお気軽にご連絡ください。\n\nよくある質問：\n• WONDERFUL WORLDについて\n• AIモデルサービス\n• 料金・お申し込み方法';
+};
 
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
+    const [messages, setMessages] = useState<Message[]>([
+        {
+            id: 'welcome',
+            role: 'assistant',
+            content: 'こんにちは！WONDERFUL WORLDへようこそ。何かお手伝いできることはありますか？',
+        },
+    ]);
+    const [input, setInput] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
-
-    const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
-        initialMessages: [
-            {
-                id: 'welcome',
-                role: 'assistant',
-                content: 'こんにちは！WONDERFUL WORLDへようこそ。何かお手伝いできることはありますか？',
-            },
-        ],
-    });
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -25,6 +86,33 @@ export default function ChatBot() {
     useEffect(() => {
         scrollToBottom();
     }, [messages, isOpen]);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!input.trim()) return;
+
+        // ユーザーメッセージを追加
+        const userMessage: Message = {
+            id: `user-${Date.now()}`,
+            role: 'user',
+            content: input,
+        };
+
+        setMessages((prev) => [...prev, userMessage]);
+        setInput('');
+        setIsLoading(true);
+
+        // ボットの応答を生成（少し遅延を入れて自然に）
+        setTimeout(() => {
+            const botResponse: Message = {
+                id: `bot-${Date.now()}`,
+                role: 'assistant',
+                content: getResponse(input),
+            };
+            setMessages((prev) => [...prev, botResponse]);
+            setIsLoading(false);
+        }, 500);
+    };
 
     return (
         <>
@@ -75,7 +163,7 @@ export default function ChatBot() {
                                         }`}
                                 >
                                     <div
-                                        className={`max-w-[80%] p-3 rounded-2xl text-sm ${message.role === 'user'
+                                        className={`max-w-[80%] p-3 rounded-2xl text-sm whitespace-pre-line ${message.role === 'user'
                                             ? 'bg-orange-500 text-white rounded-br-none'
                                             : 'bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700 rounded-bl-none shadow-sm'
                                             }`}
@@ -107,7 +195,7 @@ export default function ChatBot() {
                                 <input
                                     type="text"
                                     value={input}
-                                    onChange={handleInputChange}
+                                    onChange={(e) => setInput(e.target.value)}
                                     placeholder="メッセージを入力..."
                                     className="flex-1 px-4 py-2 rounded-full bg-zinc-100 dark:bg-zinc-800 border-none focus:ring-2 focus:ring-orange-500 outline-none text-sm text-zinc-800 dark:text-zinc-200"
                                 />
@@ -197,4 +285,3 @@ export default function ChatBot() {
         </>
     );
 }
-
