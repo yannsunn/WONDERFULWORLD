@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useChat } from 'ai/react';
+import { useChat } from '@ai-sdk/react';
 
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -76,8 +76,8 @@ export default function ChatBot() {
                                 >
                                     <div
                                         className={`max-w-[80%] p-3 rounded-2xl text-sm ${message.role === 'user'
-                                                ? 'bg-orange-500 text-white rounded-br-none'
-                                                : 'bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700 rounded-bl-none shadow-sm'
+                                            ? 'bg-orange-500 text-white rounded-br-none'
+                                            : 'bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700 rounded-bl-none shadow-sm'
                                             }`}
                                     >
                                         {message.content}
